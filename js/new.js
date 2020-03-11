@@ -864,10 +864,20 @@ $(document).ready(function () {
             const $theaterModalTrigger = $('.event-list .event-header .place-info');
             const $theaterModalClose = $('.js-theater-modal-close, .tm-modal-close');
 
+            // $theaterModalContent.mCustomScrollbar({
+            //     //scrollbarPosition: "outside",
+            //     autoHideScrollbar: false,
+            //     theme: "dark",
+            //     mouseWheel: {scrollAmount: 300},
+            //     advanced: {updateOnContentResize: true}
+            // });
+
             $theaterModalTrigger.attr('href','#');
 
             $theaterModalTrigger.on('click', function (e) {
                 e.preventDefault();
+
+                $theaterModalContent.mCustomScrollbar("destroy");
 
                 const $oldData = $theaterModalContent.find('>*');
                 $oldData.remove();
@@ -877,7 +887,7 @@ $(document).ready(function () {
                 $theaterModal.show();
                 //$('body').addClass('body-noscroll');
 
-                $theaterModal.find('.tm-modal-content').mCustomScrollbar({
+                $theaterModalContent.mCustomScrollbar({
                     //scrollbarPosition: "outside",
                     autoHideScrollbar: false,
                     theme: "dark",
