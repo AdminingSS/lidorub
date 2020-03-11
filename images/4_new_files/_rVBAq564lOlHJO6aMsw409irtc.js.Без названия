@@ -1,0 +1,148 @@
+;window.CloudflareApps=window.CloudflareApps||{};CloudflareApps.siteId="dea3a6fa44696ef36f4123e5657911c3";CloudflareApps.installs=CloudflareApps.installs||{};;(function(){'use strict'
+CloudflareApps.internal=CloudflareApps.internal||{}
+var errors=[]
+CloudflareApps.internal.placementErrors=errors
+var errorHashes={}
+function noteError(options){var hash=options.selector+'::'+options.type+'::'+(options.installId||'')
+if(errorHashes[hash]){return}
+errorHashes[hash]=true
+errors.push(options)}
+var initializedSelectors={}
+var currentInit=false
+CloudflareApps.internal.markSelectors=function markSelectors(){if(!currentInit){check()
+currentInit=true
+setTimeout(function(){currentInit=false})}}
+function check(){var installs=window.CloudflareApps.installs
+for(var installId in installs){if(!installs.hasOwnProperty(installId)){continue}
+var selectors=installs[installId].selectors
+if(!selectors){continue}
+for(var key in selectors){if(!selectors.hasOwnProperty(key)){continue}
+var hash=installId+'::'+key
+if(initializedSelectors[hash]){continue}
+var els=document.querySelectorAll(selectors[key])
+if(els&&els.length>1){noteError({type:'init:too-many',option:key,selector:selectors[key],installId:installId})
+initializedSelectors[hash]=true
+continue}else if(!els||!els.length){continue}
+initializedSelectors[hash]=true
+els[0].setAttribute('cfapps-selector',selectors[key])}}}
+CloudflareApps.querySelector=function querySelector(selector){if(selector==='body'||selector==='head'){return document[selector]}
+CloudflareApps.internal.markSelectors()
+var els=document.querySelectorAll('[cfapps-selector="'+selector+'"]')
+if(!els||!els.length){noteError({type:'select:not-found:by-attribute',selector:selector})
+els=document.querySelectorAll(selector)
+if(!els||!els.length){noteError({type:'select:not-found:by-query',selector:selector})
+return null}else if(els.length>1){noteError({type:'select:too-many:by-query',selector:selector})}
+return els[0]}
+if(els.length>1){noteError({type:'select:too-many:by-attribute',selector:selector})}
+return els[0]}}());(function(){'use strict'
+var prevEls={}
+CloudflareApps.createElement=function createElement(options,prevEl){options=options||{}
+CloudflareApps.internal.markSelectors()
+try{if(prevEl&&prevEl.parentNode){var replacedEl
+if(prevEl.cfAppsElementId){replacedEl=prevEls[prevEl.cfAppsElementId]}
+if(replacedEl){prevEl.parentNode.replaceChild(replacedEl,prevEl)
+delete prevEls[prevEl.cfAppsElementId]}else{prevEl.parentNode.removeChild(prevEl)}}
+var element=document.createElement('cloudflare-app')
+var container
+if(options.pages&&options.pages.URLPatterns&&!CloudflareApps.matchPage(options.pages.URLPatterns)){return element}
+try{container=CloudflareApps.querySelector(options.selector)}catch(e){}
+if(!container){return element}
+if(!container.parentNode&&(options.method==='after'||options.method==='before'||options.method==='replace')){return element}
+if(container===document.body){if(options.method==='after'){options.method='append'}else if(options.method==='before'){options.method='prepend'}}
+switch(options.method){case'prepend':if(container.firstChild){container.insertBefore(element,container.firstChild)
+break}
+case'append':container.appendChild(element)
+break
+case'after':if(container.nextSibling){container.parentNode.insertBefore(element,container.nextSibling)}else{container.parentNode.appendChild(element)}
+break
+case'before':container.parentNode.insertBefore(element,container)
+break
+case'replace':try{var id=element.cfAppsElementId=Math.random().toString(36)
+prevEls[id]=container}catch(e){}
+container.parentNode.replaceChild(element,container)}
+return element}catch(e){if(typeof console!=='undefined'&&typeof console.error!=='undefined'){console.error('Error creating Cloudflare Apps element',e)}}}}());(function(){'use strict'
+CloudflareApps.matchPage=function matchPage(patterns){if(!patterns||!patterns.length){return true}
+var loc=document.location.host+document.location.pathname
+if(window.CloudflareApps&&CloudflareApps.proxy&&CloudflareApps.proxy.originalURL){var url=CloudflareApps.proxy.originalURL.parsed
+loc=url.host+url.path}
+for(var i=0;i<patterns.length;i++){var re=new RegExp(patterns[i],'i')
+if(re.test(loc)){return true}}
+return false}}());CloudflareApps.installs["fHnlEtSWsaLR"]={appId:"ftSYTOLuWZbg",scope:{}};;CloudflareApps.installs["fHnlEtSWsaLR"].options={"acceptButton":"I Understand","opacity":70,"policyText":"By using this website, you agree that we and our partners may set cookies for purposes such as customising content and advertising."};;CloudflareApps.installs["af1EnDTlR9Rw"]={appId:"JI85SyC9e8es",scope:{}};;CloudflareApps.installs["af1EnDTlR9Rw"].options={"instances":[{"align":"left","buttonsType":"floating","floatingHorizontal":{"hideOnDesktop":true,"placement":"center"},"floatingVertical":{"hideOnMobile":true,"placement":"right"},"iconStyle":{"bgColor":"#82b0ff","color":"original","fgColor":"#ffffff","floatingMargin":4,"padding":4,"radius":0.125,"size":48},"location":{"method":"append","selector":"body"},"services":[{"serviceCode":"facebook","serviceCodeOther":""},{"serviceCode":"twitter","serviceCodeOther":""},{"serviceCode":"google_plus","serviceCodeOther":""},{"serviceCode":"tumblr","serviceCodeOther":"","serviceCounter":false},{"serviceCode":"pinterest","serviceCodeOther":"","serviceCounter":false},{"serviceCode":"email","serviceCodeOther":""},{"serviceCode":"addtoany","serviceCodeOther":""}],"shareTitle":"","showSharingOptions":true}]};;CloudflareApps.installs["af1EnDTlR9Rw"].selectors={"instances[0].location.selector":"body"};;if(CloudflareApps.matchPage(CloudflareApps.installs['af1EnDTlR9Rw'].URLPatterns)){(function(){'use strict'
+if(!window.addEventListener)return
+var options=CloudflareApps.installs['af1EnDTlR9Rw'].options
+var isPreview="af1EnDTlR9Rw"==='preview'
+var previewElements=[]
+window.a2a_config=window.a2a_config||{}
+window.a2a_config.onclick=2
+var vendorScript=document.createElement('script')
+vendorScript.src='https://static.addtoany.com/menu/page.js'
+document.head.appendChild(vendorScript)
+function injectStyles(rule){var div=document.createElement('div')
+var styleId='cloudflare-addtoany-style'
+var style=document.getElementById(styleId)
+if(style)style.parentNode.removeChild(style)
+div.innerHTML='&shy;<style id="'+styleId+'">'+rule+'</style>'
+document.head.appendChild(div.childNodes[1])}
+function escapeAttr(string){var htmlEscapes={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}
+return string.replace(/[&<>"']/g,function(chr){return htmlEscapes[chr]})}
+function updateElements(){previewElements=[]
+var css=''
+options.instances.forEach(function(instanceOptions,index){var element=CloudflareApps.createElement(instanceOptions.location)
+if(!element||!element.parentNode)return
+if(isPreview){previewElements.push(element)}
+var buttonsType=instanceOptions.buttonsType
+var isFloating=instanceOptions.buttonsType==='floating'
+var buttonsTypeAttrSelector=buttonsType==='floating'?'[type="floating"]':'[type="inline"]'
+var vertical=instanceOptions.floatingVertical
+var verticalPlacement=vertical.placement
+element.setAttribute('app','addtoany')
+if(isFloating){element.setAttribute('type','floating')}else{element.setAttribute('type','inline')
+element.setAttribute('data-align',instanceOptions.align)}
+var iconSize=instanceOptions.iconStyle.size||32
+var iconColorAttr=''
+if(instanceOptions.iconStyle.color==='custom'){iconColorAttr=' data-a2a-icon-color="'+instanceOptions.iconStyle.bgColor+','+instanceOptions.iconStyle.fgColor+'"'}
+var elementSelector='cloudflare-app[app="addtoany"]'+buttonsTypeAttrSelector
+var radius=(iconSize/2*instanceOptions.iconStyle.radius).toFixed(2)+'px'
+css=css+
+elementSelector+' .a2a_svg,'+
+elementSelector+' .a2a_count'+'{border-radius:'+radius+'!important;}'
+var padding=(instanceOptions.iconStyle.padding/2)+'px'
+css+=elementSelector+' .a2a_kit a{padding:'+padding+';}'
+if(isFloating){var margin=instanceOptions.iconStyle.floatingMargin+'px'
+css+=elementSelector+' .a2a_kit.a2a_vertical_style{margin-'+verticalPlacement+':'+margin+';}'
+css+=elementSelector+' .a2a_kit.a2a_default_style{margin-bottom:'+margin+';}'}
+var shareUrlAttr=''
+if(instanceOptions.shareURL){shareUrlAttr=' data-a2a-url="'+escapeAttr(instanceOptions.shareURL.trim())+'"'}else if(isPreview){var parsedUrl=CloudflareApps.proxy.originalURL.parsed
+shareUrlAttr=' data-a2a-url="'+escapeAttr(parsedUrl.scheme+'://'+parsedUrl.host+parsedUrl.path)+'"'}
+var shareTitleAttr=''
+if(instanceOptions.shareTitle){shareTitleAttr=' data-a2a-title="'+escapeAttr(instanceOptions.shareTitle.trim())+'"'}
+var buttonsHTML=''
+instanceOptions.services.forEach(function(service){var serviceCode=''
+serviceCode=service.serviceCode==='__other'?service.serviceCodeOther:service.serviceCode
+serviceCode=serviceCode.trim().toLowerCase()
+var serviceCounter=service.serviceCounter?' a2a_counter':''
+if(serviceCode==='addtoany'){buttonsHTML+='<a class="a2a_dd'+serviceCounter+'"></a>'}else{buttonsHTML+='<a class="a2a_button_'+serviceCode+serviceCounter+'"></a>'}})
+var styleAttr=''
+var html=''
+if(isFloating){var verticalCentering='top:50%;transform:translateY(-50%);'
+var mobileHideClass=vertical.hideOnMobile?' mobileHide':''
+styleAttr=' style="'
+if(verticalPlacement==='left'){styleAttr+='left:0px;'+verticalCentering}else if(verticalPlacement==='right'){styleAttr+='right:0px;'+verticalCentering}
+styleAttr+='"'
+if(verticalPlacement!=='none'){html+='<div class="a2a_kit a2a_kit_size_'+iconSize+' a2a_floating_style a2a_vertical_style'+mobileHideClass+'"'+iconColorAttr+shareUrlAttr+shareTitleAttr+styleAttr+'>'+buttonsHTML+'</div>'}
+var horizontal=instanceOptions.floatingHorizontal
+var horizontalPlacement=horizontal.placement
+var horizontalBottom='bottom:0px;'
+var desktopHideClass=horizontal.hideOnDesktop?' desktopHide':''
+styleAttr=' style="'
+if(horizontalPlacement==='left'){styleAttr+=horizontalBottom+'left:0;'}else if(horizontalPlacement==='right'){styleAttr+=horizontalBottom+'right:0;'}
+styleAttr+='"'
+if(horizontalPlacement!=='none'){html+='<div class="a2a_kit a2a_kit_size_'+iconSize+' a2a_floating_style a2a_default_style'+desktopHideClass+'"'+iconColorAttr+shareUrlAttr+shareTitleAttr+styleAttr+'>'+buttonsHTML+'</div>'}}else{html+='<div class="a2a_kit a2a_kit_size_'+iconSize+' a2a_default_style"'+iconColorAttr+shareUrlAttr+shareTitleAttr+styleAttr+'>'+buttonsHTML+'</div>'}
+element.innerHTML=html})
+injectStyles(css)
+if(window.a2a)window.a2a.init_all('page')
+if(isPreview&&previewElements.length===1&&previewElements[0].getAttribute('type')==='inline'){previewElements[0].scrollIntoView()}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',updateElements)}else{updateElements()}
+window.CloudflareApps.installs['af1EnDTlR9Rw'].scope={setOptions:function setOptions(nextOptions){previewElements.forEach(function(element){CloudflareApps.createElement(null,element)})
+options=nextOptions
+updateElements()}}}())};(function(){try{var link=document.createElement('link');link.rel='stylesheet';link.href='data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwPSJhZGR0b2FueSJdIHsKICBkaXNwbGF5OiBibG9jazsKICBtYXJnaW46IC41ZW0gLjJlbTsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwPSJhZGR0b2FueSJdW2RhdGEtYWxpZ249ImNlbnRlciJdIC5hMmFfZGVmYXVsdF9zdHlsZSB7CiAgZGlzcGxheTogZmxleDsKICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsKfQpjbG91ZGZsYXJlLWFwcFthcHA9ImFkZHRvYW55Il1bZGF0YS1hbGlnbj0ibGVmdCJdIC5hMmFfZGVmYXVsdF9zdHlsZSB7CiAgZGlzcGxheTogZmxleDsKICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7Cn0KY2xvdWRmbGFyZS1hcHBbYXBwPSJhZGR0b2FueSJdW2RhdGEtYWxpZ249InJpZ2h0Il0gLmEyYV9kZWZhdWx0X3N0eWxlIHsKICBkaXNwbGF5OiBmbGV4OwogIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7Cn0KCi8qIE92ZXJyaWRlIGRlZmF1bHQgOmhvdmVyIGVmZmVjdCAqLwpjbG91ZGZsYXJlLWFwcFthcHA9ImFkZHRvYW55Il0gLmEyYV9raXQgYTpob3ZlciAuYTJhX3N2ZyB7CiAgb3BhY2l0eTogMTsKfQpjbG91ZGZsYXJlLWFwcFthcHA9ImFkZHRvYW55Il0gLmEyYV9raXQgYTpob3ZlciAuYTJhX3N2ZyBzdmcgewogIG9wYWNpdHk6IC44Owp9CgovKiBGbG9hdGluZyBzdHlsZXMgKi8KLyogRGVmYXVsdCB0byBjZW50ZXJpbmcgdGhlIGhvcml6b250YWwgYmFyLCB3aXRob3V0IHRoZSBwcmVtYXR1cmUgd3JhcHBpbmcgb2YgdHJhbnNmb3JtL3RyYW5zbGF0ZVkgKi8KY2xvdWRmbGFyZS1hcHBbYXBwPSJhZGR0b2FueSJdW3R5cGU9ImZsb2F0aW5nIl0gewogIGRpc3BsYXk6IGZsZXg7CiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7Cn0KY2xvdWRmbGFyZS1hcHBbYXBwPSJhZGR0b2FueSJdIC5hMmFfZmxvYXRpbmdfc3R5bGUgewogIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50OwogIHBhZGRpbmc6IDA7Cn0KLyogQWRqdXN0IGZsb2F0aW5nIHR5cGUncyBsaW5rIHBhZGRpbmcgd2l0aCBoaWdoIHNwZWNpZmljaXR5ICovCmNsb3VkZmxhcmUtYXBwW2FwcD0iYWRkdG9hbnkiXSAuYTJhX2Zsb2F0aW5nX3N0eWxlLmEyYV9raXQuYTJhX3ZlcnRpY2FsX3N0eWxlIGEgewogIHBhZGRpbmctbGVmdDogMDsKICBwYWRkaW5nLXJpZ2h0OiAwOwp9CmNsb3VkZmxhcmUtYXBwW2FwcD0iYWRkdG9hbnkiXSAuYTJhX2Zsb2F0aW5nX3N0eWxlLmEyYV9raXQuYTJhX2RlZmF1bHRfc3R5bGUgYSB7CiAgcGFkZGluZy10b3A6IDA7CiAgcGFkZGluZy1ib3R0b206IDA7Cn0KLyogRmxvYXRpbmcgcmVzcG9uc2l2ZW5lc3MgKi8KQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDo5ODBweCkgewogIGNsb3VkZmxhcmUtYXBwW2FwcD0iYWRkdG9hbnkiXSAuYTJhX2Zsb2F0aW5nX3N0eWxlLmEyYV92ZXJ0aWNhbF9zdHlsZS5tb2JpbGVIaWRlIHsgCiAgICBkaXNwbGF5OiBub25lOwogIH0KfQpAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOjk4MXB4KSB7CiAgY2xvdWRmbGFyZS1hcHBbYXBwPSJhZGR0b2FueSJdIC5hMmFfZmxvYXRpbmdfc3R5bGUuYTJhX2RlZmF1bHRfc3R5bGUuZGVza3RvcEhpZGUgewogICAgZGlzcGxheTogbm9uZTsKICB9Cn0=';document.getElementsByTagName('head')[0].appendChild(link);}catch(e){}})();(function(){var script = document.createElement('script');script.src = '/cdn-cgi/apps/body/EYjZvRJCzs30hahohx-Yo0u9pA8.js';document.head.appendChild(script);})();
