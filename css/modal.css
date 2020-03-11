@@ -14,13 +14,28 @@
 }
 
 .tm-modal-body {
+    position: relative;
     width: 80%;
     background: #ffffff;
-    padding: 20px;
+    padding: 60px 20px 20px;
     margin: 40px auto auto;
-    overflow: auto;
+    /*overflow: auto;*/
     height: 80vh;
     border-radius: 5px;
+}
+
+.tm-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #363636;
+    cursor: pointer;
+}
+
+.tm-modal-content {
+    height: inherit;
 }
 
 .tm-modal .reservation-tunnel {
@@ -589,7 +604,7 @@
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    padding: 40px;
+    padding: 0 40px;
 }
 
 .js-theater-modal .panel {
@@ -622,7 +637,8 @@
 }
 
 .js-theater-modal h2 a {
-    text-decoration: none; 
+    text-decoration: none;
+    color: #0f1e48;
 }
 
 .js-theater-modal .panel-heading {

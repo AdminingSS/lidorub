@@ -862,7 +862,7 @@ $(document).ready(function () {
             const $theaterModal = $('.js-theater-modal');
             const $theaterModalContent = $theaterModal.find('.tm-modal-content');
             const $theaterModalTrigger = $('.event-list .event-header .place-info');
-            const $theaterModalClose = $('.js-theater-modal-close');
+            const $theaterModalClose = $('.js-theater-modal-close, .tm-modal-close');
 
             $theaterModalTrigger.attr('href','#');
 
@@ -875,13 +875,21 @@ $(document).ready(function () {
                 ajaxStageOneTheaters($theaterModalContent);
 
                 $theaterModal.show();
-                $('body').addClass('body-noscroll');
+                //$('body').addClass('body-noscroll');
+
+                $theaterModal.find('.tm-modal-content').mCustomScrollbar({
+                    //scrollbarPosition: "outside",
+                    autoHideScrollbar: false,
+                    theme: "dark",
+                    mouseWheel: {scrollAmount: 300},
+                    advanced: {updateOnContentResize: true}
+                });
             });
 
             $theaterModalClose.on('click', function (e) {
                 if(e.target !== this) return;
                 $theaterModal.hide();
-                $('body').removeClass('body-noscroll');
+                //$('body').removeClass('body-noscroll');
             });
             //theater modals end
 
