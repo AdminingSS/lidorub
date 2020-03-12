@@ -743,7 +743,7 @@ $(document).ready(function () {
 
     })();
 
-    //main modal
+    //modals control
     (() => {
         const $orderModal = $('.js-order-modal');
         const $orderModalTrigger = $('.js-order-modal-trigger');
@@ -751,15 +751,9 @@ $(document).ready(function () {
 
         const $orderModal2 = $('.js-order-modal-2');
         const $orderModalClose2 = $('.js-order-modal-close-2');
-
         const $orderModalReturn2 = $('.js-order-modal-return-2');
 
         const $jsSubmitStageOne = $('.js-submit-stage-1');
-
-        // const $jsSubmitStageThree = $('.js-submit-stage-3');
-        // const $jsSubmitStageFour = $('.js-submit-stage-4');
-        // const $jsSubmitStageFive = $('.js-submit-stage-5');
-        // const $jsSubmitStageSix = $('.js-submit-stage-6');
 
         const $mainForm = $('.js-form-main');
         const $modalFormOne = $orderModal.find('.step1 form');
