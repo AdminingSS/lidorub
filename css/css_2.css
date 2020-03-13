@@ -4624,7 +4624,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     }
 }
 
-#nav .container:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'], #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'], #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] {
+#nav .container:nth-of-type(1) ul.nav-primary > li:last-child > a, #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a, #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a {
     padding-left: 35px;
     margin-left: 5px;
     font-weight: 700;
@@ -4632,11 +4632,11 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     color: #0f1e48
 }
 
-#nav .container:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] span, #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] span, #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] span {
+#nav .container:nth-of-type(1) ul.nav-primary > li:last-child > a span, #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a span, #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a span {
     position: relative
 }
 
-#nav .container:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] span:before, #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] span:before, #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li > a[data-drupal-link-system-path='node/56'] span:before {
+#nav .container:nth-of-type(1) ul.nav-primary > li:last-child > a span:before, #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a span:before, #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a span:before {
     content: '';
     position: absolute;
     left: -30px;
@@ -4900,7 +4900,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     background-position: center 44px
 }
 
-#nav .container:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'], #nav #cookie .cookie__content:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'], #cookie #nav .cookie__content:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] {
+#nav .container:nth-of-type(3) ul.nav-primary li:last-child > a, #nav #cookie .cookie__content:nth-of-type(3) ul.nav-primary li:last-child > a, #cookie #nav .cookie__content:nth-of-type(3) ul.nav-primary li:last-child > a {
     padding-left: 35px;
     margin-left: 5px;
     font-weight: 700;
@@ -4908,11 +4908,11 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     color: #0f1e48
 }
 
-#nav .container:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] span, #nav #cookie .cookie__content:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] span, #cookie #nav .cookie__content:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] span {
+#nav .container:nth-of-type(3) ul.nav-primary li:last-child > a span, #nav #cookie .cookie__content:nth-of-type(3) ul.nav-primary li:last-child > a span, #cookie #nav .cookie__content:nth-of-type(3) ul.nav-primary li:last-child > a span {
     position: relative
 }
 
-#nav .container:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] span:before, #nav #cookie .cookie__content:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] span:before, #cookie #nav .cookie__content:nth-of-type(3) ul.nav-primary a[data-drupal-link-system-path='node/56'] span:before {
+#nav .container:nth-of-type(3) ul.nav-primary li:last-child > a span:before, #nav #cookie .cookie__content:nth-of-type(3) ul.nav-primary li:last-child > a span:before, #cookie #nav .cookie__content:nth-of-type(3) ul.nav-primary li:last-child > a span:before {
     content: '';
     position: absolute;
     z-index: 100;
