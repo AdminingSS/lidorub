@@ -1,80 +1,99 @@
+function isTouchDevice() {
+    try {
+        document.createEvent('TouchEvent');
+        return true;
+    }
+    catch(e) {
+        return false;
+    }
+}
+function getScrollWidth() {
+    var div = document.createElement('div');
+
+    div.style.overflowY = 'scroll';
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.visibility = 'hidden';
+
+    document.body.appendChild(div);
+    var sw = div.offsetWidth - div.clientWidth;
+    document.body.removeChild(div);
+    window.scrollWidth = sw;
+}
+function preventScale() {
+    window.addEventListener('wheel', function (e) {
+        if (e.ctrlKey) {
+            e.preventDefault();
+        }
+    });
+
+    window.addEventListener("gesturestart", function (e) {
+        e.preventDefault();
+    });
+
+    window.addEventListener("gesturechange", function (e) {
+        e.preventDefault();
+    });
+
+    window.addEventListener("gestureend", function (e) {
+        e.preventDefault();
+    });
+}
+
+// Детект мобильного браузера
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
 $(document).ready(function () {
 
-    //LEGACY CODE
+    //Top block code from mariinski
+    //какие-то манипуляции
+    if ( isTouchDevice() )
+        $('html').addClass('touch');
+    window.scrollWidh = getScrollWidth();
+    preventScale();
+
+    // Слайдер на главной
+    if ($('.slider-top').length) {
+        $('.slider-top').slick({
+            centerMode: true,
+            arrows: false,
+            centerPadding: 0
+        });
+    }
+    setTimeout(function () {
+        $('.ytplayer').each(function () {
+            if (typeof YTPlayer !== "undefined") {
+                $(this).YTPlayer({
+                    fitToBackground: false,
+                    mute: true,
+                    videoId: $(this).data('id')
+                });
+            }
+        });
+    }, 400);
+
+    //LIDO LEGACY CODE
 
     (this),
-        // function (t) {
-        //     var e = !1;
-        //     if ("function" == typeof define && define.amd && (define(t), e = !0), "object" == typeof exports && (module.exports = t(), e = !0), !e) {
-        //         var i = window.Cookies, n = window.Cookies = t();
-        //         n.noConflict = function () {
-        //             return window.Cookies = i, n
-        //         }
-        //     }
-        // }
-        //
-        // (function () {
-        //     function t() {
-        //         for (var t = 0, e = {}; t < arguments.length; t++) {
-        //             var i = arguments[t];
-        //             for (var n in i) e[n] = i[n]
-        //         }
-        //         return e
-        //     }
-        //
-        //     function e(i) {
-        //         function n(e, s, r) {
-        //             var a;
-        //             if ("undefined" != typeof document) {
-        //                 if (arguments.length > 1) {
-        //                     if ("number" == typeof(r = t({path: "/"}, n.defaults, r)).expires) {
-        //                         var o = new Date;
-        //                         o.setMilliseconds(o.getMilliseconds() + 864e5 * r.expires), r.expires = o
-        //                     }
-        //                     r.expires = r.expires ? r.expires.toUTCString() : "";
-        //                     try {
-        //                         a = JSON.stringify(s), /^[\{\[]/.test(a) && (s = a)
-        //                     } catch (t) {
-        //                     }
-        //                     s = i.write ? i.write(s, e) : encodeURIComponent(String(s)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent), e = (e = (e = encodeURIComponent(String(e))).replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)).replace(/[\(\)]/g, escape);
-        //                     var l = "";
-        //                     for (var c in r) r[c] && (l += "; " + c, !0 !== r[c] && (l += "=" + r[c]));
-        //                     return document.cookie = e + "=" + s + l
-        //                 }
-        //                 e || (a = {});
-        //                 for (var h = document.cookie ? document.cookie.split("; ") : [], u = /(%[0-9A-Z]{2})+/g, d = 0; d < h.length; d++) {
-        //                     var f = h[d].split("="), p = f.slice(1).join("=");
-        //                     this.json || '"' !== p.charAt(0) || (p = p.slice(1, -1));
-        //                     try {
-        //                         var m = f[0].replace(u, decodeURIComponent);
-        //                         if (p = i.read ? i.read(p, m) : i(p, m) || p.replace(u, decodeURIComponent), this.json) try {
-        //                             p = JSON.parse(p)
-        //                         } catch (t) {
-        //                         }
-        //                         if (e === m) {
-        //                             a = p;
-        //                             break
-        //                         }
-        //                         e || (a[m] = p)
-        //                     } catch (t) {
-        //                     }
-        //                 }
-        //                 return a
-        //             }
-        //         }
-        //
-        //         return n.set = n, n.get = function (t) {
-        //             return n.call(n, t)
-        //         }, n.getJSON = function () {
-        //             return n.apply({json: !0}, [].slice.call(arguments))
-        //         }, n.defaults = {}, n.remove = function (e, i) {
-        //             n(e, "", t(i, {expires: -1}))
-        //         }, n.withConverter = e, n
-        //     }
-        //
-        //     return e(function () {
-        //     })
-        // }),
         function (t, e, i) {
             t.Browser = function () {
                 function e() {
@@ -228,7 +247,7 @@ $(document).ready(function () {
         }
     }
 
-    //popin
+    //popin (what?)
     (jQuery, window, document), function (t, e, i, n) {
         function s(e, i) {
             this.element = e;
@@ -272,7 +291,7 @@ $(document).ready(function () {
         }
     }
 
-    //rPopin
+    //rPopin (what?)
     (jQuery, window, document), function (t, e, i, n) {
         function s(e, i) {
             this.element = e;
@@ -357,7 +376,7 @@ $(document).ready(function () {
         }
     }
 
-    //selects
+    //selects (obso?)
     (jQuery, window, document), function (t, e, i, n) {
         function s(e, i) {
             this.element = e;
@@ -377,10 +396,11 @@ $(document).ready(function () {
         }
     }
 
-    //dont delete --> selects somehow
+    //dont delete --> selects somehow (obso?)
     (jQuery, window, document), function (t, e) {
     }
 
+    //main
     (jQuery, window, document), function (t, e, i, n) {
         function s() {
             this.init()
@@ -429,11 +449,8 @@ $(document).ready(function () {
                     e.addEventListener("resizeEnd", function () {
                         s()
                     }),
-                    //t(".booking").booking(),
                     t("#nav").nav({position: t("#header").length && !Browser.isMobile() ? "bottom" : "top"}),
-                    t(".topnav-container").fixedNav()//,
-                //t(".ticketing").ticketing()//,
-                //t(".checkout").checkout()
+                    t(".topnav-container").fixedNav()
             }
         },
             t('[href="#"]').click(function () {
@@ -444,9 +461,9 @@ $(document).ready(function () {
             })
     }(jQuery, window, document);
 
-    //END OF LEGACY CODE
+    //END OF LIDO LEGACY CODE
 
-    //custom flatpickr
+    //custom flatpickr plugin
     (() => {
         const $flatPickr = $('.js-flatpickr');
 
@@ -459,7 +476,7 @@ $(document).ready(function () {
 
     })();
 
-    //modals control
+    //modals control (not done)
     (() => {
         const $orderModal = $('.js-order-modal');
         const $orderModalTrigger = $('.js-order-modal-trigger');
@@ -690,6 +707,7 @@ $(document).ready(function () {
 
     })();
 
+    //ajax and processing / modal 1-2 (not done)
     function ajaxStageOne() {
         //ajax imitation
         const $destinationHolder = $('.reservation-tunnel .step.step2 .offers');
@@ -708,6 +726,7 @@ $(document).ready(function () {
         fixImages($destinationHolder);
     }
 
+    //ajax and processing / modal 1-2 theaters modal (not done)
     function ajaxStageOneTheaters($holder) {
         //ajax imitation
         const $destinationHolder = $holder;
@@ -760,6 +779,7 @@ $(document).ready(function () {
         });
     }
 
+    //ajax and processing / modal 1-2 show more (not done)
     function ajaxStageOneShowMore($holder) {
         //ajax imitation
         const $destinationHolder = $holder;
@@ -809,6 +829,7 @@ $(document).ready(function () {
 
     }
 
+    //ajax and processing / modal 1-3 (not done)
     function ajaxStageTwo() {
         //ajax imitation
         const $destinationHolder = $('.reservation-tunnel .step.step3 .options');
@@ -830,33 +851,7 @@ $(document).ready(function () {
 
     }
 
-    // //playbill slidesFix
-    // function getSlides($holder) {
-    //     const $rawImages = $();
-    //
-    //
-    //     const $playbillContent = $('.event-list');
-    //     const $playbillImages = $playbillContent.find('img.img-thumbnail, img.img-responsive, .carousel-inner img');
-    //     const $playbillLinks = $playbillContent.find('.col-md-12 p a');
-    //
-    //     $playbillImages.each(function () {
-    //         const $currImg = $(this);
-    //         const oldSrc = $currImg.attr('src');
-    //         const newSrc = 'https://russianbroadway.com' + oldSrc;
-    //
-    //         $currImg.attr('src', newSrc);
-    //     });
-    //
-    //     $playbillLinks.each(function () {
-    //         const $currLnk = $(this);
-    //         const oldSrc = $currLnk.attr('href');
-    //         const newSrc = 'https://russianbroadway.com' + oldSrc;
-    //
-    //         $currLnk.attr('href', newSrc);
-    //     });
-    // }
-
-    //playbill images fix
+    //playbill images and image links fix (to check)
     function fixImages($holder) {
         const $playbillContent = $holder;
         const $playbillImages = $playbillContent.find('img');
@@ -879,7 +874,7 @@ $(document).ready(function () {
         });
     }
 
-    //regaloeb
+    //regaloeb plugin
     (() => {
 
         $(".js-regaloeb").regaloebParallax();
@@ -913,6 +908,7 @@ $(document).ready(function () {
 
     })();
 
+    //custom select plugin
     (() => {
         $('.form-item:not(".quantity") select').customSelect();
     })();
