@@ -398,14 +398,13 @@
     top: 0;
 }
 
-
 @media (max-width: 1024px) {
     #main {
-        margin-top: 0!important;
+        margin-top: 0 !important;
     }
 
     .js-regaloeb {
-        opacity: 1!important;
+        opacity: 1 !important;
         transform: none;
     }
 }
@@ -416,7 +415,6 @@
     }
 
     /*raw*/
-
     .slide-top__content {
         width: 90%;
         padding: 20px 0
@@ -473,9 +471,8 @@
     }
 
     /*.slide-top, .slider-top {*/
-        /*max-height: 500px*/
+    /*max-height: 500px*/
     /*}*/
-
     .electron_com svg {
         width: 40px;
         height: 40px
@@ -501,13 +498,11 @@
 
 @media (max-width: 640px) {
     /*.wrapper {*/
-        /*margin: 56px 0 0*/
+    /*margin: 56px 0 0*/
     /*}*/
-
     /*.slide-top, .slider-top {*/
-        /*height: 360px*/
+    /*height: 360px*/
     /*}*/
-
     .slide-top__title {
         font-size: 30px;
         line-height: 32px;
