@@ -946,12 +946,12 @@ hr {
     color: #fff
 }
 
-form fieldset {
+form:not(.myform) fieldset {
     padding: 0;
     border: 0
 }
 
-form label {
+form:not(.myform) label {
     color: #b8a15d;
     display: block;
     font-family: inherit;
@@ -961,7 +961,7 @@ form label {
     box-sizing: border-box
 }
 
-form input, form select, form textarea {
+form:not(.myform) input, form:not(.myform) select, form:not(.myform) textarea {
     outline: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -981,71 +981,71 @@ form input, form select, form textarea {
     transition: all .27s ease-out 0s
 }
 
-form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+form:not(.myform) input::-webkit-input-placeholder, form:not(.myform) select::-webkit-input-placeholder, form:not(.myform) textarea::-webkit-input-placeholder {
     font-style: italic;
     font-weight: 100;
     color: #333
 }
 
-form input:-moz-placeholder, form select:-moz-placeholder, form textarea:-moz-placeholder {
+form:not(.myform) input:-moz-placeholder, form:not(.myform) select:-moz-placeholder, form:not(.myform) textarea:-moz-placeholder {
     font-style: italic;
     font-weight: 100;
     color: #333
 }
 
-form input::-moz-placeholder, form select::-moz-placeholder, form textarea::-moz-placeholder {
+form:not(.myform) input::-moz-placeholder, form:not(.myform) select::-moz-placeholder, form:not(.myform) textarea::-moz-placeholder {
     font-style: italic;
     font-weight: 100;
     color: #333
 }
 
-form input:-ms-input-placeholder, form select:-ms-input-placeholder, form textarea:-ms-input-placeholder {
+form:not(.myform) input:-ms-input-placeholder, form:not(.myform) select:-ms-input-placeholder, form:not(.myform) textarea:-ms-input-placeholder {
     font-style: italic;
     font-weight: 100;
     color: #333
 }
 
-form input.placeholder, form select.placeholder, form textarea.placeholder {
+form:not(.myform) input.placeholder,form:not(.myform) select.placeholder,form:not(.myform) textarea.placeholder {
     font-style: italic;
     font-weight: 100;
     color: #333
 }
 
-form input:hover, form input:focus, form select:hover, form select:focus, form textarea:hover, form textarea:focus {
+form:not(.myform) input:hover,form:not(.myform) input:focus,form:not(.myform) select:hover,form:not(.myform) select:focus,form:not(.myform) textarea:hover,form:not(.myform) textarea:focus {
     border-color: #b8a15d
 }
 
-form input#edit-comment, form select#edit-comment, form textarea#edit-comment {
+form:not(.myform) input#edit-comment,form:not(.myform) select#edit-comment,form:not(.myform) textarea#edit-comment {
     min-height: 50px
 }
 
-form input[type="date"] {
+form:not(.myform) input[type="date"] {
     font-style: italic;
     font-weight: 100;
     color: #333
 }
 
-form input[type="text"], form input[type="email"], form input[type="password"], form input[type="number"], form input[type="date"], form input[type="tel"], form select, form textarea {
+form:not(.myform) input[type="text"],form:not(.myform) input[type="email"],form:not(.myform) input[type="password"],form:not(.myform) input[type="number"],form:not(.myform) input[type="date"],form:not(.myform) input[type="tel"],form:not(.myform) select,form:not(.myform) textarea {
     padding: 0 0 5px;
     display: block;
     width: 100%
 }
 
-form input::-webkit-outer-spin-button, form input::-webkit-inner-spin-button {
+form:not(.myform) input::-webkit-outer-spin-button,form:not(.myform) input::-webkit-inner-spin-button {
     -webkit-appearance: none
 }
 
-form select::-ms-expand {
+form:not(.myform) select::-ms-expand {
     display: none
 }
 
-form input[type="text"], form input[type="email"], form input[type="password"], form input[type="number"] {
+form:not(.myform) input[type="text"],form:not(.myform) input[type="email"],form:not(.myform) input[type="password"],form:not(.myform) input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield
 }
 
-button, html [type="button"], [type="reset"], [type="submit"] {
+form:not(.myform) button, html [type="button"], [type="reset"], [type="submit"] {
     -webkit-appearance: none
 }
 
@@ -1062,13 +1062,13 @@ button, html [type="button"], [type="reset"], [type="submit"] {
     left: 0px
 }
 
-form input[type="checkbox"]:not(:checked), form input[type="checkbox"]:checked, form input[type="radio"]:not(:checked), form input[type="radio"]:checked {
+form:not(.myform) input[type="checkbox"]:not(:checked),form:not(.myform) input[type="checkbox"]:checked,form:not(.myform) input[type="radio"]:not(:checked),form:not(.myform) input[type="radio"]:checked {
     outline: 0;
     position: absolute;
     left: -9999px
 }
 
-form input[type="checkbox"] + label, form input[type="radio"] + label {
+form:not(.myform) input[type="checkbox"] + label,form:not(.myform) input[type="radio"] + label {
     outline: 0;
     position: relative;
     padding-left: 30px;
@@ -1083,12 +1083,12 @@ form input[type="checkbox"] + label, form input[type="radio"] + label {
 }
 
 @media screen and (max-width: 1024px) {
-    form input[type="checkbox"] + label, form input[type="radio"] + label {
+   form:not(.myform) input[type="checkbox"] + label,form:not(.myform) input[type="radio"] + label {
         line-height: 22px
     }
 }
 
-form input[type="checkbox"] + label:before, form input[type="checkbox"] + label:after, form input[type="radio"] + label:before, form input[type="radio"] + label:after {
+form:not(.myform) input[type="checkbox"] + label:before,form:not(.myform) input[type="checkbox"] + label:after,form:not(.myform) input[type="radio"] + label:before,form:not(.myform) input[type="radio"] + label:after {
     outline: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1102,45 +1102,45 @@ form input[type="checkbox"] + label:before, form input[type="checkbox"] + label:
 }
 
 @media screen and (max-width: 1024px) {
-    form input[type="checkbox"] + label:before, form input[type="checkbox"] + label:after, form input[type="radio"] + label:before, form input[type="radio"] + label:after {
+   form:not(.myform) input[type="checkbox"] + label:before,form:not(.myform) input[type="checkbox"] + label:after,form:not(.myform) input[type="radio"] + label:before,form:not(.myform) input[type="radio"] + label:after {
         width: 22px;
         height: 22px;
         line-height: 22px
     }
 }
 
-form input[type="checkbox"]:not(:checked) + label:before, form input[type="checkbox"]:checked + label:before, form input[type="radio"]:not(:checked) + label:before, form input[type="radio"]:checked + label:before {
+form:not(.myform) input[type="checkbox"]:not(:checked) + label:before,form:not(.myform) input[type="checkbox"]:checked + label:before,form:not(.myform) input[type="radio"]:not(:checked) + label:before,form:not(.myform) input[type="radio"]:checked + label:before {
     background: transparent;
     border: 1px solid #b8a15d
 }
 
-form input[type="checkbox"]:not(:checked) + label:after, form input[type="checkbox"]:checked + label:after, form input[type="radio"]:not(:checked) + label:after, form input[type="radio"]:checked + label:after {
+form:not(.myform) input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="radio"]:not(:checked) + label:after,form:not(.myform) input[type="radio"]:checked + label:after {
     background: url(../images/check.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10px auto
 }
 
-form input[type="checkbox"]:not(:checked) + label:after, form input[type="radio"]:not(:checked) + label:after {
+form:not(.myform) input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="radio"]:not(:checked) + label:after {
     opacity: 0
 }
 
-form input[type="checkbox"]:checked + label:after, form input[type="radio"]:checked + label:after {
+form:not(.myform) input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="radio"]:checked + label:after {
     opacity: 1
 }
 
-form input[type="checkbox"]:disabled:not(:checked) + label:before, form input[type="checkbox"]:disabled:checked + label:before, form input[type="radio"]:disabled:not(:checked) + label:before, form input[type="radio"]:disabled:checked + label:before {
+form:not(.myform) input[type="checkbox"]:disabled:not(:checked) + label:before,form:not(.myform) input[type="checkbox"]:disabled:checked + label:before,form:not(.myform) input[type="radio"]:disabled:not(:checked) + label:before,form:not(.myform) input[type="radio"]:disabled:checked + label:before {
     -webkit-box-shadow: none;
     box-shadow: none;
     border-color: #ccc;
     background-color: #ededed
 }
 
-form input[type="checkbox"]:disabled:checked + label:after, form input[type="radio"]:disabled:checked + label:after {
+form:not(.myform) input[type="checkbox"]:disabled:checked + label:after,form:not(.myform) input[type="radio"]:disabled:checked + label:after {
     color: #aaa
 }
 
-form input[type="checkbox"]:disabled + label, form input[type="radio"]:disabled + label {
+form:not(.myform) input[type="checkbox"]:disabled + label,form:not(.myform) input[type="radio"]:disabled + label {
     color: #aaa
 }
 
@@ -1193,7 +1193,7 @@ section:focus {
     transform: translate(-10px, -50%) rotate(90deg)
 }
 
-.btn, button, html [type="button"], [type="reset"], [type="submit"], .show_page #diner > .container .container:nth-of-type(2) .content:nth-of-type(2) a, .show_page #cookie #diner > .cookie__content .container:nth-of-type(2) .content:nth-of-type(2) a, #cookie .show_page #diner > .cookie__content .container:nth-of-type(2) .content:nth-of-type(2) a, .show_page #diner > .container #cookie .cookie__content:nth-of-type(2) .content:nth-of-type(2) a, #cookie .show_page #diner > .container .cookie__content:nth-of-type(2) .content:nth-of-type(2) a, .show_page #cookie #diner > .cookie__content .cookie__content:nth-of-type(2) .content:nth-of-type(2) a, #cookie .show_page #diner > .cookie__content .cookie__content:nth-of-type(2) .content:nth-of-type(2) a {
+.btn, html [type="button"], [type="reset"], [type="submit"], .show_page #diner > .container .container:nth-of-type(2) .content:nth-of-type(2) a, .show_page #cookie #diner > .cookie__content .container:nth-of-type(2) .content:nth-of-type(2) a, #cookie .show_page #diner > .cookie__content .container:nth-of-type(2) .content:nth-of-type(2) a, .show_page #diner > .container #cookie .cookie__content:nth-of-type(2) .content:nth-of-type(2) a, #cookie .show_page #diner > .container .cookie__content:nth-of-type(2) .content:nth-of-type(2) a, .show_page #cookie #diner > .cookie__content .cookie__content:nth-of-type(2) .content:nth-of-type(2) a, #cookie .show_page #diner > .cookie__content .cookie__content:nth-of-type(2) .content:nth-of-type(2) a {
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -1935,7 +1935,7 @@ section:focus {
     z-index: 0
 }
 
-.quantity input, .quantity select {
+form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     pointer-events: none;
     text-align: center;
     text-align-last: center;

@@ -623,3 +623,7 @@
 #nav .container:nth-of-type(1) {
     max-width: 1200px;
 }
+
+.myform button {
+    padding: 1px 6px;
+}
