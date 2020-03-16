@@ -5955,10 +5955,10 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     background-color: #fff
 }
 
-.checkout__form .form-item.js-form-item-is-gift label {
-    opacity: 0;
-    filter: alpha(opacity=0)
-}
+/*.checkout__form .form-item.js-form-item-is-gift label {*/
+    /*opacity: 0;*/
+    /*filter: alpha(opacity=0)*/
+/*}*/
 
 .checkout__form .form-item.js-form-item-is-gift .custom-select-opener {
     line-height: 20px;

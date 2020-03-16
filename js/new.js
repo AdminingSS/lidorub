@@ -917,4 +917,13 @@ $(document).ready(function () {
         $('.form-item:not(".quantity") select').customSelect();
     })();
 
+    //gift chech transfer
+    (()=>{
+        const $giftTrigger = $('.js-gift-trigger');
+        const $giftChecker = $('#edit-is-gift-yes');
+
+        $giftTrigger.on('click', function () {
+            $giftChecker.click();
+        })
+    })();
 });
