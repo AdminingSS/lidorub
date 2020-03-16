@@ -707,11 +707,15 @@ $(document).ready(function () {
 
     })();
 
+    function get_play_bill() {
+        return $('.server-datas .event-list').clone();
+    }
+
     //ajax and processing / modal 1-2 (not done)
     function ajaxStageOne() {
         //ajax imitation
         const $destinationHolder = $('.reservation-tunnel .step.step2 .offers');
-        const $rawData = $('.server-datas .event-list').clone();
+        const $rawData = get_play_bill();
         const $eventBoxes = $rawData.find('.event-box');
         const $showMoreBlock = $(
             '<div class="show-more-block">\n' +

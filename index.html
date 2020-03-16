@@ -97,24 +97,41 @@
 
 
                         <ul class="nav-primary">
-                            <li>
-                                <a href="" class="is-active"> <span>Главная</span>
-                                </a>
+                            <li class="tm-dropdown">
+                                <a href=""> <span>Shows</span></a>
+                                <div class="tm-dropdown-content">
+                                    <ul>
+                                        <li><a href="">Show 1</a></li>
+                                        <li><a href="">Show 2</a></li>
+                                        <li><a href="">Show 3</a></li>
+                                        <li><a href="">Show 4</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tm-dropdown">
+                                <a href=""> <span>Theatres</span></a>
+                                <div class="tm-dropdown-content">
+                                    <ul>
+                                        <li><a href="">Theater 1</a></li>
+                                        <li><a href="">Theater 2</a></li>
+                                        <li><a href="">Theater 3</a></li>
+                                        <li><a href="">Theater 4</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tm-dropdown">
+                                <a href=""> <span>Genres</span></a>
+                                <div class="tm-dropdown-content">
+                                    <ul>
+                                        <li><a href="">Genre 1</a></li>
+                                        <li><a href="">Genre 2</a></li>
+                                        <li><a href="">Genre 3</a></li>
+                                        <li><a href="">Genre 4</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li>
-                                <a href=""> <span>Вечернее шоу</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""> <span>Предложения</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""> <span>Информация</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""> <span>Подарить</span>
+                                <a href=""> <span>Gift</span>
                                 </a>
                             </li>
                         </ul>
@@ -323,7 +340,7 @@
                                         </p>
                                     </div>
                                     <p class="reveal" style="transition-delay: 0s;">
-                                        <a class="btn" href="#" target="_blank">
+                                        <a class="btn js-order-modal-trigger" href="#" target="_blank">
                                             <span style="top: -44px; left: 208.5px;"></span>
                                             <span>Discover our offers </span>
                                         </a>
@@ -366,7 +383,7 @@
 
                                     </div>
                                     <p class="js-regaloeb" data-y="70#0" data-o="0#1" data-end="3">
-                                        <a class="btn" href="">
+                                        <a class="btn js-order-modal-trigger" href="">
                                             <span></span>
                                             <span>Подробнее</span>
                                         </a>
@@ -2595,8 +2612,8 @@
                                             </div>
                                         </fieldset>
 
-                                        <p class="cgv"><a
-                                                href="https://www.lido.fr/ru/%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B#popin--cgv-voucher">Подробнее</a>
+                                        <p class="cgv"><a class="js-order-modal-trigger"
+                                                href="#">Подробнее</a>
                                         </p>
                                         <fieldset id="edit-gift"
                                                   class="js-form-item form-item js-form-wrapper form-wrapper">
@@ -7858,10 +7875,11 @@
     </div>
 </div>
 
+
 <!--jquery-->
 <script src="./js/jquery.min.js"></script>
 
-<!--mariinski legacy js-->
+<!--yt player plugin (from mariinski)-->
 <script src="./js/jquery.youtubebackground.js"></script>
 
 <!--Scrollbar plugin-->
