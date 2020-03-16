@@ -10964,7 +10964,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
 
 #main .plume, #main .halo {
     position: absolute;
-    z-index: -1
+    /*z-index: -1*/
 }
 
 #main .plume-1 {
