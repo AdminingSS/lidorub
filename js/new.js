@@ -1,6 +1,14 @@
 if(typeof landing_options === "undefined") {
     var get_play_bill = function() {
         return $('.server-datas .event-list >*').clone();
+    };
+
+    var get_theater_info = function () {
+        return $('.server-datas .theaters-data .container-white').clone();
+    };
+
+    var get_event_info = function () {
+        return $('.server-datas #step2-inactive .container-white').clone();
     }
 }
 
@@ -488,6 +496,10 @@ $(document).ready(function () {
         const $orderModalTrigger = $('.js-order-modal-trigger');
         const $orderModalClose = $('.js-order-modal-close');
 
+        const $theaterModal = $('.js-theater-modal');
+        const $theaterModalContent = $theaterModal.find('.tm-modal-content');
+        const $theaterModalClose = $('.js-theater-modal-close, .js-theater-modal-close .tm-modal-close');
+
         const $orderModal2 = $('.js-order-modal-2');
         const $orderModalClose2 = $('.js-order-modal-close-2');
         const $orderModalReturn2 = $('.js-order-modal-return-2');
@@ -508,6 +520,12 @@ $(document).ready(function () {
 
         const $mainForm = $('.js-form-main');
         const $modalFormOne = $orderModal.find('.step1 form');
+
+        $theaterModalClose.on('click', function (e) {
+            if(e.target !== this) return;
+            $theaterModal.hide();
+            //$('body').removeClass('body-noscroll');
+        });
 
         $termsModalTrigger.on('click', function (e) {
             e.preventDefault();
@@ -589,98 +607,13 @@ $(document).ready(function () {
             //$orderModal.find('.reservation-tunnel .step.step2').addClass('active');
         });
 
-        $jsSubmitStageOne.on('click', function (e) {
+        $jsSubmitStageOne.on('click', async function (e) {
             if (!$(this).hasClass('active')) return;
 
             const $oldData = $('.step.step2 .offers .event-list');
             $oldData.remove();
 
-            ajaxStageOne();
-
-            //theater modals
-            const $theaterModal = $('.js-theater-modal');
-            const $theaterModalContent = $theaterModal.find('.tm-modal-content');
-            const $theaterModalTrigger = $('.event-list .event-header .place-info');
-            const $theaterModalClose = $('.js-theater-modal-close, .js-theater-modal-close .tm-modal-close');
-
-            // $theaterModalContent.mCustomScrollbar({
-            //     //scrollbarPosition: "outside",
-            //     autoHideScrollbar: false,
-            //     theme: "dark",
-            //     mouseWheel: {scrollAmount: 300},
-            //     advanced: {updateOnContentResize: true}
-            // });
-
-            $theaterModalTrigger.attr('href','#');
-
-            $theaterModalTrigger.on('click', function (e) {
-                e.preventDefault();
-
-                $theaterModalContent.mCustomScrollbar("destroy");
-
-                const $oldData = $theaterModalContent.find('>*');
-                $oldData.remove();
-
-                ajaxStageOneTheaters($theaterModalContent);
-
-                $theaterModal.show();
-                //$('body').addClass('body-noscroll');
-
-                $theaterModalContent.mCustomScrollbar({
-                    //scrollbarPosition: "outside",
-                    autoHideScrollbar: false,
-                    theme: "dark",
-                    mouseWheel: {scrollAmount: 300},
-                    advanced: {updateOnContentResize: true}
-                });
-            });
-
-            $theaterModalClose.on('click', function (e) {
-                if(e.target !== this) return;
-                $theaterModal.hide();
-                //$('body').removeClass('body-noscroll');
-            });
-            //theater modals end
-
-            //more button
-            const $eventBoxes = $orderModal.find('.event-box');
-
-            $eventBoxes.each(function () {
-                const $moreBlock = $(this).find('.show-more-block');
-                const $showTrigger = $moreBlock.find('.show-menu');
-
-                let openMore = false;
-                let loaded = false;
-
-                $showTrigger.on('click', function (e) {
-                    e.preventDefault();
-
-                    if (!loaded) {
-                        //ajax2 here
-                        ajaxStageOneShowMore($moreBlock);
-                        loaded = true;
-                    }
-
-                    const $containerWhite = $moreBlock.find('.container-white');
-
-                    //$containerWhite.addClass('loaded');
-
-                    if (!openMore) {
-                        $containerWhite.slideDown(500).fadeIn({duration: 500, queue: false});
-                        $showTrigger.html('Скрыть подробности');
-                        openMore = true;
-                        $containerWhite.find('.carousel-inner').slick();
-                    }
-                    else {
-                        $containerWhite.fadeOut(500).slideUp({duration: 500, queue: false});
-                        $showTrigger.html('Показать подробности');
-                        openMore = false;
-                        $containerWhite.find('.carousel-inner').slick('unslick');
-                    }
-
-
-                });
-            });
+            await ajaxStageOne();
 
             const $jsSubmitStageTwo = $('.event-box .btn.btn-danger');
 
@@ -721,21 +654,58 @@ $(document).ready(function () {
             const $destinationHolder = $('.reservation-tunnel .step.step2 .offers');
             const $rawData = await get_play_bill();
             const $eventList = $('<div class="event-list js-custom-scrollbar"></div>');
-            const $eventBoxes = $rawData.find('.event-box');
+
             const $showMoreBlock = $(
                 '<div class="show-more-block">\n' +
                 '    <a href="#" class="show-menu">Показать\n' +
                 '    подробности</a>' +
                 '</div>');
 
-            $showMoreBlock.appendTo($eventBoxes);
-
             $rawData.appendTo($eventList);
             $eventList.appendTo($destinationHolder);
 
             fixImages($destinationHolder);
 
+            const $eventBoxes = $destinationHolder.find('.event-box');
+            $showMoreBlock.appendTo($eventBoxes);
+
             readyStageTwo();
+            initTheaterModal();
+
+            $eventBoxes.each(function () {
+                const $moreBlock = $(this).find('.show-more-block');
+                const $showTrigger = $moreBlock.find('.show-menu');
+
+                let openMore = false;
+                let loaded = false;
+
+                $showTrigger.on('click', async function (e) {
+                    e.preventDefault();
+
+                    if (!loaded) {
+                        //ajax2 here
+                        await ajaxStageOneShowMore($moreBlock);
+                        loaded = true;
+                    }
+
+                    const $containerWhite = $moreBlock.find('.container-white');
+
+                    //$containerWhite.addClass('loaded');
+
+                    if (!openMore) {
+                        $containerWhite.slideDown(500).fadeIn({duration: 500, queue: false});
+                        $showTrigger.html('Скрыть подробности');
+                        openMore = true;
+                        $containerWhite.find('.carousel-inner').slick();
+                    }
+                    else {
+                        $containerWhite.fadeOut(500).slideUp({duration: 500, queue: false});
+                        $showTrigger.html('Показать подробности');
+                        openMore = false;
+                        $containerWhite.find('.carousel-inner').slick('unslick');
+                    }
+                });
+            });
         }
 
         function readyStageTwo() {
@@ -757,11 +727,28 @@ $(document).ready(function () {
             });
         }
 
+        function initTheaterModal() {
+            const $theaterModalTrigger = $('.event-list .event-header .place-info');
+
+            $theaterModalTrigger.attr('href','#');
+
+            $theaterModalTrigger.on('click', function (e) {
+                e.preventDefault();
+
+                $theaterModalContent.mCustomScrollbar("destroy");
+
+                const $oldData = $theaterModalContent.find('>*');
+                $oldData.remove();
+
+                ajaxStageOneTheaters();
+            });
+        }
+
         //ajax and processing / modal 1-2 theaters modal (not done)
-        function ajaxStageOneTheaters($holder) {
+        async function ajaxStageOneTheaters() {
             //ajax imitation
-            const $destinationHolder = $holder;
-            const $rawData = $('.server-datas .theaters-data .container-white').clone();
+            const $destinationHolder = $theaterModalContent;
+            const $rawData = await get_theater_info();
             const $carouselPlace = $rawData.find('.carousel').parent();
             const $rawImages = $carouselPlace.find('.carousel-inner img');
             const $sliderHolder = $('<div></div>');
@@ -808,13 +795,24 @@ $(document).ready(function () {
                     $(this).parent().toggleClass('active');
                 })
             });
+
+            $theaterModal.show();
+            //$('body').addClass('body-noscroll');
+
+            $theaterModalContent.mCustomScrollbar({
+                //scrollbarPosition: "outside",
+                autoHideScrollbar: false,
+                theme: "dark",
+                mouseWheel: {scrollAmount: 300},
+                advanced: {updateOnContentResize: true}
+            });
         }
 
         //ajax and processing / modal 1-2 show more (not done)
-        function ajaxStageOneShowMore($holder) {
+        async function ajaxStageOneShowMore($holder) {
             //ajax imitation
             const $destinationHolder = $holder;
-            const $rawData = $('.server-datas #step2-inactive .container-white').clone();
+            const $rawData = await get_event_info();
             const $rawImages = $rawData.find('.carousel-inner img');
             const $sliderHolder = $('<div></div>');
             const $panelAccordions = $rawData.find('.panel-group .panel');
@@ -827,7 +825,6 @@ $(document).ready(function () {
                 $currImg.attr('src', newSrc);
                 $currImg.appendTo($('<div></div>')).appendTo($sliderHolder);
             });
-
 
             $rawData.find('.carousel').remove();
 
