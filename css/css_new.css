@@ -641,3 +641,7 @@
 .tm-dropdown:hover .tm-dropdown-content {
     display: block;
 }
+
+.tm-uppercase {
+    text-transform: uppercase;
+}

@@ -644,3 +644,26 @@
 .js-theater-modal .panel-heading {
     background-color: #f5f5f5;
 }
+
+/*other modals*/
+
+.js-terms-modal .tm-modal-body, .js-privacy-modal .tm-modal-body, .js-contact-modal .tm-modal-body {
+    width: 60%;
+}
+
+.js-terms-modal .tm-modal-content, .js-privacy-modal .tm-modal-content, .js-contact-modal .tm-modal-content {
+    color: #373737;
+    font-size: 16px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    padding: 0 40px;
+}
+
+.js-terms-modal h2, .js-privacy-modal h2, .js-contact-modal h2 {
+    margin-bottom: 40px;
+}
+
+.js-terms-modal p, .js-privacy-modal p, .js-contact-modal p {
+    margin-bottom: 20px;
+}

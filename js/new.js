@@ -486,10 +486,61 @@ $(document).ready(function () {
         const $orderModalClose2 = $('.js-order-modal-close-2');
         const $orderModalReturn2 = $('.js-order-modal-return-2');
 
+        const $termsModal = $('.js-terms-modal');
+        const $termsModalTrigger = $('.js-terms-modal-trigger');
+        const $termsModalClose = $('.js-terms-modal-close, .js-terms-modal-close .tm-modal-close');
+
+        const $privacyModal = $('.js-privacy-modal');
+        const $privacyModalTrigger = $('.js-privacy-modal-trigger');
+        const $privacyModalClose = $('.js-privacy-modal-close, .js-privacy-modal-close .tm-modal-close');
+
+        const $contactModal = $('.js-contact-modal');
+        const $contactModalTrigger = $('.js-contact-modal-trigger');
+        const $contactModalClose = $('.js-contact-modal-close, .js-contact-modal-close .tm-modal-close');
+
         const $jsSubmitStageOne = $('.js-submit-stage-1');
 
         const $mainForm = $('.js-form-main');
         const $modalFormOne = $orderModal.find('.step1 form');
+
+        $termsModalTrigger.on('click', function (e) {
+            e.preventDefault();
+
+            $termsModal.show();
+            $('body').addClass('body-noscroll');
+        });
+
+        $termsModalClose.on('click', function (e) {
+            if(e.target !== this) return;
+            $termsModal.hide();
+            $('body').removeClass('body-noscroll');
+        });
+
+        $privacyModalTrigger.on('click', function (e) {
+            e.preventDefault();
+
+            $privacyModal.show();
+            $('body').addClass('body-noscroll');
+        });
+
+        $privacyModalClose.on('click', function (e) {
+            if(e.target !== this) return;
+            $privacyModal.hide();
+            $('body').removeClass('body-noscroll');
+        });
+
+        $contactModalTrigger.on('click', function (e) {
+            e.preventDefault();
+
+            $contactModal.show();
+            $('body').addClass('body-noscroll');
+        });
+
+        $contactModalClose.on('click', function (e) {
+            if(e.target !== this) return;
+            $contactModal.hide();
+            $('body').removeClass('body-noscroll');
+        });
 
         $mainForm.on('submit', function (e) {
             e.preventDefault();
@@ -589,7 +640,7 @@ $(document).ready(function () {
             const $theaterModal = $('.js-theater-modal');
             const $theaterModalContent = $theaterModal.find('.tm-modal-content');
             const $theaterModalTrigger = $('.event-list .event-header .place-info');
-            const $theaterModalClose = $('.js-theater-modal-close, .tm-modal-close');
+            const $theaterModalClose = $('.js-theater-modal-close, .js-theater-modal-close .tm-modal-close');
 
             // $theaterModalContent.mCustomScrollbar({
             //     //scrollbarPosition: "outside",
