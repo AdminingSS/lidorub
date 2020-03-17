@@ -9,6 +9,10 @@ if(typeof landing_options === "undefined") {
 
     var get_event_info = function () {
         return $('.server-datas #step2-inactive .container-white').clone();
+    };
+
+    var get_place_selector = function () {
+        return $('.server-datas .options .options').clone();
     }
 }
 
@@ -490,6 +494,18 @@ $(document).ready(function () {
 
     })();
 
+    //regaloeb plugin
+    (() => {
+
+        $(".js-regaloeb").regaloebParallax();
+
+    })();
+
+    //custom select plugin
+    (() => {
+        $('.form-item:not(".quantity") select').customSelect();
+    })();
+
     //modals control (not done)
     (() => {
         const $orderModal = $('.js-order-modal');
@@ -570,17 +586,6 @@ $(document).ready(function () {
             e.preventDefault();
         });
 
-        //main form transfer
-        function transferFormMain() {
-            const quantity = $mainForm.find('[name="na"]').val();
-            const dateRange = $mainForm.find('.flatpickr-input').val();
-
-            $modalFormOne.find('[name="na"]').val(quantity);
-            $modalFormOne.find("#modalFlatpickr").each(function () {
-                this._flatpickr.setDate(dateRange);
-            })
-        }
-
         $orderModalTrigger.on('click', function () {
             transferFormMain();
             $orderModal.show();
@@ -625,26 +630,6 @@ $(document).ready(function () {
 
                 ajaxStageTwo();
 
-                $orderModal.find('.step3 .inactive').fadeOut();
-                $orderModal.find('.step3 .options').slideDown(500).fadeIn({duration: 500, queue: false});
-
-                $orderModal.find('.reservation-tunnel .step.step3').addClass('active');
-
-                $orderModal.find('.reservation-tunnel .step.step3 .js-custom-scrollbar').mCustomScrollbar({
-                    scrollbarPosition: "outside",
-                    autoHideScrollbar: false,
-                    theme: "dark",
-                    mouseWheel: {scrollAmount: 200},
-                    advanced: {updateOnContentResize: true}
-                });
-
-                const $orderModalTrigger2 = $('.js-order-modal-trigger-2');
-
-                $orderModalTrigger2.on('click', function (e) {
-                    e.preventDefault();
-                    $orderModal.hide();
-                    $orderModal2.show();
-                });
             });
 
         });
@@ -858,10 +843,10 @@ $(document).ready(function () {
         }
 
         //ajax and processing / modal 1-3 (not done)
-        function ajaxStageTwo() {
+        async function ajaxStageTwo() {
             //ajax imitation
             const $destinationHolder = $('.reservation-tunnel .step.step3 .options');
-            const $rawData = $('.server-datas .options .options').clone();
+            const $rawData = await get_place_selector();
 
             $rawData.find('>.form-group:first-child').remove();
             $rawData.find('>.form-group:first-child').remove();
@@ -877,6 +862,30 @@ $(document).ready(function () {
 
             fixImages($destinationHolder);
 
+            readyStageThree();
+        }
+
+        function readyStageThree() {
+            $orderModal.find('.step3 .inactive').fadeOut();
+            $orderModal.find('.step3 .options').slideDown(500).fadeIn({duration: 500, queue: false});
+
+            $orderModal.find('.reservation-tunnel .step.step3').addClass('active');
+
+            $orderModal.find('.reservation-tunnel .step.step3 .js-custom-scrollbar').mCustomScrollbar({
+                scrollbarPosition: "outside",
+                autoHideScrollbar: false,
+                theme: "dark",
+                mouseWheel: {scrollAmount: 200},
+                advanced: {updateOnContentResize: true}
+            });
+
+            const $orderModalTrigger2 = $('.js-order-modal-trigger-2');
+
+            $orderModalTrigger2.on('click', function (e) {
+                e.preventDefault();
+                $orderModal.hide();
+                $orderModal2.show();
+            });
         }
 
         //playbill images and image links fix (to check)
@@ -902,19 +911,16 @@ $(document).ready(function () {
             });
         }
 
-    })();
+        //main form transfer
+        function transferFormMain() {
+            const quantity = $mainForm.find('[name="na"]').val();
+            const dateRange = $mainForm.find('.flatpickr-input').val();
 
-
-    // function get_play_bill() {
-    //     return $('.server-datas .event-list').clone();
-    // }
-
-
-
-    //regaloeb plugin
-    (() => {
-
-        $(".js-regaloeb").regaloebParallax();
+            $modalFormOne.find('[name="na"]').val(quantity);
+            $modalFormOne.find("#modalFlatpickr").each(function () {
+                this._flatpickr.setDate(dateRange);
+            })
+        }
 
     })();
 
@@ -945,12 +951,7 @@ $(document).ready(function () {
 
     })();
 
-    //custom select plugin
-    (() => {
-        $('.form-item:not(".quantity") select').customSelect();
-    })();
-
-    //gift chech transfer
+    //gift check transfer
     (()=>{
         const $giftTrigger = $('.js-gift-trigger');
         const $giftChecker = $('#edit-is-gift-yes');
