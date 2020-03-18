@@ -1,10 +1,28 @@
-if(typeof landing_options === "undefined") {
-    var get_play_bill = function() {
+if (typeof landing_options === "undefined") {
+    var get_play_bill = function () {
         return $('.server-datas .event-list >*').clone();
     };
 
-    var get_theater_info = function () {
-        return $('.server-datas .theaters-data .container-white').clone();
+    var get_theater_info = function (locationHref) {
+        //return $('.server-datas .theaters-data .container-white').clone();
+
+        return $.ajax({
+            url:     locationHref, //url страницы (action_ajax_form.php)
+            type:     "POST", //метод отправки
+            //enctype: 'multipart/form-data',
+            //dataType: "html", //формат данных
+            // processData: false,
+            // contentType: false,
+            data: {
+                nolayout: true
+            },
+            success: function(response) { //Данные отправлены успешно
+
+            },
+            error: function(response) { // Данные не отправлены
+
+            }
+        });
     };
 
     var get_event_info = function () {
@@ -21,10 +39,11 @@ function isTouchDevice() {
         document.createEvent('TouchEvent');
         return true;
     }
-    catch(e) {
+    catch (e) {
         return false;
     }
 }
+
 function getScrollWidth() {
     var div = document.createElement('div');
 
@@ -38,6 +57,7 @@ function getScrollWidth() {
     document.body.removeChild(div);
     window.scrollWidth = sw;
 }
+
 function preventScale() {
     window.addEventListener('wheel', function (e) {
         if (e.ctrlKey) {
@@ -60,22 +80,22 @@ function preventScale() {
 
 // Детект мобильного браузера
 var isMobile = {
-    Android: function() {
+    Android: function () {
         return navigator.userAgent.match(/Android/i);
     },
-    BlackBerry: function() {
+    BlackBerry: function () {
         return navigator.userAgent.match(/BlackBerry/i);
     },
-    iOS: function() {
+    iOS: function () {
         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
-    Opera: function() {
+    Opera: function () {
         return navigator.userAgent.match(/Opera Mini/i);
     },
-    Windows: function() {
+    Windows: function () {
         return navigator.userAgent.match(/IEMobile/i);
     },
-    any: function() {
+    any: function () {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
@@ -84,7 +104,7 @@ $(document).ready(function () {
 
     //Top block code from mariinski
     //какие-то манипуляции
-    if ( isTouchDevice() )
+    if (isTouchDevice())
         $('html').addClass('touch');
     window.scrollWidh = getScrollWidth();
     preventScale();
@@ -538,7 +558,7 @@ $(document).ready(function () {
         const $modalFormOne = $orderModal.find('.step1 form');
 
         $theaterModalClose.on('click', function (e) {
-            if(e.target !== this) return;
+            if (e.target !== this) return;
             $theaterModal.hide();
             //$('body').removeClass('body-noscroll');
         });
@@ -551,7 +571,7 @@ $(document).ready(function () {
         });
 
         $termsModalClose.on('click', function (e) {
-            if(e.target !== this) return;
+            if (e.target !== this) return;
             $termsModal.hide();
             $('body').removeClass('body-noscroll');
         });
@@ -564,7 +584,7 @@ $(document).ready(function () {
         });
 
         $privacyModalClose.on('click', function (e) {
-            if(e.target !== this) return;
+            if (e.target !== this) return;
             $privacyModal.hide();
             $('body').removeClass('body-noscroll');
         });
@@ -577,7 +597,7 @@ $(document).ready(function () {
         });
 
         $contactModalClose.on('click', function (e) {
-            if(e.target !== this) return;
+            if (e.target !== this) return;
             $contactModal.hide();
             $('body').removeClass('body-noscroll');
         });
@@ -617,6 +637,8 @@ $(document).ready(function () {
 
             const $oldData = $('.step.step2 .offers .event-list');
             $oldData.remove();
+
+            let $triggerButton;
 
             await ajaxStageOne();
 
@@ -691,6 +713,8 @@ $(document).ready(function () {
                     }
                 });
             });
+
+            initTriggerButton();
         }
 
         function readyStageTwo() {
@@ -712,28 +736,30 @@ $(document).ready(function () {
             });
         }
 
-        function initTheaterModal() {
-            const $theaterModalTrigger = $('.event-list .event-header .place-info');
+        function initTheaterModal($theaterModalTrigger = $('.event-list .event-header .place-info')) {
 
-            $theaterModalTrigger.attr('href','#');
+            //$theaterModalTrigger.attr('href', '#');
 
             $theaterModalTrigger.on('click', function (e) {
                 e.preventDefault();
+
+                const locationHref = $(this).attr('href');
 
                 $theaterModalContent.mCustomScrollbar("destroy");
 
                 const $oldData = $theaterModalContent.find('>*');
                 $oldData.remove();
 
-                ajaxStageOneTheaters();
+                ajaxStageOneTheaters(locationHref);
             });
         }
 
         //ajax and processing / modal 1-2 theaters modal (not done)
-        async function ajaxStageOneTheaters() {
+        async function ajaxStageOneTheaters(locationHref) {
             //ajax imitation
             const $destinationHolder = $theaterModalContent;
-            const $rawData = await get_theater_info();
+            const $rawData = await get_theater_info(locationHref);
+            console.log($rawData);
             const $carouselPlace = $rawData.find('.carousel').parent();
             const $rawImages = $carouselPlace.find('.carousel-inner img');
             const $sliderHolder = $('<div></div>');
@@ -888,11 +914,105 @@ $(document).ready(function () {
             });
         }
 
+        //main form transfer
+        function transferFormMain() {
+            const quantity = $mainForm.find('[name="na"]').val();
+            const dateRange = $mainForm.find('.flatpickr-input').val();
+
+            $modalFormOne.find('[name="na"]').val(quantity);
+            $modalFormOne.find("#modalFlatpickr").each(function () {
+                this._flatpickr.setDate(dateRange);
+            })
+        }
+
+        //
+        function initTriggerButton() {
+            $triggerButton = $('.reservation-tunnel .buttons-action a');
+            $triggerButton.attr('href', '#');
+
+            const string = $triggerButton.attr('onclick');
+
+            const dataStart = string.indexOf('getresult') + 11;
+            const dataEnd = string.indexOf("'", dataStart);
+            const pageStart = dataEnd + 3;
+            const pageEnd = string.indexOf(")", pageStart);
+            newData = string.slice(dataStart, dataEnd);
+            newPage = string.slice(pageStart, pageEnd);
+
+            $triggerButton.attr('onclick', '');
+
+            $triggerButton.on('click', function () {
+                getresult(newData, newPage, $(this));
+            });
+        }
+
+        //load more pages
+        async function getresult(date, page, $triggerButton) {
+            const $destinationHolder = $triggerButton.parent().parent();
+            const $rawData = await get_play_bill(date, page);
+
+            const $showMoreBlock = $(
+                '<div class="show-more-block">\n' +
+                '    <a href="#" class="show-menu">Показать\n' +
+                '    подробности</a>' +
+                '</div>');
+
+            $rawData.appendTo($destinationHolder);
+
+            const $eventBoxes = $rawData.filter('.event-box');
+
+            $showMoreBlock.appendTo($eventBoxes);
+
+            fixImages($rawData);
+
+            initTheaterModal($rawData.find('.event-header .place-info'));
+
+            $eventBoxes.each(function () {
+                const $moreBlock = $(this).find('.show-more-block');
+                const $showTrigger = $moreBlock.find('.show-menu');
+
+                let openMore = false;
+                let loaded = false;
+
+                $showTrigger.on('click', async function (e) {
+                    e.preventDefault();
+
+                    if (!loaded) {
+                        //ajax2 here
+                        await ajaxStageOneShowMore($moreBlock);
+                        loaded = true;
+                    }
+
+                    const $containerWhite = $moreBlock.find('.container-white');
+
+                    //$containerWhite.addClass('loaded');
+
+                    if (!openMore) {
+                        $containerWhite.slideDown(500).fadeIn({duration: 500, queue: false});
+                        $showTrigger.html('Скрыть подробности');
+                        openMore = true;
+                        $containerWhite.find('.carousel-inner').slick();
+                    }
+                    else {
+                        $containerWhite.fadeOut(500).slideUp({duration: 500, queue: false});
+                        $showTrigger.html('Показать подробности');
+                        openMore = false;
+                        $containerWhite.find('.carousel-inner').slick('unslick');
+                    }
+                });
+            });
+
+            $triggerButton.remove();
+
+            initTriggerButton();
+
+        }
+
         //playbill images and image links fix (to check)
         function fixImages($holder) {
             const $playbillContent = $holder;
             const $playbillImages = $playbillContent.find('img');
-            const $playbillLinks = $playbillContent.find('a');
+            const $playbillLinks = $playbillContent.find('a:not(.place-info)');
 
             $playbillImages.each(function () {
                 const $currImg = $(this);
@@ -909,17 +1029,6 @@ $(document).ready(function () {
 
                 $currLnk.attr('href', newSrc);
             });
-        }
-
-        //main form transfer
-        function transferFormMain() {
-            const quantity = $mainForm.find('[name="na"]').val();
-            const dateRange = $mainForm.find('.flatpickr-input').val();
-
-            $modalFormOne.find('[name="na"]').val(quantity);
-            $modalFormOne.find("#modalFlatpickr").each(function () {
-                this._flatpickr.setDate(dateRange);
-            })
         }
 
     })();
@@ -952,7 +1061,7 @@ $(document).ready(function () {
     })();
 
     //gift check transfer
-    (()=>{
+    (() => {
         const $giftTrigger = $('.js-gift-trigger');
         const $giftChecker = $('#edit-is-gift-yes');
 
@@ -960,8 +1069,9 @@ $(document).ready(function () {
             $giftChecker.click();
         })
     })();
-    
-    (()=>{
+
+    //dropdowns with checkboxes
+    (() => {
         const $dropdownInputs = $('.tm-dropdown-inputs');
         const $allSelector = $('.js-all-trigger');
         const $clearSelector = $('.js-clear-trigger');
@@ -979,7 +1089,6 @@ $(document).ready(function () {
             const $dropdownContent = $dropdownInput.find('.tm-dropdown-content');
 
             $dropdownInput.on('click', function () {
-                // event.stopImmediatePropagation();
 
                 $dropdownInput.toggleClass('active');
 
@@ -994,24 +1103,5 @@ $(document).ready(function () {
 
             })
         })
-
-        // $dropdownInputs.on('click', function () {
-        //     // event.stopImmediatePropagation();
-        //
-        //
-        //
-        //     $dropdownInput.toggleClass('active');
-        //     setTimeout(function () {
-        //         $(document).on('click', closeOutside);
-        //     }, 500);
-        //
-        //     function closeOutside(event) {
-        //
-        //         if ($(event.target).is($dropdownContent)) return;
-        //
-        //         $dropdownInput.removeClass('active');
-        //         $(document).off('click', closeOutside);
-        //     }
-        // })
     })();
 });
