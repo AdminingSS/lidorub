@@ -623,12 +623,12 @@
     padding: 1px 6px;
 }
 
-.tm-dropdown {
+.nav-primary .tm-dropdown {
     position: relative;
     display: inline-block;
 }
 
-.tm-dropdown-content {
+.nav-primary .tm-dropdown .tm-dropdown-content {
     display: none;
     position: absolute;
     background-color: #ffffff;
@@ -638,10 +638,18 @@
     z-index: 1;
 }
 
-.tm-dropdown:hover .tm-dropdown-content {
+.nav-primary .tm-dropdown:hover .tm-dropdown-content {
     display: block;
 }
 
 .tm-uppercase {
     text-transform: uppercase;
+}
+
+.sitemap-primary .tm-dropdown >a {
+    cursor: initial;
+}
+
+.sitemap-primary .tm-dropdown >a:hover {
+    color: #ffffff;
 }
