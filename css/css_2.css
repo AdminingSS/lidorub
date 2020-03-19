@@ -6662,7 +6662,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     margin-right: 20px
 }
 
-#edit-gift-postal, #edit-gift-postal-me, #edit-gift-postal-him, #edit-gift-email-destination--wrapper, #edit-gift-email-him {
+#edit-gift-postal, #edit-gift-postal-me, #edit-gift-postal-him, #edit-gift-email, #edit-gift-email-me, #edit-gift-email-him {
     display: none
 }
 

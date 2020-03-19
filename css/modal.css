@@ -792,3 +792,7 @@ form.tm-form label {
     display: inline-block;
     margin: 0 10px 10px 0;
 }
+
+#edit-gift-postal.active, #edit-gift-email.active, #edit-gift-postal-me.active, #edit-gift-postal-him.active, #edit-gift-email-him.active {
+    display: block;
+}

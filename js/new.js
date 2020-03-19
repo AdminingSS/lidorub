@@ -7,8 +7,8 @@ if (typeof landing_options === "undefined") {
         //return $('.server-datas .theaters-data .container-white').clone();
 
         return $.ajax({
-            url:     locationHref, //url страницы (action_ajax_form.php)
-            type:     "POST", //метод отправки
+            url: locationHref, //url страницы (action_ajax_form.php)
+            type: "POST", //метод отправки
             //enctype: 'multipart/form-data',
             //dataType: "html", //формат данных
             // processData: false,
@@ -16,10 +16,10 @@ if (typeof landing_options === "undefined") {
             data: {
                 nolayout: true
             },
-            success: function(response) { //Данные отправлены успешно
+            success: function (response) { //Данные отправлены успешно
 
             },
-            error: function(response) { // Данные не отправлены
+            error: function (response) { // Данные не отправлены
 
             }
         });
@@ -77,6 +77,34 @@ function preventScale() {
         e.preventDefault();
     });
 }
+
+(() => {
+    const countryData = window.intlTelInputGlobals.getCountryData();
+
+    fillSelect("#edit-nationality");
+    fillSelect("#edit-gift-postal-me-country");
+    fillSelect("#edit-gift-postal-him-country");
+
+    function fillSelect(selector) {
+        const addressDropdown = document.querySelector(selector);
+        const optionNode = document.createElement("option");
+        optionNode.value = '';
+        optionNode.selected = true;
+        const textNode = document.createTextNode('-- Select Country --*');
+        optionNode.appendChild(textNode);
+        addressDropdown.appendChild(optionNode);
+
+        for (var i = 0; i < countryData.length; i++) {
+            const country = countryData[i];
+            const optionNode = document.createElement("option");
+            optionNode.value = country.iso2;
+            //if(optionNode.value == 'us') optionNode.selected = true;
+            const textNode = document.createTextNode(country.name);
+            optionNode.appendChild(textNode);
+            addressDropdown.appendChild(optionNode);
+        }
+    }
+})();
 
 // Детект мобильного браузера
 var isMobile = {
@@ -1103,5 +1131,74 @@ $(document).ready(function () {
 
             })
         })
+    })();
+
+    //
+    (() => {
+        const $scrollbars = $('.checkout__content:not(.checkout__summary), .reservation-tunnel .step.step1');
+
+        $scrollbars.mCustomScrollbar({
+            //scrollbarPosition: "outside",
+            theme: "dark",
+            mouseWheel: {scrollAmount: 300},
+            advanced: {updateOnContentResize: true}
+        });
+
+    })();
+
+    (() => {
+        const $giftSendPostalSelector = $('#edit-gift-method-postal');
+        const $giftSendEmailSelector = $('#edit-gift-method-email');
+        const $giftSendPostal = $('#edit-gift-postal');
+        const $giftSendEmail = $('#edit-gift-email');
+
+        const $giftSendPostalMeSelector = $('#edit-gift-postal-destination-me');
+        const $giftSendPostalHimSelector = $('#edit-gift-postal-destination-him');
+        const $giftSendPostalMe = $('#edit-gift-postal-me');
+        const $giftSendPostalHim = $('#edit-gift-postal-him');
+
+        const $giftSendEmailMeSelector = $('#edit-gift-email-destination-me');
+        const $giftSendEmailHimSelector = $('#edit-gift-email-destination-him');
+        const $giftSendEmailHim = $('#edit-gift-email-him');
+
+        $giftSendPostalSelector.on('change', function () {
+            if ($(this).prop('checked') === true) {
+                $giftSendPostal.addClass('active');
+                $giftSendEmail.removeClass('active');
+            }
+        });
+
+        $giftSendEmailSelector.on('change', function () {
+            if ($(this).prop('checked') === true) {
+                $giftSendEmail.addClass('active');
+                $giftSendPostal.removeClass('active');
+            }
+        });
+
+        $giftSendPostalMeSelector.on('change', function () {
+            if ($(this).prop('checked') === true) {
+                $giftSendPostalMe.addClass('active');
+                $giftSendPostalHim.removeClass('active');
+            }
+        });
+
+        $giftSendPostalHimSelector.on('change', function () {
+            if ($(this).prop('checked') === true) {
+                $giftSendPostalHim.addClass('active');
+                $giftSendPostalMe.removeClass('active');
+            }
+        });
+
+        $giftSendEmailMeSelector.on('change', function () {
+            if ($(this).prop('checked') === true) {
+                $giftSendEmailHim.removeClass('active');
+            }
+        });
+
+        $giftSendEmailHimSelector.on('change', function () {
+            if ($(this).prop('checked') === true) {
+                $giftSendEmailHim.addClass('active');
+            }
+        });
     })();
 });
