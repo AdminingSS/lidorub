@@ -783,7 +783,7 @@ button.swiper-pagination-bullet {
 }
 
 .custom-select-container.is-open .custom-select-panel {
-    max-height: 10.7em;
+    max-height: 250px;
     overflow-y: auto
 }
 
