@@ -4624,10 +4624,6 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     }
 }
 
-#nav .container:nth-of-type(1) ul.nav-primary > li > span {
-
-}
-
 #nav .container:nth-of-type(1) ul.nav-primary > li:last-child > a, #nav #cookie .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a, #cookie #nav .cookie__content:nth-of-type(1) ul.nav-primary > li:last-child > a {
     padding-left: 35px;
     margin-left: 5px;

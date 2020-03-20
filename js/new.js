@@ -13,8 +13,12 @@ if (typeof landing_options === "undefined") {
         });
     };
 
-    var get_event_info = function () {
-        return $('.server-datas #step2-inactive .container-white').clone();
+    var get_event_info = function (href) {
+        //return $('.server-datas #step2-inactive .container-white').clone();
+        return $.ajax({
+            url: href,
+            type: "GET"
+        });
     };
 
     var get_place_selector = function (href) {
@@ -708,6 +712,7 @@ $(document).ready(function () {
             $eventBoxes.each(function () {
                 const $moreBlock = $(this).find('.show-more-block');
                 const $showTrigger = $moreBlock.find('.show-menu');
+                const linkHref = $(this).find('.btn.btn-primary').attr('href');
 
                 let openMore = false;
                 let loaded = false;
@@ -717,7 +722,7 @@ $(document).ready(function () {
 
                     if (!loaded) {
                         //ajax2 here
-                        await ajaxStageOneShowMore($moreBlock);
+                        await ajaxStageOneShowMore($moreBlock, linkHref);
                         loaded = true;
                     }
 
@@ -847,10 +852,12 @@ $(document).ready(function () {
         }
 
         //ajax and processing / modal 1-2 show more (not done)
-        async function ajaxStageOneShowMore($holder) {
+        async function ajaxStageOneShowMore($holder, rawHref) {
             //ajax imitation
             const $destinationHolder = $holder;
-            const $rawData = await get_event_info();
+            const fixedHref = rawHref + "?nolayout2=true"
+            const $rawHtml = await get_event_info(fixedHref);
+            const $rawData = $($rawHtml).find('.container-white');
             const $rawImages = $rawData.find('.carousel-inner img');
             const $sliderHolder = $('<div></div>');
             const $panelAccordions = $rawData.find('.panel-group .panel');
