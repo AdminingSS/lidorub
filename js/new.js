@@ -5,23 +5,11 @@ if (typeof landing_options === "undefined") {
 
     var get_theater_info = function (locationHref) {
         //return $('.server-datas .theaters-data .container-white').clone();
+        const fixedHref = locationHref + "?nolayout=true";
 
         return $.ajax({
-            url: locationHref, //url страницы (action_ajax_form.php)
-            type: "POST", //метод отправки
-            //enctype: 'multipart/form-data',
-            //dataType: "html", //формат данных
-            // processData: false,
-            // contentType: false,
-            data: {
-                nolayout: true
-            },
-            success: function (response) { //Данные отправлены успешно
-
-            },
-            error: function (response) { // Данные не отправлены
-
-            }
+            url: fixedHref,
+            type: "GET"
         });
     };
 
@@ -29,8 +17,12 @@ if (typeof landing_options === "undefined") {
         return $('.server-datas #step2-inactive .container-white').clone();
     };
 
-    var get_place_selector = function () {
-        return $('.server-datas .options .options').clone();
+    var get_place_selector = function (href) {
+        //return $('.server-datas .options .options').clone();
+        return $.ajax({
+            url: href,
+            type: "GET"
+        });
     }
 }
 
@@ -674,11 +666,13 @@ $(document).ready(function () {
 
             $jsSubmitStageTwo.on('click', function (e) {
                 e.preventDefault();
+                const locationHref = $(this).attr('href');
+                const fixedHref = locationHref.slice(0,-6) + "?nolayout=true";
 
                 const $oldData = $('.step.step3 .options .options, .step.step3 .options .form-group');
                 $oldData.remove();
 
-                ajaxStageTwo();
+                ajaxStageTwo(fixedHref);
 
             });
 
@@ -688,6 +682,10 @@ $(document).ready(function () {
         async function ajaxStageOne() {
             const $destinationHolder = $('.reservation-tunnel .step.step2 .offers');
             const $rawData = await get_play_bill();
+            if(!$rawData.length) {
+                $('<div>Ничего не найдено.</div>').appendTo($destinationHolder);
+                return;
+            }
             const $eventList = $('<div class="event-list js-custom-scrollbar"></div>');
 
             const $showMoreBlock = $(
@@ -786,7 +784,8 @@ $(document).ready(function () {
         async function ajaxStageOneTheaters(locationHref) {
             //ajax imitation
             const $destinationHolder = $theaterModalContent;
-            const $rawData = await get_theater_info(locationHref);
+            const $rawHtml = await get_theater_info(locationHref);
+            const $rawData = $($rawHtml);
             console.log($rawData);
             const $carouselPlace = $rawData.find('.carousel').parent();
             const $rawImages = $carouselPlace.find('.carousel-inner img');
@@ -897,18 +896,23 @@ $(document).ready(function () {
         }
 
         //ajax and processing / modal 1-3 (not done)
-        async function ajaxStageTwo() {
+        async function ajaxStageTwo(href) {
             //ajax imitation
             const $destinationHolder = $('.reservation-tunnel .step.step3 .options');
-            const $rawData = await get_place_selector();
-
-            $rawData.find('>.form-group:first-child').remove();
-            $rawData.find('>.form-group:first-child').remove();
-            $rawData.find('.form-group>p:last-child').remove();
-            $rawData.find('>.form-group:last-child').remove();
-            $rawData.find('>.form-group:last-child').remove();
+            const $rawHtml = await get_place_selector(href);
+            const $rawData = $($rawHtml);
 
             $rawData.appendTo($destinationHolder);
+
+            $destinationHolder.find('>*:nth-child(-n+2)').remove();
+            //$rawData.filter('p:first-child').remove();
+            //$rawData.filter('>.form-group:first-child').remove();
+            //$rawData.filter('>.form-group:first-child').remove();
+            // $rawData.filter('.form-group>p:last-child').remove();
+            // $rawData.filter('>.form-group:last-child').remove();
+            // $rawData.filter('>.form-group:last-child').remove();
+
+
 
             $('<div class="form-group button-group">\n' +
                 '    <a class="btn next1 js-order-modal-trigger-2" href="#">Подтвердить заказ</a>\n' +
@@ -1040,7 +1044,7 @@ $(document).ready(function () {
         function fixImages($holder) {
             const $playbillContent = $holder;
             const $playbillImages = $playbillContent.find('img');
-            const $playbillLinks = $playbillContent.find('a:not(.place-info)');
+            const $playbillLinks = $playbillContent.find('a:not(.place-info, .btn)');
 
             $playbillImages.each(function () {
                 const $currImg = $(this);
