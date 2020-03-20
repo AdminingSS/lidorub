@@ -654,8 +654,9 @@
     color: #ffffff;
 }
 
-#nav .container:nth-of-type(3) ul .tm-dropdown a {
-
+#nav .container:nth-of-type(3) ul .tm-dropdown a:hover {
+    cursor: auto;
+    /*background-color: #fff;*/
 }
 
 /*#nav .container:nth-of-type(1) ul.nav-primary > li > span {*/

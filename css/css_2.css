@@ -4999,7 +4999,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
 
 #nav .container:nth-of-type(3) a:before, #nav #cookie .cookie__content:nth-of-type(3) a:before, #cookie #nav .cookie__content:nth-of-type(3) a:before {
     z-index: -1;
-    content: '';
+    /*content: '';*/
     display: block;
     display: block;
     position: absolute;

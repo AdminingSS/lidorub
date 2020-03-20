@@ -1117,12 +1117,12 @@ $(document).ready(function () {
 
         $allSelector.on('click', function () {
             $(this).parent().find('[type="checkbox"]').prop('checked', true);
-            $(this).parent().find('[type="checkbox"]')[0].trigger('change');
+            $(this).parent().find('[type="checkbox"]:first-child').trigger('change');
         });
 
         $clearSelector.on('click', function () {
-            $(this).parent().find('[type="checkbox"]').prop('checked', false);
-            $(this).parent().find('[type="checkbox"]')[0].trigger('change');
+            $(this).parent().find('[type="checkbox"]:first-child').prop('checked', false);
+            $(this).parent().find('[type="checkbox"]:first-child').trigger('change');
         });
 
 
