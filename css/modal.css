@@ -796,3 +796,7 @@ form.tm-form label {
 #edit-gift-postal.active, #edit-gift-email.active, #edit-gift-postal-me.active, #edit-gift-postal-him.active, #edit-gift-email-him.active {
     display: block;
 }
+
+.tm-form .tm-dropdown-content label {
+    font-size: 12px;
+}

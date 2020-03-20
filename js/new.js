@@ -1116,6 +1116,7 @@ $(document).ready(function () {
             $(this).parent().find('[type="checkbox"]').prop('checked', false);
         });
 
+
         $dropdownInputs.each(function () {
             const $dropdownInput = $(this);
             const $dropdownContent = $dropdownInput.find('.tm-dropdown-content');
@@ -1128,7 +1129,7 @@ $(document).ready(function () {
 
                 function closeOutside() {
 
-                    if ($(event.target).is($dropdownContent) || $(event.target).is($dropdownInput)) return;
+                    if ($(event.target).parents('.tm-dropdown-inputs').length || $(event.target).is($dropdownInput)) return;
                     $dropdownInput.removeClass('active');
                     $(document).off('click', closeOutside);
                 }
