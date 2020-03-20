@@ -781,7 +781,7 @@ form.tm-form label {
 
 .tm-dropdown-inputs.active .tm-dropdown-content {
     display: block;
-    max-height: 10.7em;
+    max-height: 250px;
     overflow-y: auto;
     webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.13));
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.13));
