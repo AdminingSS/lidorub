@@ -791,6 +791,12 @@ form.tm-form label {
 .js-all-trigger, .js-clear-trigger {
     display: inline-block;
     margin: 0 10px 10px 0;
+    color: #0f1e48;
+    text-decoration: none;
+}
+
+.js-all-trigger:hover, .js-clear-trigger:hover {
+    color: #0f1e48;
 }
 
 #edit-gift-postal.active, #edit-gift-email.active, #edit-gift-postal-me.active, #edit-gift-postal-him.active, #edit-gift-email-him.active {
