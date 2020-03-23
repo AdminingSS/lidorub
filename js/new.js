@@ -686,7 +686,7 @@ $(document).ready(function () {
                 const locationHref = $(this).attr('href');
                 const fixedHref = locationHref.slice(0,-6) + "?nolayout=true";
 
-                const $oldData = $('.step.step3 .options .options, .step.step3 .options .form-group');
+                const $oldData = $('.step.step3 .options .options, .step.step3 .options >div');
                 $oldData.remove();
 
                 ajaxStageTwo(fixedHref);
@@ -924,10 +924,11 @@ $(document).ready(function () {
             const $destinationHolder = $('.reservation-tunnel .step.step3 .options');
             const $rawHtml = await get_place_selector(href);
             const $rawData = $($rawHtml);
+            const $wrapper = $('<div class="js-custom-scrollbar"></div>')
 
-            $rawData.appendTo($destinationHolder);
+            $rawData.appendTo($wrapper);
 
-            $destinationHolder.find('>*:nth-child(-n+2)').remove();
+            $wrapper.find('>*:nth-child(-n+1)').remove();
             //$rawData.filter('p:first-child').remove();
             //$rawData.filter('>.form-group:first-child').remove();
             //$rawData.filter('>.form-group:first-child').remove();
@@ -935,6 +936,7 @@ $(document).ready(function () {
             // $rawData.filter('>.form-group:last-child').remove();
             // $rawData.filter('>.form-group:last-child').remove();
 
+            $wrapper.appendTo($destinationHolder);
 
 
             $('<div class="form-group button-group">\n' +
@@ -954,7 +956,7 @@ $(document).ready(function () {
 
             init_scheme();
 
-            $orderModal.find('.reservation-tunnel .step.step3 .options').mCustomScrollbar({
+            $orderModal.find('.reservation-tunnel .step.step3 .js-custom-scrollbar').mCustomScrollbar({
                 scrollbarPosition: "outside",
                 autoHideScrollbar: false,
                 theme: "dark",
