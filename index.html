@@ -1512,10 +1512,6 @@
 
                                             </div>
                                         </fieldset>
-
-                                        <p class="cgv"><a class="" onclick="$('#edit-gift').toggle();"
-                                                          href="#">Подробнее</a>
-                                        </p>
                                         <fieldset id="edit-gift"
                                                   class="js-form-item form-item js-form-wrapper form-wrapper">
                                             <legend>
@@ -1567,6 +1563,29 @@
                                             </div>
                                         </fieldset>
 
+                                        <fieldset>
+                                            <legend>
+                                                <span class="fieldset-legend">Select delivery option:</span>
+                                            </legend>
+                                            <div class="fieldset-wrapper">
+                                                <div id="edit-is-delivery">
+                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-delivery js-form-item-is-delivery">
+                                                        <input type="radio"
+                                                               id="edit-is-delivery-one" name="is_gift" value="yes"
+                                                               class="form-radio">
+                                                        <label for="edit-is-delivery-one" class="option">Postal delivery to your country (takes up to 1+ month) + 10.2 EUR</label>
+                                                    </div>
+                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
+                                                        <input type="radio"
+                                                               id="edit-is-delivery-two" name="is_gift" value="no"
+                                                               class="form-radio">
+                                                        <label for="edit-is-delivery-two" class="option">E-ticket</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+
 
                                         <!--<div class="gift-mention form-item">Отправка в течение 48 часов максимум и получение с учетом почтовых задержек.</div>-->
                                         <fieldset id="edit-payment"
@@ -1584,14 +1603,6 @@
                                                     <div class="fieldset-wrapper">
                                                         <div id="edit-payement-mode">
                                                             <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
-                                                                <input type="radio" id="edit-payement-mode-cb"
-                                                                       name="payement_mode" value="CB"
-                                                                       class="form-radio">
-
-                                                                <label for="edit-payement-mode-cb"
-                                                                       class="option">cb</label>
-                                                            </div>
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
                                                                 <input type="radio" id="edit-payement-mode-visa"
                                                                        name="payement_mode" value="VISA"
                                                                        class="form-radio">
@@ -1606,23 +1617,6 @@
 
                                                                 <label for="edit-payement-mode-mastercard"
                                                                        class="option">mastercard</label>
-                                                            </div>
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
-                                                                <input type="radio"
-                                                                       id="edit-payement-mode-american-express"
-                                                                       name="payement_mode" value="American Express"
-                                                                       class="form-radio">
-
-                                                                <label for="edit-payement-mode-american-express"
-                                                                       class="option">amex</label>
-                                                            </div>
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
-                                                                <input type="radio" id="edit-payement-mode-jcb"
-                                                                       name="payement_mode" value="JCB"
-                                                                       class="form-radio">
-
-                                                                <label for="edit-payement-mode-jcb"
-                                                                       class="option">jcb</label>
                                                             </div>
                                                             <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
                                                                 <input type="radio" id="edit-payement-mode-paypal"
@@ -1812,35 +1806,35 @@
         <!--</section>-->
 
         <!--<section id="popin&#45;&#45;cgv-voucher" class="popin">-->
-            <!--<div class="popin__bg"></div>-->
-            <!--<div class="popin__content">-->
-                <!--<a class="popin__close" href="https://www.lido.fr/ru/%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B#"></a>-->
-                <!--<p class="popin__title">-->
+        <!--<div class="popin__bg"></div>-->
+        <!--<div class="popin__content">-->
+        <!--<a class="popin__close" href="https://www.lido.fr/ru/%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B#"></a>-->
+        <!--<p class="popin__title">-->
 
-                    <!--Общие условия продажи-->
-                <!--</p>-->
-                <!--<p class="popin__subtitle">-->
+        <!--Общие условия продажи-->
+        <!--</p>-->
+        <!--<p class="popin__subtitle">-->
 
-                    <!--Подарочные сертификаты-->
-                <!--</p>-->
-                <!--<div class="popin__text">-->
+        <!--Подарочные сертификаты-->
+        <!--</p>-->
+        <!--<div class="popin__text">-->
 
-                    <!--<p>Au-delà de la date limite, les Chèques Cadeaux ne sont ni remboursables ni échangeables. Les-->
-                        <!--réservations pour les prestations des Chèques Cadeaux se font sous réserve des disponibilités.-->
-                        <!--Il est obligatoire de présenter le carton d’invitation à la réception du Lido le jour de la-->
-                        <!--prestation. Les réservations enregistrées peuvent être modifiées ou annulées dans les mêmes-->
-                        <!--conditions que celles exposées aux articles 1.4 &amp; 1.5 des présentes conditions générales de-->
-                        <!--ventes. Si les clients ou les bénéficiaires ne sont pas présents le jour de la réservation, le-->
-                        <!--Chèque Cadeau n’est ni remboursable ni échangeable. Les Chèques Cadeaux sont payables 100 % à la-->
-                        <!--commande et pourront être envoyés sous réserve d’encaissement du paiement. Les Chèques Cadeaux-->
-                        <!--perdus ou volés ne peuvent donner lieu ni à un échange ni à un remboursement.</p>-->
+        <!--<p>Au-delà de la date limite, les Chèques Cadeaux ne sont ni remboursables ni échangeables. Les-->
+        <!--réservations pour les prestations des Chèques Cadeaux se font sous réserve des disponibilités.-->
+        <!--Il est obligatoire de présenter le carton d’invitation à la réception du Lido le jour de la-->
+        <!--prestation. Les réservations enregistrées peuvent être modifiées ou annulées dans les mêmes-->
+        <!--conditions que celles exposées aux articles 1.4 &amp; 1.5 des présentes conditions générales de-->
+        <!--ventes. Si les clients ou les bénéficiaires ne sont pas présents le jour de la réservation, le-->
+        <!--Chèque Cadeau n’est ni remboursable ni échangeable. Les Chèques Cadeaux sont payables 100 % à la-->
+        <!--commande et pourront être envoyés sous réserve d’encaissement du paiement. Les Chèques Cadeaux-->
+        <!--perdus ou volés ne peuvent donner lieu ni à un échange ni à un remboursement.</p>-->
 
-                <!--</div>-->
-                <!--<p class="popin__legend">-->
+        <!--</div>-->
+        <!--<p class="popin__legend">-->
 
-                    <!--Article 1.13-->
-                <!--</p>-->
-            <!--</div>-->
+        <!--Article 1.13-->
+        <!--</p>-->
+        <!--</div>-->
         <!--</section>-->
         <!--<section id="popin&#45;&#45;max-people" class="popin">-->
         <!--<div class="popin__bg"></div>-->
@@ -2069,6 +2063,7 @@
 
 
 
+
                 </script>
                 <div class="event-box" rel="14061" attr-time="1582905600"
                      itemscope="" itemtype="http://data-vocabulary.org/Event">
@@ -2189,6 +2184,7 @@
     "name": "Mariinsky II (New) Theatre troupe"
   }
 }
+
 
 
 
@@ -2335,6 +2331,7 @@
 
 
 
+
                 </script>
                 <div class="event-box" rel="14118" attr-time="1582905600"
                      itemscope="" itemtype="http://data-vocabulary.org/Event">
@@ -2451,6 +2448,7 @@
     "name": "Mikhailovsky (ex. Mussorgsky) Theatre troupe"
   }
 }
+
 
 
 
@@ -2581,6 +2579,7 @@
     "name": "Saint-Petersburg Opera Theatre troupe"
   }
 }
+
 
 
 
@@ -2735,6 +2734,7 @@
 
 
 
+
                 </script>
                 <div style="background:#fce07f" class="event-box" rel="14145"
                      attr-time="1582992000" itemscope=""
@@ -2857,6 +2857,7 @@
     "name": "Mariinsky (ex. Kirov) Ballet and Opera Theatre troupe"
   }
 }
+
 
 
 
@@ -2993,6 +2994,7 @@
     "name": "Mariinsky II (New) Theatre troupe"
   }
 }
+
 
 
 
@@ -3147,6 +3149,7 @@
 
 
 
+
                 </script>
                 <div class="event-box" rel="12649" attr-time="1583053200"
                      itemscope="" itemtype="http://data-vocabulary.org/Event">
@@ -3272,6 +3275,7 @@
     "name": "Mariinsky (ex. Kirov) Ballet and Opera Theatre troupe"
   }
 }
+
 
 
 

@@ -90,8 +90,6 @@ function preventScale() {
     const countryData = window.intlTelInputGlobals.getCountryData();
 
     fillSelect("#edit-nationality");
-    fillSelect("#edit-gift-postal-me-country");
-    fillSelect("#edit-gift-postal-him-country");
 
     function fillSelect(selector) {
         const addressDropdown = document.querySelector(selector);
@@ -1181,57 +1179,19 @@ $(document).ready(function () {
     })();
 
     (() => {
-        const $giftSendPostalSelector = $('#edit-gift-method-postal');
-        const $giftSendEmailSelector = $('#edit-gift-method-email');
-        const $giftSendPostal = $('#edit-gift-postal');
-        const $giftSendEmail = $('#edit-gift-email');
+        const $giftYes = $('#edit-is-gift-yes');
+        const $giftNo = $('#edit-is-gift-no');
+        const $giftEdit = $('#edit-gift');
 
-        const $giftSendPostalMeSelector = $('#edit-gift-postal-destination-me');
-        const $giftSendPostalHimSelector = $('#edit-gift-postal-destination-him');
-        const $giftSendPostalMe = $('#edit-gift-postal-me');
-        const $giftSendPostalHim = $('#edit-gift-postal-him');
-
-        const $giftSendEmailMeSelector = $('#edit-gift-email-destination-me');
-        const $giftSendEmailHimSelector = $('#edit-gift-email-destination-him');
-        const $giftSendEmailHim = $('#edit-gift-email-him');
-
-        $giftSendPostalSelector.on('change', function () {
-            if ($(this).prop('checked') === true) {
-                $giftSendPostal.addClass('active');
-                $giftSendEmail.removeClass('active');
+        $giftYes.on('change', function () {
+            if($(this).prop('checked') === true) {
+                $giftEdit.addClass('active');
             }
         });
 
-        $giftSendEmailSelector.on('change', function () {
-            if ($(this).prop('checked') === true) {
-                $giftSendEmail.addClass('active');
-                $giftSendPostal.removeClass('active');
-            }
-        });
-
-        $giftSendPostalMeSelector.on('change', function () {
-            if ($(this).prop('checked') === true) {
-                $giftSendPostalMe.addClass('active');
-                $giftSendPostalHim.removeClass('active');
-            }
-        });
-
-        $giftSendPostalHimSelector.on('change', function () {
-            if ($(this).prop('checked') === true) {
-                $giftSendPostalHim.addClass('active');
-                $giftSendPostalMe.removeClass('active');
-            }
-        });
-
-        $giftSendEmailMeSelector.on('change', function () {
-            if ($(this).prop('checked') === true) {
-                $giftSendEmailHim.removeClass('active');
-            }
-        });
-
-        $giftSendEmailHimSelector.on('change', function () {
-            if ($(this).prop('checked') === true) {
-                $giftSendEmailHim.addClass('active');
+        $giftNo.on('change', function () {
+            if($(this).prop('checked') === true) {
+                $giftEdit.removeClass('active');
             }
         });
     })();

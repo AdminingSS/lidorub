@@ -6524,7 +6524,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     font-size: 14px
 }
 
-#edit-is-gift .js-form-type-radio label:before {
+#edit-is-gift .js-form-type-radio label:before, #edit-is-delivery .js-form-type-radio label:before {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -6533,7 +6533,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     width: 15px
 }
 
-#edit-is-gift .js-form-type-radio label:after {
+#edit-is-gift .js-form-type-radio label:after, #edit-is-delivery .js-form-type-radio label:after {
     background-color: #b8a15d;
     background-image: none;
     background-repeat: no-repeat;
