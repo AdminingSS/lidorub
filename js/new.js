@@ -89,7 +89,7 @@ function preventScale() {
 (() => {
     const countryData = window.intlTelInputGlobals.getCountryData();
 
-    fillSelect("#edit-nationality");
+    fillSelect("#address-country");
 
     function fillSelect(selector) {
         const addressDropdown = document.querySelector(selector);
