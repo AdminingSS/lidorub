@@ -946,6 +946,8 @@ $(document).ready(function () {
 
             $orderModal.find('.reservation-tunnel .step.step3').addClass('active');
 
+            init_scheme();
+
             $orderModal.find('.reservation-tunnel .step.step3 .js-custom-scrollbar').mCustomScrollbar({
                 scrollbarPosition: "outside",
                 autoHideScrollbar: false,
@@ -953,8 +955,6 @@ $(document).ready(function () {
                 mouseWheel: {scrollAmount: 200},
                 advanced: {updateOnContentResize: true}
             });
-
-            init_scheme();
 
             const $orderModalTrigger2 = $('.js-order-modal-trigger-2');
 
