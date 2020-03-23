@@ -1,6 +1,8 @@
 if (typeof landing_options === "undefined") {
     var get_play_bill = function () {
         return $('.server-datas .event-list >*').clone();
+
+    //return $('<div class="event-box"><strong>Sorry, no perfomances were found!</strong></div>');
     };
 
     var get_theater_info = function (locationHref) {
@@ -695,6 +697,7 @@ $(document).ready(function () {
             if(!checkContent.length) {
                 //$('<div>Ничего не найдено.</div>').appendTo($destinationHolder);
                 $rawData.appendTo($destinationHolder);
+                readyStageTwo();
                 return;
             }
             const $eventList = $('<div class="event-list js-custom-scrollbar"></div>');

@@ -806,3 +806,7 @@ form.tm-form label {
 .tm-form .tm-dropdown-content label {
     font-size: 12px;
 }
+
+.offers .event-box strong {
+    color: #333333;
+}
