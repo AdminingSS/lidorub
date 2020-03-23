@@ -35,6 +35,12 @@ if (typeof landing_options === "undefined") {
 
     }
 }
+else {
+    var input = document.querySelector("#edit-phone-number");
+    window.iti =window.intlTelInput(input,{
+        utilsScript: "/js/tel4/build/js/utils.js?1549804213570",
+    });
+}
 
 function isTouchDevice() {
     try {
@@ -948,7 +954,7 @@ $(document).ready(function () {
 
             init_scheme();
 
-            $orderModal.find('.reservation-tunnel .step.step3 .js-custom-scrollbar').mCustomScrollbar({
+            $orderModal.find('.reservation-tunnel .step.step3 .options').mCustomScrollbar({
                 scrollbarPosition: "outside",
                 autoHideScrollbar: false,
                 theme: "dark",
