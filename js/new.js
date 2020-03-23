@@ -1148,7 +1148,10 @@ $(document).ready(function () {
 
         $dropdownInputs.each(function () {
             const $dropdownInput = $(this);
-            const $dropdownContent = $dropdownInput.find('.tm-dropdown-content');
+            const $dropdownSelect = $dropdownInput.find('>span');
+            const $dropdownContainer = $dropdownInput.find('.tm-dropdown-content');
+            const $dropdownCheckboxes = $dropdownContainer.find('.tm-input');
+            const dropdownType = $dropdownCheckboxes.first().parent().text().slice(0,1);
 
             $dropdownInput.on('click', function () {
 
@@ -1164,7 +1167,36 @@ $(document).ready(function () {
                 }
 
             })
-        })
+
+            $dropdownCheckboxes.on('change', function () {
+                $dropdownSelect.text(getTheaterName($dropdownContainer, dropdownType, $dropdownCheckboxes.length));
+            })
+
+        });
+
+        function getTheaterName($container, type, max) {
+            const $selectedItems = $container.find('.tm-input:checked');
+            let allName;
+
+            switch(type) {
+                case 'T':
+                    allName = " theaters";
+                    break;
+                case 'G':
+                    allName = " genres";
+                    break;
+            }
+
+            switch($selectedItems.length) {
+                case 0:
+                case max:
+                    return "All" + allName;
+                case 1:
+                    return $selectedItems.parent().text();
+                default:
+                    return $selectedItems.length + allName;
+            }
+        }
     })();
 
     //
