@@ -691,8 +691,10 @@ $(document).ready(function () {
         async function ajaxStageOne() {
             const $destinationHolder = $('.reservation-tunnel .step.step2 .offers');
             const $rawData = await get_play_bill();
-            if(!$rawData.length) {
-                $('<div>Ничего не найдено.</div>').appendTo($destinationHolder);
+            const checkContent = $($rawData).find('.buttons');
+            if(!checkContent.length) {
+                //$('<div>Ничего не найдено.</div>').appendTo($destinationHolder);
+                $rawData.appendTo($destinationHolder);
                 return;
             }
             const $eventList = $('<div class="event-list js-custom-scrollbar"></div>');
