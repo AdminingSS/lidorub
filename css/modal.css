@@ -814,3 +814,7 @@ form.tm-form label {
 .step3 .options .js-custom-scrollbar {
     max-height: calc(100vh - 328px);
 }
+
+.point_raphael {
+    color: #333333;
+}
