@@ -36,7 +36,7 @@ if (typeof landing_options === "undefined") {
     }
 }
 else {
-    var input = document.querySelector("#edit-phone-number");
+    var input = document.querySelector("#ph");
     window.iti =window.intlTelInput(input,{
         utilsScript: "/js/tel4/build/js/utils.js?1549804213570",
     });
