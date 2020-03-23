@@ -27,6 +27,10 @@ if (typeof landing_options === "undefined") {
             url: href,
             type: "GET"
         });
+    };
+
+    var init_scheme = function () {
+
     }
 }
 
@@ -944,6 +948,8 @@ $(document).ready(function () {
                 mouseWheel: {scrollAmount: 200},
                 advanced: {updateOnContentResize: true}
             });
+
+            init_scheme();
 
             const $orderModalTrigger2 = $('.js-order-modal-trigger-2');
 
