@@ -5,31 +5,7 @@ if (typeof landing_options === "undefined") {
     //return $('<div class="event-box"><strong>Sorry, no perfomances were found!</strong></div>');
     };
 
-    var get_theater_info = function (locationHref) {
-        //return $('.server-datas .theaters-data .container-white').clone();
-        const fixedHref = locationHref + "?nolayout=true";
 
-        return $.ajax({
-            url: fixedHref,
-            type: "GET"
-        });
-    };
-
-    var get_event_info = function (href) {
-        //return $('.server-datas #step2-inactive .container-white').clone();
-        return $.ajax({
-            url: href,
-            type: "GET"
-        });
-    };
-
-    var get_place_selector = function (href) {
-        //return $('.server-datas .options .options').clone();
-        return $.ajax({
-            url: href,
-            type: "GET"
-        });
-    };
 
     var init_scheme = function () {
 
@@ -47,6 +23,31 @@ else {
     });
 }
 
+var get_theater_info = function (locationHref) {
+    //return $('.server-datas .theaters-data .container-white').clone();
+    const fixedHref = locationHref + "?nolayout=true";
+
+    return $.ajax({
+        url: fixedHref,
+        type: "GET"
+    });
+};
+
+var get_event_info = function (href) {
+    //return $('.server-datas #step2-inactive .container-white').clone();
+    return $.ajax({
+        url: href,
+        type: "GET"
+    });
+};
+
+var get_place_selector = function (href) {
+    //return $('.server-datas .options .options').clone();
+    return $.ajax({
+        url: href,
+        type: "GET"
+    });
+};
 
 
 function isTouchDevice() {
