@@ -672,7 +672,7 @@ $(document).ready(function () {
         $jsSubmitStageOne.on('click', async function (e) {
             if (!$(this).hasClass('active')) return;
 
-            const $oldData = $('.step.step2 .offers .event-list');
+            const $oldData = $('.step.step2 .offers >*:nth-child(n+2)');
             $oldData.remove();
 
             let $triggerButton;
@@ -1151,7 +1151,7 @@ $(document).ready(function () {
             const $dropdownSelect = $dropdownInput.find('>span');
             const $dropdownContainer = $dropdownInput.find('.tm-dropdown-content');
             const $dropdownCheckboxes = $dropdownContainer.find('.tm-input');
-            const dropdownType = $dropdownCheckboxes.first().parent().text().slice(0,1);
+            const dropdownType = $dropdownInput.hasClass('tm-input-theaters') ? 'T' : 'G';
 
             $dropdownInput.on('click', function () {
 

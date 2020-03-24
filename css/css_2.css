@@ -5992,7 +5992,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     display: none
 }
 
-.checkout__form #edit-payement-mode--wrapper legend {
+.checkout__form #payments legend {
     display: none
 }
 
@@ -6040,84 +6040,84 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     opacity: 1
 }
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="CB"] + label:before {
-    background-image: url(../images/cb-off.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="CB"] + label:before {*/
+    /*background-image: url(../images/cb-off.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="CB"] + label:after {
-    background-image: url(../images/cb-on.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="CB"] + label:after {*/
+    /*background-image: url(../images/cb-on.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="VISA"] + label:before {
+.visap + label:before {
     background-image: url(../images/visa-off.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
 }
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="VISA"] + label:after {
+.visap + label:after {
     background-image: url(../images/visa-on.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
 }
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="MasterCard"] + label:before {
-    background-image: url(../images/mastercard-off.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="MasterCard"] + label:before {*/
+    /*background-image: url(../images/mastercard-off.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="MasterCard"] + label:after {
-    background-image: url(../images/mastercard-on.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="MasterCard"] + label:after {*/
+    /*background-image: url(../images/mastercard-on.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="American Express"] + label:before {
-    background-image: url(../images/amex-off.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="American Express"] + label:before {*/
+    /*background-image: url(../images/amex-off.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="American Express"] + label:after {
-    background-image: url(../images/amex-on.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="American Express"] + label:after {*/
+    /*background-image: url(../images/amex-on.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="JCB"] + label:before {
-    background-image: url(../images/jcb-off.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="JCB"] + label:before {*/
+    /*background-image: url(../images/jcb-off.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="JCB"] + label:after {
-    background-image: url(../images/jcb-on.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center
-}
+/*.checkout__form #edit-payement-mode .form-item input[type="radio"][value="JCB"] + label:after {*/
+    /*background-image: url(../images/jcb-on.png);*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center*/
+/*}*/
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="PAYPAL"] + label:before {
+.paypalp + label:before {
     background-image: url(../images/paypal-off.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
 }
 
-.checkout__form #edit-payement-mode .form-item input[type="radio"][value="PAYPAL"] + label:after {
+.paypalp + label:after {
     background-image: url(../images/paypal-on.png);
     background-size: cover;
     background-repeat: no-repeat;

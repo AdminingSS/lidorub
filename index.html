@@ -1165,7 +1165,7 @@
 
                                     <div class="content">
                                         <div class="form-item formule">
-                                            <div class="tm-dropdown-inputs">
+                                            <div class="tm-dropdown-inputs tm-input-theaters">
                                                 <span>All theaters</span>
                                                 <fieldset class="tm-dropdown-content">
                                                     <legend>Select Theater(s)</legend>
@@ -1213,22 +1213,28 @@
                                                 <!--<div class="custom-select-container">-->
                                                 <select name="spectacle" tabindex="-1">
                                                     <option value="0">
-                                                        All spectacles
+                                                        All shows
                                                     </option>
                                                     <option value="0">
-                                                        All spectacles
+                                                        All shows
                                                     </option>
                                                     <option value="1">
-                                                        Popular
+                                                        Popular shows
                                                     </option>
                                                     <option value="2">
-                                                        Nutcracker
+                                                        Swan Lake ballet
                                                     </option>
                                                     <option value="3">
-                                                        Desperate clowns
+                                                        The Nutcracker ballet
                                                     </option>
                                                     <option value="4">
-                                                        Dziadek do orzechów
+                                                        The Sleeping Beauty ballet
+                                                    </option>
+                                                    <option value="5">
+                                                        Giselle ballet
+                                                    </option>
+                                                    <option value="6">
+                                                        Folklore show
                                                     </option>
                                                 </select>
                                                 <!--</div>-->
@@ -1600,7 +1606,7 @@
                                                 <span class="fieldset-legend">Средства оплаты</span>
                                             </legend>
                                             <div class="fieldset-wrapper">
-                                                <fieldset id="edit-payement-mode--wrapper"
+                                                <fieldset id="payments"
                                                           class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper"
                                                           required="required" aria-required="true">
                                                     <legend>
@@ -1611,7 +1617,7 @@
                                                             <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
                                                                 <input type="radio" id="edit-payement-mode-visa"
                                                                        name="payement_mode" value="VISA"
-                                                                       class="form-radio">
+                                                                       class="form-radio visap">
 
                                                                 <label for="edit-payement-mode-visa"
                                                                        class="option">credit card</label>
@@ -1619,7 +1625,7 @@
                                                             <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
                                                                 <input type="radio" id="edit-payement-mode-paypal"
                                                                        name="payement_mode" value="PAYPAL"
-                                                                       class="form-radio">
+                                                                       class="form-radio paypalp">
 
                                                                 <label for="edit-payement-mode-paypal"
                                                                        class="option">paypal</label>
