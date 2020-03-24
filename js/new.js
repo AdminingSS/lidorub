@@ -1107,6 +1107,7 @@ $(document).ready(function () {
                 if (selectedItem === 0) return;
                 $quantitySelect.find('option').removeAttr('selected');
                 $quantitySelect.find('option:nth-child(' + (selectedItem) + ')').attr('selected', 'selected');
+                $('#spinEdit').change();
             });
 
             $quantityTriggerMore.on('click', function () {
@@ -1114,6 +1115,7 @@ $(document).ready(function () {
                 if (selectedItem === $quantitySelect.find('option:last-child').index()) return;
                 $quantitySelect.find('option').removeAttr('selected');
                 $quantitySelect.find('option:nth-child(' + (selectedItem + 2) + ')').attr('selected', 'selected');
+                $('#spinEdit').change();
             });
         })
 
