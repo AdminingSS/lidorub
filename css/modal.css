@@ -840,3 +840,9 @@ form.tm-form label {
 .checkout__form {
     padding: 30px;
 }
+
+.checkout__summary > div > ul > li ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

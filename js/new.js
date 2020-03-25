@@ -1,11 +1,9 @@
-if (typeof landing_options === "undefined") {
+if (typeof prod === "undefined") {
     var get_play_bill = function () {
         return $('.server-datas .event-list >*').clone();
 
     //return $('<div class="event-box"><strong>Sorry, no perfomances were found!</strong></div>');
     };
-
-
 
     var init_scheme = function () {
 
