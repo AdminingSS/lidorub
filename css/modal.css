@@ -667,7 +667,7 @@ form:not(.myform) input.tm-input[type="checkbox"]:not(:checked), form:not(.myfor
     left: auto;
 }
 
-form.tm-form .tm-input[type="checkbox"] {
+form .tm-form .tm-input[type="checkbox"] {
     width: 18px;
     height: 18px;
     /*-webkit-appearance: checkbox;*/
@@ -678,7 +678,7 @@ form.tm-form .tm-input[type="checkbox"] {
     vertical-align: sub;
 }
 
-form.tm-form .tm-input[type="checkbox"]:checked::before {
+form .tm-form .tm-input[type="checkbox"]:checked::before {
     position: absolute;
     display: block;
     content: '';
@@ -692,7 +692,7 @@ form.tm-form .tm-input[type="checkbox"]:checked::before {
     background-size: 10px auto;
 }
 
-form.tm-form label {
+form .tm-form label {
     font-size: 16px;
     display: block;
     text-transform: uppercase;
@@ -849,4 +849,18 @@ form.tm-form label {
 
 .intl-tel-input .country-list {
     max-width: 300px;
+}
+
+.form-item.adults .block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking form .form-item .block:before, .booking form .form-item .block:after {
+    display: none;
+}
+
+.tm-form .content {
+    margin-bottom: 20px;
 }

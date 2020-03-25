@@ -678,7 +678,7 @@
   			<div class="shining-star shining-star-7"></div>
   		</span>
 
-                        <form class="tm-flex tm-flex-between js-form-main css-form" action="/">
+                        <form class="tm-flex tm-flex-between js-form-main css-form tag-form" action="/">
 
 
                             <div class="content reveal" style="transition-delay: 0.2s;">
@@ -843,6 +843,7 @@
 
 </div>
 
+<form id="fm" method="post">
 <!--order modal first part-->
 <div class="tm-modal js-order-modal tm-hidden ticketing">
     <div id="wrapper" class="layout-container">
@@ -1127,7 +1128,7 @@
                                 <a href="#r-popin-alert"
                                    class="backto only-desktop">Назад</a>
                                 <h2 class="title">Ваши заказы</h2>
-                                <form class="tm-form css-form">
+                                <div class="tm-form css-form">
                                     <div class="content">
                                         <div class="form-item adults quantity quantity--filled" value="1">
                                             <div class="block">
@@ -1288,7 +1289,7 @@
 
                                     <input type="hidden" value="" name="v" id="offer-id">
                                     <input type="hidden" value="1" name="ts" id="ticket-step">
-                                </form>
+                                </div>
 
                                 <div class="offrir-accroche">
                                     <p>Следующий этап оплаты. Подарите уникальные мгновения</p>
@@ -1362,7 +1363,7 @@
                             <div class="checkout__main">
 
 
-                                <form class="checkout-information-form css-form"
+                                <div class="checkout-information-form css-form"
                                       action="/" method="post"
                                       id="checkout-information-form" accept-charset="UTF-8">
                                     <div class="checkout__content active checkout__form scroller">
@@ -1752,7 +1753,7 @@
                                             терминалу оплаты, предоставленному нашим партнером INGENICO.
                                         </div>
                                     </div>
-                                </form>
+                                </div>
 
                             </div>
 
@@ -1809,6 +1810,7 @@
 
     </div>
 </div>
+</form>
 
 <!--theaters modal-->
 <div class="tm-modal js-theater-modal js-theater-modal-close tm-hidden">

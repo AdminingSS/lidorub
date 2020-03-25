@@ -1062,13 +1062,13 @@ form:not(.myform) button, html [type="button"], [type="reset"], [type="submit"] 
     left: 0px
 }
 
-form:not(.myform) input[type="checkbox"]:not(:checked),form:not(.myform) input[type="checkbox"]:checked,form:not(.myform) input[type="radio"]:not(:checked),form:not(.myform) input[type="radio"]:checked {
+.tag-form input[type="checkbox"]:not(:checked),.tag-form input[type="checkbox"]:checked,form:not(.myform) input[type="checkbox"]:not(:checked),form:not(.myform) input[type="checkbox"]:checked,form:not(.myform) input[type="radio"]:not(:checked),form:not(.myform) input[type="radio"]:checked {
     outline: 0;
     position: absolute;
     left: -9999px
 }
 
-form:not(.myform) input[type="checkbox"] + label,form:not(.myform) input[type="radio"] + label {
+.tag-form input[type="checkbox"] + label,form:not(.myform) input[type="checkbox"] + label,form:not(.myform) input[type="radio"] + label {
     outline: 0;
     position: relative;
     padding-left: 30px;
@@ -1088,7 +1088,7 @@ form:not(.myform) input[type="checkbox"] + label,form:not(.myform) input[type="r
     }
 }
 
-form:not(.myform) input[type="checkbox"] + label:before,form:not(.myform) input[type="checkbox"] + label:after,form:not(.myform) input[type="radio"] + label:before,form:not(.myform) input[type="radio"] + label:after {
+.tag-form input[type="checkbox"] + label:before ,form:not(.myform) input[type="checkbox"] + label:before, .tag-form input[type="checkbox"] + label:after, form:not(.myform) input[type="checkbox"] + label:after,form:not(.myform) input[type="radio"] + label:before,form:not(.myform) input[type="radio"] + label:after {
     outline: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1102,45 +1102,45 @@ form:not(.myform) input[type="checkbox"] + label:before,form:not(.myform) input[
 }
 
 @media screen and (max-width: 1024px) {
-   form:not(.myform) input[type="checkbox"] + label:before,form:not(.myform) input[type="checkbox"] + label:after,form:not(.myform) input[type="radio"] + label:before,form:not(.myform) input[type="radio"] + label:after {
+    .tag-form input[type="checkbox"] + label:before,.tag-form input[type="checkbox"] + label:after,form:not(.myform) input[type="checkbox"] + label:before,form:not(.myform) input[type="checkbox"] + label:after,form:not(.myform) input[type="radio"] + label:before,form:not(.myform) input[type="radio"] + label:after {
         width: 22px;
         height: 22px;
         line-height: 22px
     }
 }
 
-form:not(.myform) input[type="checkbox"]:not(:checked) + label:before,form:not(.myform) input[type="checkbox"]:checked + label:before,form:not(.myform) input[type="radio"]:not(:checked) + label:before,form:not(.myform) input[type="radio"]:checked + label:before {
+.tag-form input[type="checkbox"]:not(:checked) + label:before,.tag-form input[type="checkbox"]:checked + label:before,form:not(.myform) input[type="radio"]:not(:checked) + label:before,form:not(.myform) input[type="radio"]:checked + label:before {
     background: transparent;
     border: 1px solid #b8a15d
 }
 
-form:not(.myform) input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="radio"]:not(:checked) + label:after,form:not(.myform) input[type="radio"]:checked + label:after {
+.tag-form input[type="checkbox"]:not(:checked) + label:after,.tag-form input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="radio"]:not(:checked) + label:after,form:not(.myform) input[type="radio"]:checked + label:after {
     background: url(../images/check.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10px auto
 }
 
-form:not(.myform) input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="radio"]:not(:checked) + label:after {
+.tag-form input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="checkbox"]:not(:checked) + label:after,form:not(.myform) input[type="radio"]:not(:checked) + label:after {
     opacity: 0
 }
 
-form:not(.myform) input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="radio"]:checked + label:after {
+.tag-form input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="checkbox"]:checked + label:after,form:not(.myform) input[type="radio"]:checked + label:after {
     opacity: 1
 }
 
-form:not(.myform) input[type="checkbox"]:disabled:not(:checked) + label:before,form:not(.myform) input[type="checkbox"]:disabled:checked + label:before,form:not(.myform) input[type="radio"]:disabled:not(:checked) + label:before,form:not(.myform) input[type="radio"]:disabled:checked + label:before {
+.tag-form input[type="checkbox"]:disabled:not(:checked) + label:before,.tag-form input[type="checkbox"]:disabled:checked + label:before,form:not(.myform) input[type="checkbox"]:disabled:not(:checked) + label:before,form:not(.myform) input[type="checkbox"]:disabled:checked + label:before,form:not(.myform) input[type="radio"]:disabled:not(:checked) + label:before,form:not(.myform) input[type="radio"]:disabled:checked + label:before {
     -webkit-box-shadow: none;
     box-shadow: none;
     border-color: #ccc;
     background-color: #ededed
 }
 
-form:not(.myform) input[type="checkbox"]:disabled:checked + label:after,form:not(.myform) input[type="radio"]:disabled:checked + label:after {
+.tag-form input[type="checkbox"]:disabled:checked + label:after,form:not(.myform) input[type="checkbox"]:disabled:checked + label:after,form:not(.myform) input[type="radio"]:disabled:checked + label:after {
     color: #aaa
 }
 
-form:not(.myform) input[type="checkbox"]:disabled + label,form:not(.myform) input[type="radio"]:disabled + label {
+.tag-form input[type="checkbox"]:disabled + label,form:not(.myform) input[type="checkbox"]:disabled + label,form:not(.myform) input[type="radio"]:disabled + label {
     color: #aaa
 }
 
