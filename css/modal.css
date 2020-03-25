@@ -846,3 +846,7 @@ form.tm-form label {
     justify-content: space-between;
     align-items: center;
 }
+
+.intl-tel-input .country-list {
+    max-width: 300px;
+}

@@ -6333,10 +6333,10 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     margin-bottom: 10px
 }
 
-.checkout__summary > div > ul > li ul li:before, .checkout__summary > div > ul > li ul li:after {
-    content: " ";
-    display: table
-}
+/*.checkout__summary > div > ul > li ul li:before, .checkout__summary > div > ul > li ul li:after {*/
+    /*content: " ";*/
+    /*display: table*/
+/*}*/
 
 .checkout__summary > div > ul > li ul li:after {
     clear: both
