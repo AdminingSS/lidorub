@@ -662,12 +662,12 @@
     margin-bottom: 20px;
 }
 
-.tag-form:not(.myform) input.tm-input[type="checkbox"]:not(:checked), .tag-form:not(.myform) input.tm-input[type="checkbox"]:checked, .tag-form:not(.myform) {
+form:not(.myform) input.tm-input[type="checkbox"]:not(:checked), form:not(.myform) input.tm-input[type="checkbox"]:checked, form:not(.myform) {
     position: relative;
     left: auto;
 }
 
-.tag-form.tm-form .tm-input[type="checkbox"] {
+form.tm-form .tm-input[type="checkbox"] {
     width: 18px;
     height: 18px;
     /*-webkit-appearance: checkbox;*/
@@ -678,7 +678,7 @@
     vertical-align: sub;
 }
 
-.tag-form.tm-form .tm-input[type="checkbox"]:checked::before {
+form.tm-form .tm-input[type="checkbox"]:checked::before {
     position: absolute;
     display: block;
     content: '';
@@ -692,7 +692,7 @@
     background-size: 10px auto;
 }
 
-.tag-form.tm-form label {
+form.tm-form label {
     font-size: 16px;
     display: block;
     text-transform: uppercase;
@@ -700,7 +700,7 @@
     margin-bottom: 10px;
 }
 
-.reservation-tunnel .step.step1 .tag-form .content .form-item .block label {
+.reservation-tunnel .step.step1 form .content .form-item .block label {
     min-width: 0;
     width: auto;
     color: #333333;
