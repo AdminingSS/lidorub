@@ -864,3 +864,25 @@ form .tm-form label {
 .tm-form .content {
     margin-bottom: 20px;
 }
+
+.tag-form .visap + label:before {
+    background-image: url(../images/visa-off.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.tag-form .visap + label:after {
+    background-image: url(../images/visa-on.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.tag-form .paypalp + label:before {
+
+}
+
+.tag-form .paypalp + label:after {
+
+}
