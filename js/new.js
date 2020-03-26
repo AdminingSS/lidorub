@@ -9,6 +9,10 @@ if (typeof prod === "undefined") {
 
     };
 
+    var recount = function () {
+
+    };
+
     var input = document.querySelector("#ph");
     window.iti =window.intlTelInput(input,{
         utilsScript: "./vendor/tel4/utils.js?1549804213570",
@@ -714,8 +718,8 @@ $(document).ready(function () {
 
             const $showMoreBlock = $(
                 '<div class="show-more-block">\n' +
-                '    <a href="#" class="show-menu">Показать\n' +
-                '    подробности</a>' +
+                '    <a href="#" class="show-menu">Show\n' +
+                '    details</a>' +
                 '</div>');
 
             $rawData.appendTo($eventList);
@@ -752,13 +756,13 @@ $(document).ready(function () {
 
                     if (!openMore) {
                         $containerWhite.slideDown(500).fadeIn({duration: 500, queue: false});
-                        $showTrigger.html('Скрыть подробности');
+                        $showTrigger.html('Hide details');
                         openMore = true;
                         $containerWhite.find('.carousel-inner').slick();
                     }
                     else {
                         $containerWhite.fadeOut(500).slideUp({duration: 500, queue: false});
-                        $showTrigger.html('Показать подробности');
+                        $showTrigger.html('Show details');
                         openMore = false;
                         $containerWhite.find('.carousel-inner').slick('unslick');
                     }
@@ -944,7 +948,7 @@ $(document).ready(function () {
 
 
             $('<div class="form-group button-group">\n' +
-                '    <a class="btn next1 js-order-modal-trigger-2" href="#">Подтвердить заказ</a>\n' +
+                '    <a class="btn next1 js-order-modal-trigger-2" href="#">Confirm order</a>\n' +
                 '</div>').appendTo($destinationHolder);
 
             fixImages($destinationHolder);
@@ -974,6 +978,7 @@ $(document).ready(function () {
                 e.preventDefault();
                 $orderModal.hide();
                 $orderModal2.show();
+                recount();
             });
         }
 
@@ -1016,8 +1021,8 @@ $(document).ready(function () {
 
             const $showMoreBlock = $(
                 '<div class="show-more-block">\n' +
-                '    <a href="#" class="show-menu">Показать\n' +
-                '    подробности</a>' +
+                '    <a href="#" class="show-menu">Show\n' +
+                '    details</a>' +
                 '</div>');
 
             $rawData.appendTo($destinationHolder);
@@ -1052,13 +1057,13 @@ $(document).ready(function () {
 
                     if (!openMore) {
                         $containerWhite.slideDown(500).fadeIn({duration: 500, queue: false});
-                        $showTrigger.html('Скрыть подробности');
+                        $showTrigger.html('Hide details');
                         openMore = true;
                         $containerWhite.find('.carousel-inner').slick();
                     }
                     else {
                         $containerWhite.fadeOut(500).slideUp({duration: 500, queue: false});
-                        $showTrigger.html('Показать подробности');
+                        $showTrigger.html('Show details');
                         openMore = false;
                         $containerWhite.find('.carousel-inner').slick('unslick');
                     }
@@ -1207,7 +1212,7 @@ $(document).ready(function () {
 
     //
     (() => {
-        const $scrollbars = $('.checkout__content:not(.checkout__summary), .reservation-tunnel .step.step1');
+        const $scrollbars = $('.checkout__content, .reservation-tunnel .step.step1');
 
         $scrollbars.mCustomScrollbar({
             //scrollbarPosition: "outside",

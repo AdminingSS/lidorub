@@ -865,24 +865,10 @@ form .tm-form label {
     margin-bottom: 20px;
 }
 
-.tag-form .visap + label:before {
-    background-image: url(../images/visa-off.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+.mCSB_inside>.mCSB_container {
+    margin-right: 45px;
 }
 
-.tag-form .visap + label:after {
-    background-image: url(../images/visa-on.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.tag-form .paypalp + label:before {
-
-}
-
-.tag-form .paypalp + label:after {
-
-}
+/*.tm-modal #nav .container:nth-of-type(1) ul.nav-primary > li:last-child > a span:before {*/
+    /*display: none;*/
+/*}*/
