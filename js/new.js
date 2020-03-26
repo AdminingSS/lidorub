@@ -1128,7 +1128,7 @@ $(document).ready(function () {
     //gift check transfer
     (() => {
         const $giftTrigger = $('.js-gift-trigger');
-        const $giftChecker = $('#edit-is-gift-yes');
+        const $giftChecker = $('#edit-is-gift-yes, #edit-is-gift-yes1');
 
         $giftTrigger.on('click', function () {
             $giftChecker.click();
@@ -1219,20 +1219,30 @@ $(document).ready(function () {
     })();
 
     (() => {
-        const $giftYes = $('#edit-is-gift-yes');
-        const $giftNo = $('#edit-is-gift-no');
+        const $giftYes = $('#edit-is-gift-yes, #edit-is-gift-yes1');
+        const $giftNo = $('#edit-is-gift-no, #edit-is-gift-no1');
         const $giftEdit = $('#edit-gift');
 
         $giftYes.on('change', function () {
+
             if($(this).prop('checked') === true) {
                 $giftEdit.addClass('active');
+                $giftYes.each(function () {
+                    $(this).prop('checked', true);
+                })
             }
         });
 
         $giftNo.on('change', function () {
+
             if($(this).prop('checked') === true) {
                 $giftEdit.removeClass('active');
+                $giftNo.each(function () {
+                    $(this).prop('checked', true);
+                })
             }
         });
     })();
+
+
 });
