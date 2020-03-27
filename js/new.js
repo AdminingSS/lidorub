@@ -298,7 +298,7 @@ $(document).ready(function () {
                     e.toggle(t)
                 }), this._lang.on(Event.CLICK, function (t) {
                     e.level(t)
-                }), t(".language-switcher-language-url, .currency-switcher-currency-url").on("click", function () {
+                }), t(".language-switcher-language-url").on("click", function () {
                     0 == t(i).scrollTop() && t("html, body").animate({scrollTop: t(i).height() - 1}, 1e3, function () {
                         t(".topnav-container").removeClass("topper"), i.setTimeout(function () {
                             t(".topnav-container").removeClass("topper")
@@ -1265,5 +1265,21 @@ $(document).ready(function () {
         });
     })();
 
+    (()=>{
+        const $langDropdown = $('.language-switcher-language-url .links');
+
+        $langDropdown.each(function () {
+            const $thisDropdown = $(this);
+            let $thisItem = $thisDropdown.find('.is-active');
+            let $thisTriggers = $thisDropdown.find('li a');
+
+            $thisTriggers.on('click', function () {
+                if($(this).parent().is($thisItem)) return;
+                $thisItem.removeClass('is-active');
+                $thisItem = $(this).parent();
+                $thisItem.prependTo($thisDropdown).addClass('is-active');
+            })
+        })
+    })();
 
 });
