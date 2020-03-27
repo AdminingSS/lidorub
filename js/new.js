@@ -916,6 +916,10 @@ $(document).ready(function () {
                 infinite: true
             });
 
+            $('[data-gallery="multiimages"]').fancybox({
+
+            });
+
             $panelAccordions.each(function () {
                 const $trigger = $(this).find('.panel-heading a');
                 const $data = $(this).find('.panel-collapse');
