@@ -869,7 +869,7 @@ form .tm-form label {
     margin-right: 45px;
 }
 
-.js-total-price li {
+#js-total-price li {
     display: flex;
     justify-content: space-between;
     align-items: center;
