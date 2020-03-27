@@ -916,8 +916,11 @@ $(document).ready(function () {
                 infinite: true
             });
 
-            $('[data-gallery="multiimages"]').fancybox({
+            $destinationHolder.find('[data-gallery="multiimages"]').attr('data-fancybox', 'gallery');
 
+            $destinationHolder.find('[data-gallery="multiimages"]').fancybox({
+                arrows: true,
+                loop: true
             });
 
             $panelAccordions.each(function () {
