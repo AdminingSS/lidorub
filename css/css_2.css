@@ -5670,13 +5670,13 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     line-height: 1.2
 }
 
-.checkout p a {
+.checkout p a, .js-deliv-modal-trigger {
     font-weight: 600;
     color: #0f1e48;
     text-decoration: none
 }
 
-.checkout p a:hover {
+.checkout p a:hover, .js-deliv-modal-trigger:hover {
     color: #b8a15d
 }
 
