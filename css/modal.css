@@ -869,6 +869,12 @@ form .tm-form label {
     margin-right: 45px;
 }
 
+.js-total-price li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /*.tm-modal #nav .container:nth-of-type(1) ul.nav-primary > li:last-child > a span:before {*/
     /*display: none;*/
 /*}*/

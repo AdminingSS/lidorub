@@ -6235,7 +6235,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
     margin-top: 45px
 }
 
-.checkout__summary .mCSB_container > div:nth-of-type(4):before {
+.checkout__summary .mCSB_container > div:nth-of-type(3):before {
     display: block;
     content: "";
     background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='3' viewBox='0 0 10 3'%3E%3Ccircle fill='%23b8a15d' cx='5' cy='1.5' r='1.5' /%3E%3C/svg%3E");
@@ -6381,7 +6381,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
 }
 
 .checkout__summary .mCSB_container > div > ul > li span:nth-of-type(2) {
-    float: right;
+    /*float: right;*/
     font-weight: 600;
     font-style: italic;
     font-size: 16px
