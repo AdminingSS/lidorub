@@ -875,11 +875,11 @@ form .tm-form label {
     align-items: center;
 }
 
-.js-submit-stage-1 {
+.js-submit-stage-1, .show-more-block .show-menu {
     position: relative;
 }
 
-.js-submit-stage-1::before {
+.js-submit-stage-1::before, .show-more-block .show-menu::before {
     display: none;
     position: absolute;
     content: '';
@@ -892,7 +892,7 @@ form .tm-form label {
     left: 0;
 }
 
-.js-submit-stage-1.loading::before {
+.js-submit-stage-1.loading::before, .show-more-block .show-menu.loading::before {
     display: block;
 }
 

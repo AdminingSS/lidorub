@@ -1540,7 +1540,7 @@ section:focus {
     clear: both
 }
 
-.dropdown, #nav .container:nth-of-type(1) .language-switcher-language-url, #nav #cookie .cookie__content:nth-of-type(1) .language-switcher-language-url, #cookie #nav .cookie__content:nth-of-type(1) .language-switcher-language-url {
+.dropdown, #nav .container:nth-of-type(1) .language-switcher-language-url, .currency-switcher-currency-url, #nav #cookie .cookie__content:nth-of-type(1) .language-switcher-language-url, .currency-switcher-currency-url, #cookie #nav .cookie__content:nth-of-type(1) .language-switcher-language-url {
     position: relative
 }
 
@@ -4754,7 +4754,7 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
 }
 
 @media screen and (min-width: 1025px) {
-    #nav .container:nth-of-type(1) .language-switcher-language-url, #nav #cookie .cookie__content:nth-of-type(1) .language-switcher-language-url, #cookie #nav .cookie__content:nth-of-type(1) .language-switcher-language-url {
+    #nav .container:nth-of-type(1) .language-switcher-language-url, .currency-switcher-currency-url, #nav #cookie .cookie__content:nth-of-type(1) .language-switcher-language-url, .currency-switcher-currency-url, #cookie #nav .cookie__content:nth-of-type(1) .language-switcher-language-url {
         min-width: 59px
     }
 }

@@ -298,7 +298,7 @@ $(document).ready(function () {
                     e.toggle(t)
                 }), this._lang.on(Event.CLICK, function (t) {
                     e.level(t)
-                }), t(".language-switcher-language-url").on("click", function () {
+                }), t(".language-switcher-language-url, .currency-switcher-currency-url").on("click", function () {
                     0 == t(i).scrollTop() && t("html, body").animate({scrollTop: t(i).height() - 1}, 1e3, function () {
                         t(".topnav-container").removeClass("topper"), i.setTimeout(function () {
                             t(".topnav-container").removeClass("topper")
@@ -749,7 +749,9 @@ $(document).ready(function () {
 
                     if (!loaded) {
                         //ajax2 here
+                        $showTrigger.addClass('loading');
                         await ajaxStageOneShowMore($moreBlock, linkHref);
+                        $showTrigger.removeClass('loading');
                         loaded = true;
                     }
 
