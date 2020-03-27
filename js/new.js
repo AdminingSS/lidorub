@@ -685,7 +685,9 @@ $(document).ready(function () {
 
             let $triggerButton;
 
+            $(this).addClass('loading');
             await ajaxStageOne();
+            $(this).removeClass('loading');
 
             const $jsSubmitStageTwo = $('.event-box .btn.btn-danger');
 
@@ -697,6 +699,7 @@ $(document).ready(function () {
                 const $oldData = $('.step.step3 .options .options, .step.step3 .options >div');
                 $oldData.remove();
 
+                $('.reservation-tunnel .step.step3').addClass('loading');
                 ajaxStageTwo(fixedHref);
 
             });
@@ -929,6 +932,7 @@ $(document).ready(function () {
         //ajax and processing / modal 1-3 (not done)
         async function ajaxStageTwo(href) {
             //ajax imitation
+
             const $destinationHolder = $('.reservation-tunnel .step.step3 .options');
             const $rawHtml = await get_place_selector(href);
             const $rawData = $($rawHtml);
@@ -960,7 +964,7 @@ $(document).ready(function () {
             $orderModal.find('.step3 .inactive').fadeOut();
             $orderModal.find('.step3 .options').slideDown(500).fadeIn({duration: 500, queue: false});
 
-            $orderModal.find('.reservation-tunnel .step.step3').addClass('active');
+            $orderModal.find('.reservation-tunnel .step.step3').addClass('active').removeClass('loading');
 
             init_scheme();
 
