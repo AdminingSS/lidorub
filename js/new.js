@@ -1084,7 +1084,7 @@ $(document).ready(function () {
         function fixImages($holder) {
             const $playbillContent = $holder;
             const $playbillImages = $playbillContent.find('img');
-            const $playbillLinks = $playbillContent.find('a:not(.place-info, .btn)');
+            const $playbillLinks = $playbillContent.find('>.panel a:not(.place-info, .btn)');
 
             $playbillImages.each(function () {
                 const $currImg = $(this);
