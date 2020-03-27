@@ -961,6 +961,15 @@ form:not(.myform) label {
     box-sizing: border-box
 }
 
+form:not(.myform) .step3 label {
+    color: black;
+}
+
+form:not(.myform) .step3 label.select_button {
+    background-color: #b8a15d;
+    border-color: #b8a15d;
+}
+
 form:not(.myform) input, form:not(.myform) select, form:not(.myform) textarea {
     outline: none;
     -webkit-appearance: none;
