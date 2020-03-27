@@ -728,7 +728,7 @@ $(document).ready(function () {
             $rawData.appendTo($eventList);
             $eventList.appendTo($destinationHolder);
 
-            fixImages($destinationHolder);
+            fixImages($destinationHolder, 2);
 
             const $eventBoxes = $destinationHolder.find('.event-box');
             $showMoreBlock.appendTo($eventBoxes);
@@ -1081,10 +1081,13 @@ $(document).ready(function () {
         }
 
         //playbill images and image links fix (to check)
-        function fixImages($holder) {
+        function fixImages($holder, type = 1) {
             const $playbillContent = $holder;
             const $playbillImages = $playbillContent.find('img');
-            const $playbillLinks = $playbillContent.find('>.panel a:not(.place-info, .btn)');
+            if(type === 2) {
+                const $playbillLinks = $playbillContent.find('>.panel a:not(.place-info, .btn)');
+            }
+            const $playbillLinks = $playbillContent.find('a:not(.place-info, .btn)');
 
             $playbillImages.each(function () {
                 const $currImg = $(this);
