@@ -841,7 +841,7 @@ form .tm-form label {
     padding: 30px;
 }
 
-.checkout__summary > div > ul > li ul li {
+.checkout__summary .mCSB_container > div > ul > li ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
