@@ -615,6 +615,65 @@ $(document).ready(function () {
         const $mainForm = $('.js-form-main');
         const $modalFormOne = $orderModal.find('.step1 form');
 
+        const $stepOneSection = $('.reservation-tunnel .step1');
+        const $stepTwoSection = $('.reservation-tunnel .step2');
+        const $stepThreeSection = $('.reservation-tunnel .step3');
+
+        const $navController = $('.mobile-nav .step-nav');
+
+        const $mobileTriggerOne = $navController.find('.mobile-nav-step1');
+        const $mobileTriggerTwo = $navController.find('.mobile-nav-step2');
+        const $mobileTriggerThree = $navController.find('.mobile-nav-step3');
+
+        const $mobileTitleOne = $navController.find('.mobile-nav-step1 + span');
+        const $mobileTitleTwo = $navController.find('.mobile-nav-step2 + span');
+        const $mobileTitleThree = $navController.find('.mobile-nav-step3 + span');
+
+        $mobileTriggerOne.on('click', function () {
+            if($(this).hasClass('selected')) return;
+            $stepTwoSection.removeClass('anim');
+            $stepThreeSection.removeClass('anim');
+            $stepOneSection.addClass('anim');
+
+            $mobileTriggerOne.addClass('selected');
+            $mobileTitleOne.addClass('selected');
+
+            $mobileTriggerTwo.removeClass('selected');
+            $mobileTriggerThree.removeClass('selected');
+            $mobileTitleTwo.removeClass('selected');
+            $mobileTitleThree.removeClass('selected');
+        });
+
+        $mobileTriggerTwo.on('click', function () {
+            if(!$(this).hasClass('active') || $(this).hasClass('selected')) return;
+            $stepOneSection.removeClass('anim');
+            $stepThreeSection.removeClass('anim');
+            $stepTwoSection.addClass('anim');
+
+            $mobileTriggerTwo.addClass('selected');
+            $mobileTitleTwo.addClass('selected');
+
+            $mobileTriggerOne.removeClass('selected');
+            $mobileTriggerThree.removeClass('selected');
+            $mobileTitleOne.removeClass('selected');
+            $mobileTitleThree.removeClass('selected');
+        });
+
+        $mobileTriggerThree.on('click', function () {
+            if(!$(this).hasClass('active') || $(this).hasClass('selected')) return;
+            $stepOneSection.removeClass('anim');
+            $stepTwoSection.removeClass('anim');
+            $stepThreeSection.addClass('anim');
+
+            $mobileTriggerThree.addClass('selected');
+            $mobileTitleThree.addClass('selected');
+
+            $mobileTriggerOne.removeClass('selected');
+            $mobileTriggerTwo.removeClass('selected');
+            $mobileTitleOne.removeClass('selected');
+            $mobileTitleTwo.removeClass('selected');
+        });
+
         $theaterModalClose.on('click', function (e) {
             if (e.target !== this) return;
             $theaterModal.hide();
@@ -701,6 +760,13 @@ $(document).ready(function () {
             $(this).addClass('loading');
             await ajaxStageOne();
             $(this).removeClass('loading');
+            $stepOneSection.removeClass('anim');
+            $stepTwoSection.addClass('anim');
+            $mobileTitleOne.removeClass('selected');
+            $mobileTitleTwo.addClass('active').addClass('selected');
+            $mobileTriggerOne.removeClass('selected');
+            $mobileTitleThree.removeClass('active').removeClass('selected');
+            $mobileTriggerThree.removeClass('active').removeClass('selected');
 
             const $jsSubmitStageTwo = $('.event-box .btn.btn-danger');
 
@@ -987,6 +1053,12 @@ $(document).ready(function () {
             $orderModal.find('.step3 .options').slideDown(500).fadeIn({duration: 500, queue: false});
 
             $orderModal.find('.reservation-tunnel .step.step3').addClass('active').removeClass('loading');
+
+            $stepTwoSection.removeClass('anim');
+            $stepThreeSection.addClass('anim');
+            $mobileTitleTwo.removeClass('selected');
+            $mobileTitleThree.addClass('active').addClass('selected');
+            $mobileTriggerTwo.removeClass('selected');
 
             init_scheme();
 
@@ -1276,6 +1348,18 @@ $(document).ready(function () {
                 })
             }
         });
+    })();
+
+    //mobile modal contol
+    (()=>{
+        const $navController = $('.mobile-nav .step-nav');
+        const $navControllerItems = $navController.find('.step-nav-item');
+        const $navControllerTriggers = $navControllerItems.find('a');
+        const $sectionPanels = $('.reservation-tunnel > section');
+        const $stageOneTrigger = $('');
+        const $stageTwoTriggers = $('');
+
+
     })();
 
     // (()=>{

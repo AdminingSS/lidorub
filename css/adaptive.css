@@ -2,11 +2,27 @@
     .section .title {
         font-size: 54px;
     }
+
+    .quantity .more {
+        margin-right: -3px;
+    }
+
+    .quantity .less, .quantity .more {
+        width: 20px;
+    }
 }
 
 @media (max-width: 1199px) {
     .section .title {
         font-size: 42px;
+    }
+
+    .reservation-tunnel .step.step1 .offrir-accroche {
+        padding: 30px 5px 30px 50px;
+    }
+
+    .event-list h3 {
+        font-size: 22px;
     }
 }
 
@@ -22,6 +38,11 @@
 
     .sitemap {
         padding: 0;
+    }
+
+    #js-book-btn-modele-mobile.visibility-hidden {
+        visibility: visible;
+        opacity: 1;
     }
 }
 
