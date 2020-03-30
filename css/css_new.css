@@ -666,6 +666,14 @@
     background-color: #fff;
 }
 
+#link a {
+    color: #fbfbfb;
+}
+
+#link a:hover {
+    color: #fefefe;
+}
+
 /*#nav .container:nth-of-type(1) ul.nav-primary > li > span {*/
     /*color: #333;*/
 /*}*/
