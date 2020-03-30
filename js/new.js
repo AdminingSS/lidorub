@@ -1432,7 +1432,7 @@ $(document).ready(function () {
             $checkoutFormStageTwo.addClass('active');
         });
 
-        $navControllerTriggerTwo.on('click', function () {
+        $navControllerTriggerThree.on('click', function () {
             if($(this).hasClass('selected') || !$(this).hasClass('active')) return;
 
             $navControllerTriggerOne.removeClass('selected');

@@ -170,12 +170,16 @@
         padding: 20px;
     }
 
-    .checkout__form legend {
-        margin-bottom: 0;
+    .checkout__form legend, .form-item-cgv, .security-mention {
+        margin-bottom: 10px;
     }
 
     .checkout__form .btn {
         margin-top: 0;
+    }
+
+    .checkout__summary {
+        padding: 15px 15px 0;
     }
 }
 
@@ -187,9 +191,41 @@
     .checkout__form {
         padding: 10px;
     }
+
+    .checkout__form legend {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+    }
+
+    .checkout__form legend:before {
+        font-size: 16px;
+    }
+
+    .checkout-information-form .security-mention {
+        font-size: 12px;
+        line-height: 1.2em;
+    }
+
+    .checkout__summary .mCSB_container > p {
+        font-size: 18px;
+    }
+
+    .checkout__summary .mCSB_container > div {
+        margin-top: 20px;
+    }
+
+    .checkout__summary .mCSB_container > div + div {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 374px) {
+
+    body {
+        font-size: 14px;
+    }
+
     .section .title {
         font-size: 24px;
     }
