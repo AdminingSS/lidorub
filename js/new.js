@@ -760,11 +760,16 @@ $(document).ready(function () {
             $(this).addClass('loading');
             await ajaxStageOne();
             $(this).removeClass('loading');
+
             $stepOneSection.removeClass('anim');
             $stepTwoSection.addClass('anim');
+
             $mobileTitleOne.removeClass('selected');
             $mobileTitleTwo.addClass('active').addClass('selected');
+
             $mobileTriggerOne.removeClass('selected');
+            $mobileTriggerTwo.addClass('active').addClass('selected');
+
             $mobileTitleThree.removeClass('active').removeClass('selected');
             $mobileTriggerThree.removeClass('active').removeClass('selected');
 
@@ -1056,9 +1061,12 @@ $(document).ready(function () {
 
             $stepTwoSection.removeClass('anim');
             $stepThreeSection.addClass('anim');
+
             $mobileTitleTwo.removeClass('selected');
             $mobileTitleThree.addClass('active').addClass('selected');
+
             $mobileTriggerTwo.removeClass('selected');
+            $mobileTriggerThree.addClass('active').addClass('selected');
 
             init_scheme();
 
