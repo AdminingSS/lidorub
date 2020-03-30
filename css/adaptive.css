@@ -44,6 +44,113 @@
         visibility: visible;
         opacity: 1;
     }
+
+    .reservation-tunnel .step.step1 {
+        min-height: inherit;
+    }
+
+    .event-list, .options .options {
+        max-height: calc(100vh - 240px);
+    }
+
+    .step.step3 .options > .form-group:last-child {
+        bottom: 50px;
+    }
+
+    .reservation-tunnel .step {
+        height: 200px;
+        min-height: calc(100vh - 200px);
+    }
+
+    .reservation-tunnel .mobile-nav .step-nav {
+        margin-top: 0;
+    }
+
+    #nav .container:nth-of-type(2) ul {
+        padding: 5px 10px;
+    }
+
+    #nav {
+        height: 50px;
+    }
+
+    #nav .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .reservation-tunnel .mobile-nav .step-nav {
+        padding: 5px calc(5% + 33px) 20px;
+    }
+
+    .reservation-tunnel .step.step1 {
+        padding: 5px 20px;
+    }
+
+    .reservation-tunnel .step .title {
+        font-size: 18px;
+        margin: 0 0 5px 0;
+    }
+
+    form .tm-form label {
+        font-size: 14px;
+    }
+
+    .reservation-tunnel .step .quantity select {
+        font-size: 24px;
+    }
+
+    .reservation-tunnel .step.step2.active {
+        padding: 5px 20px;
+    }
+
+    .reservation-tunnel .step.step2 .title {
+        padding: 0;
+    }
+
+    .event-list .dd {
+        margin-top: 0 !important;
+    }
+
+    .reservation-tunnel .step.step3 {
+        padding: 5px 20px;
+    }
+
+    .reservation-tunnel .step.step3 {
+        padding: 0;
+        margin: 0;
+    }
+
+    #map svg {
+        display: block;
+        margin: auto;
+    }
+
+    .reservation-tunnel .step {
+        width: 33%;
+        height: 200px;
+        min-height: calc(100vh - 106px);
+        padding-top: 33px;
+        text-align: left;
+        position: relative;
+        visibility: visible;
+    }
+
+    .event-list, .options .options {
+        max-height: calc(100vh - 132px);
+    }
+
+    .step3 .options .js-custom-scrollbar {
+        max-height: calc(100vh - 293px);
+    }
+
+    .js-order-modal-trigger-2 {
+        padding: 10px 25px;
+    }
+
+    #nav .container:nth-of-type(3) {
+        border-top: none;
+    }
 }
 
 @media (max-width: 768px) {
