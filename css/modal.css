@@ -916,3 +916,7 @@ form .tm-form label {
 .reservation-tunnel .step.step3.loading::before {
     display: block;
 }
+
+.checkout__form #edit-payement-mode {
+    height: 90px;
+}

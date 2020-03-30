@@ -1358,15 +1358,91 @@ $(document).ready(function () {
         });
     })();
 
-    //mobile modal contol
+    //mobile modal2 contols
     (()=>{
-        const $navController = $('.mobile-nav .step-nav');
-        const $navControllerItems = $navController.find('.step-nav-item');
-        const $navControllerTriggers = $navControllerItems.find('a');
-        const $sectionPanels = $('.reservation-tunnel > section');
-        const $stageOneTrigger = $('');
-        const $stageTwoTriggers = $('');
+        const $navController = $('.checkout__nav ul');
 
+        const $navControllerTriggerOne = $navController.find('li:first-child a');
+        const $navControllerTitleOne = $navController.find('li:first-child .title');
+
+        const $navControllerTriggerTwo = $navController.find('li:nth-child(2) a');
+        const $navControllerTitleTwo = $navController.find('li:nth-child(2) .title');
+
+        const $navControllerTriggerThree = $navController.find('li:last-child a');
+        const $navControllerTitleThree = $navController.find('li:last-child .title');
+
+        const $checkoutFormStageOne = $('.checkout__form:first-child');
+        const $checkoutFormStageTwo = $('.checkout__form:nth-child(2)');
+        const $checkoutFormStageThree = $('.checkout__summary');
+
+        const $checkoutFormTriggerOne = $checkoutFormStageOne.find('.btn');
+        const $checkoutFormTriggerTwo = $checkoutFormStageTwo.find('.btn');
+
+        $checkoutFormTriggerOne.on('click', function (e) {
+            e.preventDefault();
+
+            if($(this).prop('disabled')) return;
+
+            $checkoutFormStageOne.removeClass('active');
+            $checkoutFormStageTwo.addClass('active');
+
+            $navControllerTriggerOne.removeClass('selected');
+            $navControllerTitleOne.removeClass('selected');
+
+            $navControllerTriggerTwo.addClass('active').addClass('selected');
+            $navControllerTitleTwo.addClass('active').addClass('selected');
+        });
+
+        $checkoutFormTriggerTwo.on('click', function (e) {
+            e.preventDefault();
+
+            if($(this).prop('disabled')) return;
+
+            $checkoutFormStageTwo.removeClass('active');
+            $checkoutFormStageThree.addClass('active');
+
+            $navControllerTriggerTwo.removeClass('selected');
+            $navControllerTitleTwo.removeClass('selected');
+
+            $navControllerTriggerThree.addClass('active').addClass('selected');
+            $navControllerTitleThree.addClass('active').addClass('selected');
+        });
+
+        $navControllerTriggerOne.on('click', function () {
+            if($(this).hasClass('selected')) return;
+
+            $navControllerTriggerTwo.removeClass('selected');
+            $navControllerTriggerThree.removeClass('selected');
+            $navControllerTriggerOne.addClass('selected');
+
+            $checkoutFormStageTwo.removeClass('active');
+            $checkoutFormStageThree.removeClass('active')
+            $checkoutFormStageOne.addClass('active');
+        });
+
+        $navControllerTriggerTwo.on('click', function () {
+            if($(this).hasClass('selected') || !$(this).hasClass('active')) return;
+
+            $navControllerTriggerOne.removeClass('selected');
+            $navControllerTriggerThree.removeClass('selected');
+            $navControllerTriggerTwo.addClass('selected');
+
+            $checkoutFormStageOne.removeClass('active');
+            $checkoutFormStageThree.removeClass('active')
+            $checkoutFormStageTwo.addClass('active');
+        });
+
+        $navControllerTriggerTwo.on('click', function () {
+            if($(this).hasClass('selected') || !$(this).hasClass('active')) return;
+
+            $navControllerTriggerOne.removeClass('selected');
+            $navControllerTriggerTwo.removeClass('selected');
+            $navControllerTriggerThree.addClass('selected');
+
+            $checkoutFormStageOne.removeClass('active');
+            $checkoutFormStageTwo.removeClass('active')
+            $checkoutFormStageThree.addClass('active');
+        });
 
     })();
 
