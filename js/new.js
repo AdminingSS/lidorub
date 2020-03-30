@@ -96,31 +96,18 @@ function preventScale() {
     });
 }
 
-(() => {
-    const countryData = window.intlTelInputGlobals.getCountryData();
+function fixDrops(){
+    const $langDropdown = $('.language-switcher-language-url .links');
 
-    fillSelect("#address-country");
+    $langDropdown.each(function () {
+        const $thisDropdown = $(this);
+        let $thisItem = $thisDropdown.find('.is-active');
 
-    function fillSelect(selector) {
-        const addressDropdown = document.querySelector(selector);
-        const optionNode = document.createElement("option");
-        optionNode.value = '';
-        optionNode.selected = true;
-        const textNode = document.createTextNode('-- Select Country --*');
-        optionNode.appendChild(textNode);
-        addressDropdown.appendChild(optionNode);
+        if($thisItem.index() === 0) return;
 
-        for (var i = 0; i < countryData.length; i++) {
-            const country = countryData[i];
-            const optionNode = document.createElement("option");
-            optionNode.value = country.iso2;
-            //if(optionNode.value == 'us') optionNode.selected = true;
-            const textNode = document.createTextNode(country.name);
-            optionNode.appendChild(textNode);
-            addressDropdown.appendChild(optionNode);
-        }
-    }
-})();
+        $thisItem.prependTo($thisDropdown);
+    })
+}
 
 // Детект мобильного браузера
 var isMobile = {
@@ -145,6 +132,32 @@ var isMobile = {
 };
 
 $(document).ready(function () {
+
+    (() => {
+        const countryData = window.intlTelInputGlobals.getCountryData();
+
+        fillSelect("#address-country");
+
+        function fillSelect(selector) {
+            const addressDropdown = document.querySelector(selector);
+            const optionNode = document.createElement("option");
+            optionNode.value = '';
+            optionNode.selected = true;
+            const textNode = document.createTextNode('-- Select Country --*');
+            optionNode.appendChild(textNode);
+            addressDropdown.appendChild(optionNode);
+
+            for (var i = 0; i < countryData.length; i++) {
+                const country = countryData[i];
+                const optionNode = document.createElement("option");
+                optionNode.value = country.iso2;
+                //if(optionNode.value == 'us') optionNode.selected = true;
+                const textNode = document.createTextNode(country.name);
+                optionNode.appendChild(textNode);
+                addressDropdown.appendChild(optionNode);
+            }
+        }
+    })();
 
     //Top block code from mariinski
     //какие-то манипуляции
@@ -1265,21 +1278,21 @@ $(document).ready(function () {
         });
     })();
 
-    (()=>{
-        const $langDropdown = $('.language-switcher-language-url .links');
-
-        $langDropdown.each(function () {
-            const $thisDropdown = $(this);
-            let $thisItem = $thisDropdown.find('.is-active');
-            let $thisTriggers = $thisDropdown.find('li a');
-
-            $thisTriggers.on('click', function () {
-                if($(this).parent().is($thisItem)) return;
-                $thisItem.removeClass('is-active');
-                $thisItem = $(this).parent();
-                $thisItem.prependTo($thisDropdown).addClass('is-active');
-            })
-        })
-    })();
+    // (()=>{
+    //     const $langDropdown = $('.language-switcher-language-url .links');
+    //
+    //     $langDropdown.each(function () {
+    //         const $thisDropdown = $(this);
+    //         let $thisItem = $thisDropdown.find('.is-active');
+    //         let $thisTriggers = $thisDropdown.find('li a');
+    //
+    //         $thisTriggers.on('click', function () {
+    //             if($(this).parent().is($thisItem)) return;
+    //             $thisItem.removeClass('is-active');
+    //             $thisItem = $(this).parent();
+    //             $thisItem.prependTo($thisDropdown).addClass('is-active');
+    //         })
+    //     })
+    // })();
 
 });
