@@ -11,9 +11,14 @@ $(function(){
 function init_scheme(){
     if(landing == undefined) return;
 
-    const aspectRatio = landing.width / landing.height;
+
+    const oldWidth = landing.width;
+    const oldHeight = landing.height;
+    const aspectRatio = oldWidth / oldHeight;
     const newWidth = $('#map').width();
     const newHeight = newWidth / aspectRatio;
+    const oldToNewWidthRatio = oldWidth / newWidth;
+    const oldToNewHeightRatio = oldHeight / newHeight;
 
     raph = Raphael('map', newWidth, newHeight),
         attributes = {
@@ -29,7 +34,14 @@ function init_scheme(){
 
     for (var country in paths) {
 
-        var obj = Raphael.pathToRelative(raph.path(paths[country].path)).toString();
+        var preObj = Raphael.pathToRelative(raph.path(paths[country].path));
+        var firstX = preObj[0][1];
+        var firstY = preObg[0][2];
+        var newFirstX = firstX / oldToNewWidthRatio;
+        var newFirstY = firstY / oldToNewHeightRatio;
+        preObj[0][1] = newFirstX;
+        preObj[0][2] = newFirstY;
+        var obj = preObj.toString();
         obj.attr(attributes);
         arr[obj.id] = country;
         //obj.node.id="p"+paths[country].id;
