@@ -1069,6 +1069,13 @@ $(document).ready(function () {
             $mobileTriggerThree.addClass('active').addClass('selected');
 
             init_scheme();
+            const $svgMap = $('#map svg');
+            const mapW = $svgMap.attr('width');
+            const mapH = $svgMap.attr('height');
+            $svgMap.removeAttr('width').removeAttr('height');
+            $svgMap.attr('viewBox', '0 0 ' + mapW +' ' + mapH);
+            $svgMap.attr('preserveAspectRatio', 'xMidYMid meet');
+
 
             $orderModal.find('.reservation-tunnel .step.step3 .js-custom-scrollbar').mCustomScrollbar({
                 scrollbarPosition: "outside",
