@@ -36,7 +36,7 @@ function init_scheme(){
 
         var preObj = Raphael.pathToRelative(raph.path(paths[country].path));
         var firstX = preObj[0][1];
-        var firstY = preObg[0][2];
+        var firstY = preObj[0][2];
         var newFirstX = firstX / oldToNewWidthRatio;
         var newFirstY = firstY / oldToNewHeightRatio;
         preObj[0][1] = newFirstX;
