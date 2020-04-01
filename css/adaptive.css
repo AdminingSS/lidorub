@@ -262,3 +262,17 @@
 }
 
 /*modals*/
+
+/*map svg only*/
+
+/*@media (min-width: 1380px) and (max-width: 1484px) {*/
+    /*#map svg  {*/
+        /*transform: scale(0.8) translateX(-3%);*/
+    /*}*/
+/*}*/
+
+/*@media (min-width: 1025px) and (max-width: 1379px) {*/
+    /*#map svg  {*/
+        /*transform: scale(0.8) translateX(40px);*/
+    /*}*/
+/*}*/

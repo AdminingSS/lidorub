@@ -5,8 +5,12 @@ var arr;
 var mappoint_raphael;
 var objs = {};
 $(function(){
+
+    const aspectRatio = landing.width / landing.height;
+    const newWidth = $('#map').width();
+    const newHeight = newWidth / aspectRatio;
     
-    raph = Raphael('map', landing.width, landing.height),
+    raph = Raphael('map', newWidth, newHeight),
         attributes = {
             fill: hover_zone_color,
             'fill-opacity': '0',
@@ -16,7 +20,7 @@ $(function(){
 
         arr = new Array();
 
-        raph.image(landing.src, 0, 0, landing.width, landing.height);
+        raph.image(landing.src, 0, 0, newWidth, newHeight);
 
     for (var country in paths) {
         
@@ -75,6 +79,85 @@ $(function(){
 	$('.zonelist:first').prop('checked','checked');
 	if(objs['pp'+$('.zonelist:first').val()]) over_(objs['pp'+$('.zonelist:first').val()]);
 });
+
+function reInitRaph() {
+    const aspectRatio = landing.width / landing.height;
+    const newWidth = $('#map').width();
+    const newHeight = newWidth / aspectRatio;
+
+    // raph = Raphael('map', newWidth, newHeight),
+    //     attributes = {
+    //         fill: hover_zone_color,
+    //         'fill-opacity': '0',
+    //         'stroke-opacity': '0',
+    //         stroke: hover_zone_color,
+    //     };
+
+    raph.clear();
+
+    raph.setSize(newWidth, newHeight);
+
+    arr = new Array();
+
+    raph.image(landing.src, 0, 0, newWidth, newHeight);
+
+    for (var country in paths) {
+
+        var obj = raph.path(paths[country].path);
+        obj.attr(attributes);
+        arr[obj.id] = country;
+        //obj.node.id="p"+paths[country].id;
+        obj.mouseover(function(){
+            over_(this);
+
+        });
+        obj.mouseout(function(){
+            out_(this);
+        });
+
+        obj.click(function(){
+            $('#b'+paths[arr[this.id]].id).find('.zonelist').prop('checked','checked').change();
+            over_(this);
+        });
+
+        objs['pp'+paths[country].id] = obj;
+
+    }
+    $('.zoneb').mouseover(function(){
+        if(objs['pp'+$(this).data('id')]) over_(objs['pp'+$(this).data('id')]);
+    });
+    $('.zoneb').mouseout(function(){
+        if(!$(this).find('.zonelist').prop('checked')) {
+            if(objs['pp'+$(this).data('id')]) out_(objs['pp'+$(this).data('id')]);
+        }
+    });
+
+    $('.zoneb').click(function(){
+        if($(this).find('.zonelist').prop('checked')) {
+            if(objs['pp'+$(this).data('id')]) over_(objs['pp'+$(this).data('id')]);
+        }
+        $('.zonelist').each(function(){
+            if(!$(this).prop('checked')) {
+                if(objs['pp'+$(this).val()]) out_(objs['pp'+$(this).val()]);
+            }
+        });
+    });
+
+    $('.zonelist').change(function(){
+        if($(this).prop('checked')) {
+            $('.zonelist').each(function(){
+                if(!$(this).prop('checked')) {
+                    if(objs['pp'+$(this).val()]) out_(objs['pp'+$(this).val()]);
+                }
+            });
+            $('#z'+$(this).val()).prop('selected', 'selected');
+            $('#zoneprice').change();
+        }
+    });
+
+    $('.zonelist:first').prop('checked','checked');
+    if(objs['pp'+$('.zonelist:first').val()]) over_(objs['pp'+$('.zonelist:first').val()]);
+}
 
 function over_(obd)
 {	

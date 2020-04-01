@@ -920,3 +920,8 @@ form .tm-form label {
 .checkout__form #edit-payement-mode {
     height: 90px;
 }
+
+/*#map svg {*/
+    /*display: block;*/
+    /*margin: auto;*/
+/*}*/
