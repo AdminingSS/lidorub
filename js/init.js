@@ -29,7 +29,7 @@ function init_scheme(){
 
     for (var country in paths) {
 
-        var obj = Raphael.pathToRelative(raph.path(paths[country].path));
+        var obj = Raphael.pathToRelative(raph.path(paths[country].path)).toString();
         obj.attr(attributes);
         arr[obj.id] = country;
         //obj.node.id="p"+paths[country].id;
@@ -100,7 +100,7 @@ function reInitRaph() {
 
     for (var country in paths) {
 
-        var obj = Raphael.pathToRelative(raph.path(paths[country].path));
+        var obj = Raphael.pathToRelative(raph.path(paths[country].path)).toString();
         obj.attr(attributes);
         arr[obj.id] = country;
         //obj.node.id="p"+paths[country].id;
