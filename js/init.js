@@ -5,11 +5,16 @@ var arr;
 var mappoint_raphael;
 var objs = {};
 $(function(){
+  init_scheme();
+});
+
+function init_scheme(){
+    if(landing == undefined) return;
 
     const aspectRatio = landing.width / landing.height;
     const newWidth = $('#map').width();
     const newHeight = newWidth / aspectRatio;
-    
+
     raph = Raphael('map', newWidth, newHeight),
         attributes = {
             fill: hover_zone_color,
@@ -23,11 +28,11 @@ $(function(){
         raph.image(landing.src, 0, 0, newWidth, newHeight);
 
     for (var country in paths) {
-        
+
         var obj = raph.path(paths[country].path);
-        obj.attr(attributes);           
+        obj.attr(attributes);
         arr[obj.id] = country;
-        //obj.node.id="p"+paths[country].id;       
+        //obj.node.id="p"+paths[country].id;
         obj.mouseover(function(){
             over_(this);
 
@@ -35,24 +40,24 @@ $(function(){
          obj.mouseout(function(){
         	out_(this);
         });
-        
+
        obj.click(function(){
         	$('#b'+paths[arr[this.id]].id).find('.zonelist').prop('checked','checked').change();
 			over_(this);
         });
-        
+
         objs['pp'+paths[country].id] = obj;
-        
-    }    
+
+    }
     $('.zoneb').mouseover(function(){
 		if(objs['pp'+$(this).data('id')]) over_(objs['pp'+$(this).data('id')]);
 	});
 	$('.zoneb').mouseout(function(){
 		if(!$(this).find('.zonelist').prop('checked')) {
-			if(objs['pp'+$(this).data('id')]) out_(objs['pp'+$(this).data('id')]);			
+			if(objs['pp'+$(this).data('id')]) out_(objs['pp'+$(this).data('id')]);
 		}
 	});
-		
+
 	$('.zoneb').click(function(){
 		if($(this).find('.zonelist').prop('checked')) {
 			if(objs['pp'+$(this).data('id')]) over_(objs['pp'+$(this).data('id')]);
@@ -62,8 +67,8 @@ $(function(){
 				if(objs['pp'+$(this).val()]) out_(objs['pp'+$(this).val()]);
 			}
 		});
-	});	
-	
+	});
+
 	$('.zonelist').change(function(){
 		if($(this).prop('checked')) {
 			$('.zonelist').each(function(){
@@ -75,23 +80,15 @@ $(function(){
 			$('#zoneprice').change();
 		}
 	});
-	
+
 	$('.zonelist:first').prop('checked','checked');
 	if(objs['pp'+$('.zonelist:first').val()]) over_(objs['pp'+$('.zonelist:first').val()]);
-});
+}
 
 function reInitRaph() {
     const aspectRatio = landing.width / landing.height;
     const newWidth = $('#map').width();
     const newHeight = newWidth / aspectRatio;
-
-    // raph = Raphael('map', newWidth, newHeight),
-    //     attributes = {
-    //         fill: hover_zone_color,
-    //         'fill-opacity': '0',
-    //         'stroke-opacity': '0',
-    //         stroke: hover_zone_color,
-    //     };
 
     raph.clear();
 
@@ -160,7 +157,7 @@ function reInitRaph() {
 }
 
 function over_(obd)
-{	
+{
 	color = hover_color;
 	if($('#b'+paths[arr[obd.id]].id).find('.zonelist').prop('checked')) {
 		color = select_color;
@@ -169,7 +166,7 @@ function over_(obd)
 	else {
 		$('#b'+paths[arr[obd.id]].id).removeClass(select_class_button).addClass(hover_class_button);
 	}
-	 
+
    obd
     .animate({
         fill: color,
@@ -180,15 +177,15 @@ function over_(obd)
     var mappoint_raphael = obd.getBBox(0);
     $('#map').next('.point_raphael').remove();
     $('#map').after($('<div />').addClass('point_raphael'));
-   
+
     info = '';
-   
-    info += paths[arr[obd.id]].name + '' 
-    
+
+    info += paths[arr[obd.id]].name + ''
+
     $('.point_raphael')
         .html(info)
         .css({
-        	position: 'absolute',                	
+        	position: 'absolute',
           	backgroundColor: tooltip_color,
             left: mappoint_raphael.x+(mappoint_raphael.width/2)+20,
             top: mappoint_raphael.y+(mappoint_raphael.height/2)+30
@@ -197,15 +194,15 @@ function over_(obd)
 
 function out_(obd)
 {
-	if(!$('#b'+paths[arr[obd.id]].id).find('.zonelist').prop('checked')) {		
+	if(!$('#b'+paths[arr[obd.id]].id).find('.zonelist').prop('checked')) {
 		$('#b'+paths[arr[obd.id]].id).removeClass(hover_class_button).removeClass(select_class_button);
 	    obd
 	    .animate({
 	        fill: '#ffffff',
 	        'fill-opacity': '0',
 	        'stroke-opacity': '0'
-	    }, 1);                   
-	
+	    }, 1);
+
 	    parent = $('.point_raphael');
 	    parent.remove();
     }
