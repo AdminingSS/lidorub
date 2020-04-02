@@ -11,6 +11,7 @@ $(function(){
 
 
 function init_scheme(){
+    if(typeof landing == undefined) return;
     
     raph = Raphael('map', landing.width, landing.height),
         attributes = {
