@@ -227,9 +227,19 @@
     .checkout__summary .mCSB_container > div + div {
         margin-top: 20px;
     }
+
+    .checkout__form #edit-payement-mode .form-item input[type="radio"] + label {
+        width: 300px;
+        height: 55px;
+        line-height: 55px;
+    }
 }
 
 @media (max-width: 374px) {
+
+    .mCSB_inside>.mCSB_container {
+        margin-right: 0;
+    }
 
     body {
         font-size: 14px;

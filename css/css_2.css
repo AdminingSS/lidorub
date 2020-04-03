@@ -1139,14 +1139,14 @@ form:not(.myform) button, html [type="button"], [type="reset"], [type="submit"] 
 }
 
 .tag-form input.visap[type="radio"]:not(:checked) + label:before,.tag-form input.visap[type="radio"]:checked + label:before {
-    background-image: url(../images/visa-off.png);
+    background-image: url(../images/payment_off.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 .tag-form input.visap[type="radio"]:not(:checked) + label:after,.tag-form input.visap[type="radio"]:checked + label:after {
-    background-image: url(../images/visa-on.png);
+    background-image: url(../images/payment_on.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -6057,11 +6057,12 @@ form:not(.myform) .quantity input, form:not(.myform) .quantity select {
 
 .checkout__form #edit-payement-mode .form-item input[type="radio"] + label {
     padding: 0;
-    width: 85px;
-    height: 70px;
-    line-height: 70px;
+    width: 440px;
+    height: 80px;
+    color: transparent;
+    line-height: 80px;
     text-align: center;
-    background-color: #f5f5f4
+    background-color: #f5f5f4;
 }
 
 .checkout__form #edit-payement-mode .form-item input[type="radio"] + label:before, .checkout__form #edit-payement-mode .form-item input[type="radio"] + label:after {
