@@ -921,6 +921,10 @@ form .tm-form label {
     height: 90px;
 }
 
+.js-scrollbar-step1 {
+    max-height: calc(100vh - 174px);
+}
+
 /*#map svg {*/
     /*display: block;*/
     /*margin: auto;*/
