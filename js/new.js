@@ -1328,10 +1328,18 @@ $(document).ready(function () {
 
     //
     (() => {
-        const $scrollbars = $('.checkout__content, .reservation-tunnel .step.step1');
+        const $scrollbars = $('.checkout__content');
+        const $scrollbarsOut = $('.js-scrollbar-step1');
 
         $scrollbars.mCustomScrollbar({
             //scrollbarPosition: "outside",
+            theme: "dark",
+            mouseWheel: {scrollAmount: 300},
+            advanced: {updateOnContentResize: true}
+        });
+
+        $scrollbarsOut.mCustomScrollbar({
+            scrollbarPosition: "outside",
             theme: "dark",
             mouseWheel: {scrollAmount: 300},
             advanced: {updateOnContentResize: true}
