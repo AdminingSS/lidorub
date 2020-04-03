@@ -497,7 +497,7 @@
 /*Scrollbar*/
 
 .event-list, .options .options {
-    max-height: calc(100vh - 174px);
+    height: calc(100vh - 174px);
 }
 
 .reservation-tunnel .step.step3 .options, .reservation-tunnel .step.step2 .offers {
@@ -816,7 +816,7 @@ form .tm-form label {
 }
 
 .step3 .options .js-custom-scrollbar {
-    max-height: calc(100vh - 328px);
+    height: calc(100vh - 328px);
 }
 
 .point_raphael {
@@ -922,7 +922,7 @@ form .tm-form label {
 }
 
 .js-scrollbar-step1 {
-    max-height: calc(100vh - 174px);
+    height: calc(100vh - 174px);
 }
 
 /*#map svg {*/
