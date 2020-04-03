@@ -968,6 +968,7 @@ form:not(.myform) .step3 label {
 form:not(.myform) .step3 label.select_button {
     background-color: #b8a15d;
     border-color: #b8a15d;
+    color: #ffffff;
 }
 
 form:not(.myform) input, form:not(.myform) select, form:not(.myform) textarea {
@@ -1235,7 +1236,8 @@ section:focus {
     position: relative;
     cursor: pointer;
     display: inline-block;
-    color: #fff !important;
+    /*color: #fff !important;*/
+    color: #fff;
     background-color: #cab471;
     padding: 18px 25px;
     -webkit-box-sizing: border-box;

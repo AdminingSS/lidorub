@@ -925,6 +925,10 @@ form .tm-form label {
     height: calc(100vh - 174px);
 }
 
+.hover_button {
+    border: 1px solid #cab471;
+}
+
 /*#map svg {*/
     /*display: block;*/
     /*margin: auto;*/

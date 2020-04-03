@@ -4,6 +4,7 @@ var landing;
 var arr;
 var mappoint_raphael;
 var objs = {};
+const hover_zone_color = "#cab471";
 
 $(function(){
     init_scheme();

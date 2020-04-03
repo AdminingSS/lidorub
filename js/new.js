@@ -133,6 +133,8 @@ var isMobile = {
 
 $(document).ready(function () {
 
+    fixDrops();
+
     (() => {
         const countryData = window.intlTelInputGlobals.getCountryData();
 
@@ -1020,6 +1022,7 @@ $(document).ready(function () {
                 })
             })
 
+            $('[style*="background: #fed444"]').attr('style', 'background: #feefaf;');
         }
 
         //ajax and processing / modal 1-3 (not done)
