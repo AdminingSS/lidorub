@@ -844,72 +844,203 @@
 </div>
 
 <form id="fm" method="post">
-<!--order modal first part-->
-<div class="tm-modal js-order-modal tm-hidden ticketing">
-    <div id="wrapper" class="layout-container">
-        <div id="js-book-btn" class="book-btns fixed">
-            <a class="btn order js-order-modal-close" href="#">
-                <span></span>
-                <span>Закрыть</span>
-            </a>
-        </div>
-        <div class="_topnav-container fixed fixedActive">
-            <nav id="nav">
-                <div class="container">
-                    <a href="" class="home"><img src="./images/logo-2000-gold.png" alt=""></a>
-                    <nav role="navigation" aria-labelledby="block-lido-main-menu-menu" id="block-lido-main-menu">
+    <!--order modal first part-->
+    <div class="tm-modal js-order-modal tm-hidden ticketing">
+        <div id="wrapper" class="layout-container">
+            <div id="js-book-btn" class="book-btns fixed">
+                <a class="btn order js-order-modal-close" href="#">
+                    <span></span>
+                    <span>Закрыть</span>
+                </a>
+            </div>
+            <div class="_topnav-container fixed fixedActive">
+                <nav id="nav">
+                    <div class="container">
+                        <a href="" class="home"><img src="./images/logo-2000-gold.png" alt=""></a>
+                        <nav role="navigation" aria-labelledby="block-lido-main-menu-menu" id="block-lido-main-menu">
 
-                        <h2 class="visually-hidden" id="block-lido-main-menu-menu">Navigation principale</h2>
+                            <h2 class="visually-hidden" id="block-lido-main-menu-menu">Navigation principale</h2>
 
 
-                        <ul class="nav-primary">
-                            <li class="tm-dropdown">
-                                <a href="#"><span>Shows</span></a>
-                                <div class="tm-dropdown-content">
-                                    <ul>
-                                        <li><a href="">Show 1</a></li>
-                                        <li><a href="">Show 2</a></li>
-                                        <li><a href="">Show 3</a></li>
-                                        <li><a href="">Show 4</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="tm-dropdown">
-                                <a href="#"> <span>Theatres</span></a>
-                                <div class="tm-dropdown-content">
-                                    <ul>
-                                        <li><a href="">Theater 1</a></li>
-                                        <li><a href="">Theater 2</a></li>
-                                        <li><a href="">Theater 3</a></li>
-                                        <li><a href="">Theater 4</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="tm-dropdown">
-                                <a href="#"> <span>Genres</span></a>
-                                <div class="tm-dropdown-content">
-                                    <ul>
-                                        <li><a href="">Genre 1</a></li>
-                                        <li><a href="">Genre 2</a></li>
-                                        <li><a href="">Genre 3</a></li>
-                                        <li><a href="">Genre 4</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <!--<li>-->
+                            <ul class="nav-primary">
+                                <li class="tm-dropdown">
+                                    <a href="#"><span>Shows</span></a>
+                                    <div class="tm-dropdown-content">
+                                        <ul>
+                                            <li><a href="">Show 1</a></li>
+                                            <li><a href="">Show 2</a></li>
+                                            <li><a href="">Show 3</a></li>
+                                            <li><a href="">Show 4</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="tm-dropdown">
+                                    <a href="#"> <span>Theatres</span></a>
+                                    <div class="tm-dropdown-content">
+                                        <ul>
+                                            <li><a href="">Theater 1</a></li>
+                                            <li><a href="">Theater 2</a></li>
+                                            <li><a href="">Theater 3</a></li>
+                                            <li><a href="">Theater 4</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="tm-dropdown">
+                                    <a href="#"> <span>Genres</span></a>
+                                    <div class="tm-dropdown-content">
+                                        <ul>
+                                            <li><a href="">Genre 1</a></li>
+                                            <li><a href="">Genre 2</a></li>
+                                            <li><a href="">Genre 3</a></li>
+                                            <li><a href="">Genre 4</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!--<li>-->
                                 <!--<a class="js-gift-trigger js-order-modal-trigger" href="#"> <span>Gift</span>-->
                                 <!--</a>-->
-                            <!--</li>-->
+                                <!--</li>-->
+                            </ul>
+
+
+                        </nav>
+
+                        <ul class="nav-secondary">
+                            <li>
+                                <div class="language-switcher-language-url" id="block-selecteurdelangue"
+                                     role="navigation">
+
+
+                                    <ul class="links">
+                                        <li hreflang="ru" class="is-active">
+                                            <a href="#" class="language-link is-active" hreflang="ru">RU</a>
+                                        </li>
+                                        <li hreflang="en" class="en">
+                                            <a href="#" class="language-link" hreflang="en">EN</a>
+                                        </li>
+                                        <li hreflang="es" class="es">
+                                            <a href="#" class="language-link" hreflang="es">ES</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="language-switcher-language-url" id="" role="navigation">
+
+                                    <ul class="links">
+                                        <li class="rub is-active">
+                                            <a href="#" class="language-link is-active" hreflang="ru">RUB</a>
+                                        </li>
+                                        <li class="eur">
+                                            <a href="#" class="language-link" hreflang="en">EUR</a>
+                                        </li>
+                                        <li class="usd">
+                                            <a href="#" class="language-link" hreflang="fr">USD</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a class="tel" href="tel:">
+                                    +7 (812) 645 08 98
+                                </a>
+                            </li>
+
+                            <li>
+                                <div class="book-btns visibility-hidden" id="js-book-btn-modele-desktop">
+                                    <a class="btn order js-order-modal-close" href="#">
+                                        <span></span>
+                                        <span>Закрыть</span>
+                                    </a>
+                                </div>
+                            </li>
+
                         </ul>
+                    </div>
+
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a class="tel" href="tel:"></a>
+                            </li>
+                            <li>
+                                <div class="book-btns" id="js-book-btn-modele-mobile">
+                                    <a class="btn order js-order-modal-close" href="#">
+                                        <span></span>
+                                        <span>Закрыть</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li><a class="burger" href=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="content">
+                            <nav role="navigation" aria-labelledby="block-lido-main-menu-menu"
+                                 id="block-lido-main-menu">
+
+                                <h2 class="visually-hidden" id="block-lido-main-menu-menu">Navigation principale</h2>
+
+                                <ul class="nav-primary">
+                                    <li>
+                                        <a href="">
+                                            <span>Главная</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""> <span>Вечернее шоу</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""> <span>Предложения</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""> <span>Информация</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""> <span>Подарить</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <ul class="nav-secondary">
+                                <li><a class="lang" href="">RU</a></li>
+                                <li>
+                                    <a href="">Пресс-служба</a>
+                                </li>
+                                <li>
+                                    <a href="">Партнеры</a>
+                                </li>
+                                <li>
+                                    <a href="">ОТБОР И ПРИЕМ НА РАБОТУ ТАНЦОВЩИЦ И
+                                        ТАНЦОРОВ</a>
+                                </li>
+                                <li>
+                                    <a href="">Ч3B</a>
+                                </li>
+                                <li>
+                                    <a href="">ОУП</a>
+                                </li>
+                                <li>
+                                    <a href="">Юридическая информация</a>
+                                </li>
+                                <li>
+                                    <a href="">Cookies</a>
+                                </li>
+                                <li>
+                                    <a href="">Privacy</a>
+                                </li>
+                            </ul>
 
 
-                    </nav>
-
-                    <ul class="nav-secondary">
-                        <li>
+                        </div>
+                        <div class="content">
                             <div class="language-switcher-language-url" id="block-selecteurdelangue" role="navigation">
-
-
                                 <ul class="links">
                                     <li hreflang="ru" class="is-active">
                                         <a href="#" class="language-link is-active" hreflang="ru">RU</a>
@@ -922,9 +1053,10 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
 
-                        <li>
+                        </div>
+
+                        <div class="content">
                             <div class="language-switcher-language-url" id="" role="navigation">
 
                                 <ul class="links">
@@ -939,876 +1071,771 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
-
-                        <li>
-                            <a class="tel" href="tel:">
-                                +7 (812) 645 08 98
-                            </a>
-                        </li>
-
-                        <li>
-                            <div class="book-btns visibility-hidden" id="js-book-btn-modele-desktop">
-                                <a class="btn order js-order-modal-close" href="#">
-                                    <span></span>
-                                    <span>Закрыть</span>
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="container">
-                    <ul>
-                        <li>
-                            <a class="tel" href="tel:"></a>
-                        </li>
-                        <li>
-                            <div class="book-btns" id="js-book-btn-modele-mobile">
-                                <a class="btn order js-order-modal-close" href="#">
-                                    <span></span>
-                                    <span>Закрыть</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li><a class="burger" href=""></a></li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <div class="content">
-                        <nav role="navigation" aria-labelledby="block-lido-main-menu-menu" id="block-lido-main-menu">
-
-                            <h2 class="visually-hidden" id="block-lido-main-menu-menu">Navigation principale</h2>
-
-                            <ul class="nav-primary">
-                                <li>
-                                    <a href="">
-                                        <span>Главная</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href=""> <span>Вечернее шоу</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href=""> <span>Предложения</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href=""> <span>Информация</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href=""> <span>Подарить</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                        <ul class="nav-secondary">
-                            <li><a class="lang" href="">RU</a></li>
-                            <li>
-                                <a href="">Пресс-служба</a>
-                            </li>
-                            <li>
-                                <a href="">Партнеры</a>
-                            </li>
-                            <li>
-                                <a href="">ОТБОР И ПРИЕМ НА РАБОТУ ТАНЦОВЩИЦ И
-                                    ТАНЦОРОВ</a>
-                            </li>
-                            <li>
-                                <a href="">Ч3B</a>
-                            </li>
-                            <li>
-                                <a href="">ОУП</a>
-                            </li>
-                            <li>
-                                <a href="">Юридическая информация</a>
-                            </li>
-                            <li>
-                                <a href="">Cookies</a>
-                            </li>
-                            <li>
-                                <a href="">Privacy</a>
-                            </li>
-                        </ul>
-
-
-                    </div>
-                    <div class="content">
-                        <div class="language-switcher-language-url" id="block-selecteurdelangue" role="navigation">
-                            <ul class="links">
-                                <li hreflang="ru" class="is-active">
-                                    <a href="#" class="language-link is-active" hreflang="ru">RU</a>
-                                </li>
-                                <li hreflang="en" class="en">
-                                    <a href="#" class="language-link" hreflang="en">EN</a>
-                                </li>
-                                <li hreflang="es" class="es">
-                                    <a href="#" class="language-link" hreflang="es">ES</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="content">
-                        <div class="language-switcher-language-url" id="" role="navigation">
-
-                            <ul class="links">
-                                <li class="rub is-active">
-                                    <a href="#" class="language-link is-active" hreflang="ru">RUB</a>
-                                </li>
-                                <li class="eur">
-                                    <a href="#" class="language-link" hreflang="en">EUR</a>
-                                </li>
-                                <li class="usd">
-                                    <a href="#" class="language-link" hreflang="fr">USD</a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
-                </div>
 
-            </nav>
-        </div>
-
-
-        <main id="main" role="main">
-            <a id="main-content" tabindex="-1"></a>
-            <div class="layout-content">
-                <div>
-                    <div id="block-lido-content">
-                        <div class="r-popin" id="r-popin-alert">
-                            <div class="r-popin-inner">
-                                <a href=""
-                                   class="r-popin-close"></a>
-                                <p>Вы действительно хотите покинуть страницу и утратить все содержимое Вашей корзины
-                                    ? </p>
-                                <div class="actions">
-                                    <a href="" class="btn yes"><span></span><span>Покинуть эту страницу </span></a>
-                                    <a href=""
-                                       class="btn no"><span></span><span>Остаться на этой странице </span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="r-popin-mask"></div>
-
-
-                        <div class="reservation-tunnel">
-                            <div class="mobile-nav only-mobile">
-                                <a href="#r-popin-alert"
-                                   class="backto">Назад</a>
-                                <ul class="step-nav">
-                                    <li class="step-nav-item">
-                                        <a href="#"
-                                           class="mobile-nav-step mobile-nav-step1 active selected" data-step="1">1</a>
-                                        <span class="title active selected">Votre recherche</span>
-                                    </li>
-                                    <li class="step-nav-item">
-                                        <a href="#"
-                                           class="mobile-nav-step mobile-nav-step2" data-step="2">2</a>
-                                        <span class="title">Ваш выбор</span>
-                                    </li>
-                                    <li class="step-nav-item">
-                                        <a href="#"
-                                           class="mobile-nav-step mobile-nav-step3" data-step="3">3</a>
-                                        <span class="title">Options &amp; confirmation</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <section class="step step1 anim scroller">
-                                <a href="#r-popin-alert"
-                                   class="backto only-desktop">Назад</a>
-                                <h2 class="title">Ваши заказы</h2>
-                                <div class="tm-form css-form tag-form">
-                                    <div class="content">
-                                        <div class="form-item adults quantity quantity--filled" value="1">
-                                            <div class="block">
-                                                <label for="na">Взрослых</label>
-                                                <div class="number">
-                                                    <a href="#"
-                                                       class="less"></a>
-                                                    <select name="na">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="12">12</option>
-                                                        <option value="13">13</option>
-                                                        <option value="14">14</option>
-                                                        <option value="15">15</option>
-                                                        <option value="16">16</option>
-                                                        <option value="17">17</option>
-                                                        <option value="18">18</option>
-                                                        <option value="19">19</option>
-                                                        <option value="20">20</option>
-                                                    </select>
-                                                    <a href="#"
-                                                       class="more"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="form-item formule">
-                                            <div class="tm-dropdown-inputs tm-input-theaters">
-                                                <span>All theaters</span>
-                                                <fieldset class="tm-dropdown-content">
-                                                    <legend>Select Theater(s)</legend>
-                                                    <a href="#" class="js-all-trigger">All</a>
-                                                    <a href="#" class="js-clear-trigger">Clear</a>
-                                                    <label><input class="tm-input" type="checkbox" name="theater"
-                                                                  value="1">Theater 1</label>
-                                                    <label><input class="tm-input" type="checkbox" name="theater"
-                                                                  value="2">Theater 2</label>
-                                                    <label><input class="tm-input" type="checkbox" name="theater"
-                                                                  value="3">Theater 3</label>
-                                                    <label><input class="tm-input" type="checkbox" name="theater"
-                                                                  value="3">Theater 3</label>
-                                                </fieldset>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="form-item formule">
-                                            <div class="tm-dropdown-inputs">
-                                                <span>All genres</span>
-                                                <fieldset class="tm-dropdown-content">
-                                                    <legend>Select Genre(s)</legend>
-                                                    <a href="#" class="js-all-trigger">All</a>
-                                                    <a href="#" class="js-clear-trigger">Clear</a>
-                                                    <label><input class="tm-input" type="checkbox" name="genre"
-                                                                  value="1">Genre 1</label>
-                                                    <label><input class="tm-input" type="checkbox" name="genre"
-                                                                  value="2">Genre 2</label>
-                                                    <label><input class="tm-input" type="checkbox" name="genre"
-                                                                  value="3">Genre 3</label>
-                                                    <label><input class="tm-input" type="checkbox" name="genre"
-                                                                  value="3">Genre 3</label>
-                                                </fieldset>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="form-item formule">
-                                            <div class="block">
-                                                <!--<div class="custom-select-container">-->
-                                                <select name="spectacle" tabindex="-1">
-                                                    <option value="0">
-                                                        All shows
-                                                    </option>
-                                                    <option value="0">
-                                                        All shows
-                                                    </option>
-                                                    <option value="1">
-                                                        Popular shows
-                                                    </option>
-                                                    <option value="2">
-                                                        Swan Lake ballet
-                                                    </option>
-                                                    <option value="3">
-                                                        The Nutcracker ballet
-                                                    </option>
-                                                    <option value="4">
-                                                        The Sleeping Beauty ballet
-                                                    </option>
-                                                    <option value="5">
-                                                        Giselle ballet
-                                                    </option>
-                                                    <option value="6">
-                                                        Folklore show
-                                                    </option>
-                                                </select>
-                                                <!--</div>-->
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--<div class="content">-->
-                                    <!--<div class="form-item formule">-->
-                                    <!--<div class="block">-->
-
-                                    <!--<select name="theater">-->
-                                    <!--<option value="0">-->
-                                    <!--Все театры-->
-                                    <!--</option>-->
-                                    <!--<option value="1">-->
-                                    <!--Театр 1-->
-                                    <!--</option>-->
-                                    <!--<option value="2">-->
-                                    <!--Театр 2-->
-                                    <!--</option>-->
-                                    <!--<option value="3">-->
-                                    <!--Театр 3-->
-                                    <!--</option>-->
-                                    <!--<option value="4">-->
-                                    <!--Театр 4-->
-                                    <!--</option>-->
-                                    <!--</select>-->
-
-                                    <!--</div>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
-
-                                    <div class="content">
-                                        <div class="form-item" special="promos"
-                                             readonly="readonly">
-                                            <div class="block">
-                                                <input id="modalFlatpickr" class="calendar js-flatpickr"
-                                                       placeholder="Выберите диапазон дат">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <a href="#"
-                                           class="btn submit js-submit-stage-1 active">
-                                            <span></span>
-                                            <span>Следующий этап</span>
-                                        </a>
-                                    </div>
-
-                                    <input type="hidden" value="" name="v" id="offer-id">
-                                    <input type="hidden" value="1" name="ts" id="ticket-step">
-                                </div>
-
-                                <div class="offrir-accroche">
-                                    <p>Следующий этап оплаты. Подарите уникальные мгновения</p>
-                                </div>
-                            </section>
-
-                            <section class="step step2 scroller">
-                                <div class="inactive">
-                                    <span class="inactive-step">Шаг 2</span>
-                                    <span class="inactive-title">Выберите предложение</span>
-                                </div>
-                                <div class="offers">
-                                    <h2 class="title">Ваш выбор</h2>
-                                </div>
-                            </section>
-
-                            <div class="step2-dots"></div>
-
-                            <section class="step step3 scroller">
-                                <div class="inactive">
-                                    <span class="inactive-step">Шаг 3</span>
-                                    <span class="inactive-title">Персонализировать предложение</span>
-                                </div>
-                                <div class="options">
-                                    <h2 class="title"><span>Персонализировать и завершить заказ</span></h2>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
+                </nav>
             </div>
-        </main>
-    </div>
-</div>
 
-<!--order modal second part-->
-<div class="tm-modal js-order-modal-2 tm-hidden">
-    <div id="wrapper" class="layout-container">
 
-        <main id="main" role="main">
-            <a id="main-content" tabindex="-1"></a>
-            <div class="layout-content">
-                <div>
-                    <div id="block-lido-content">
-
-                        <div class="checkout">
-
-                            <div class="checkout__header">
-                                <a class="back js-order-modal-return-2" href="#">Изменить заказ</a>
-                                <p><b>Нужна помощь?</b> Вы можете связаться с нами по номеру <a href="tel:+78126450898">+7
-                                    (812) 645 08 98</a></p>
+            <main id="main" role="main">
+                <a id="main-content" tabindex="-1"></a>
+                <div class="layout-content">
+                    <div>
+                        <div id="block-lido-content">
+                            <div class="r-popin" id="r-popin-alert">
+                                <div class="r-popin-inner">
+                                    <a href=""
+                                       class="r-popin-close"></a>
+                                    <p>Вы действительно хотите покинуть страницу и утратить все содержимое Вашей корзины
+                                        ? </p>
+                                    <div class="actions">
+                                        <a href="" class="btn yes"><span></span><span>Покинуть эту страницу </span></a>
+                                        <a href=""
+                                           class="btn no"><span></span><span>Остаться на этой странице </span></a>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="checkout__nav">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="disabled active selected">1</a>
-                                        <span class="title active">Информация</span>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="disabled">2</a>
-                                        <span class="title">Оплата</span>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="disabled">3</a>
-                                        <span class="title">Итог</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="checkout__main">
+                            <div id="r-popin-mask"></div>
 
 
-                                <div class="checkout-information-form css-form tag-form"
-                                      action="/" method="post"
-                                      id="checkout-information-form" accept-charset="UTF-8">
-                                    <div class="checkout__content active checkout__form scroller">
+                            <div class="reservation-tunnel">
+                                <div class="mobile-nav only-mobile">
+                                    <a href="#r-popin-alert"
+                                       class="backto">Назад</a>
+                                    <ul class="step-nav">
+                                        <li class="step-nav-item">
+                                            <a href="#"
+                                               class="mobile-nav-step mobile-nav-step1 active selected"
+                                               data-step="1">1</a>
+                                            <span class="title active selected">Votre recherche</span>
+                                        </li>
+                                        <li class="step-nav-item">
+                                            <a href="#"
+                                               class="mobile-nav-step mobile-nav-step2" data-step="2">2</a>
+                                            <span class="title">Ваш выбор</span>
+                                        </li>
+                                        <li class="step-nav-item">
+                                            <a href="#"
+                                               class="mobile-nav-step mobile-nav-step3" data-step="3">3</a>
+                                            <span class="title">Options &amp; confirmation</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <section class="step step1 anim scroller">
 
-
-                                        <fieldset id="edit-information"
-                                                  class="js-form-item form-item js-form-wrapper form-wrapper">
-                                            <legend>
-                                                <span class="fieldset-legend">Ваши контактные данные </span>
-                                            </legend>
-
-                                            <p class="security-mention">Мы обязуемся обеспечить защиту и
-                                                конфиденциальность Ваших личных данных.</p>
-
-                                            <div class="fieldset-wrapper">
-                                                <fieldset id="edit-civility--wrapper"
-                                                          class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper form-item--valid"
-                                                          required="required" aria-required="true">
-                                                    <legend>
-                                                        <span class="fieldset-legend js-form-required form-required">Форма обращения*</span>
-                                                    </legend>
-                                                    <div class="fieldset-wrapper">
-                                                        <div id="edit-civility">
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-civility js-form-item-civility">
-                                                                <input type="radio" id="edit-civility-001"
-                                                                       name="civility" value="001" class="form-radio">
-
-                                                                <label for="edit-civility-001"
-                                                                       class="option">Господин</label>
-                                                            </div>
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-civility js-form-item-civility">
-                                                                <input type="radio" id="edit-civility-002"
-                                                                       name="civility" value="002" class="form-radio">
-
-                                                                <label for="edit-civility-002" class="option">
-                                                                    мадам</label>
-                                                            </div>
+                                    <a href="#r-popin-alert"
+                                       class="backto only-desktop">Назад</a>
+                                    <h2 class="title">Ваши заказы</h2>
+                                    <div class="js-scrollbar-step1">
+                                        <div class="tm-form css-form tag-form">
+                                            <div class="content">
+                                                <div class="form-item adults quantity quantity--filled" value="1">
+                                                    <div class="block">
+                                                        <label for="na">Взрослых</label>
+                                                        <div class="number">
+                                                            <a href="#"
+                                                               class="less"></a>
+                                                            <select name="na">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="12">12</option>
+                                                                <option value="13">13</option>
+                                                                <option value="14">14</option>
+                                                                <option value="15">15</option>
+                                                                <option value="16">16</option>
+                                                                <option value="17">17</option>
+                                                                <option value="18">18</option>
+                                                                <option value="19">19</option>
+                                                                <option value="20">20</option>
+                                                            </select>
+                                                            <a href="#"
+                                                               class="more"></a>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <div class="form-item formule">
+                                                    <div class="tm-dropdown-inputs tm-input-theaters">
+                                                        <span>All theaters</span>
+                                                        <fieldset class="tm-dropdown-content">
+                                                            <legend>Select Theater(s)</legend>
+                                                            <a href="#" class="js-all-trigger">All</a>
+                                                            <a href="#" class="js-clear-trigger">Clear</a>
+                                                            <label><input class="tm-input" type="checkbox"
+                                                                          name="theater"
+                                                                          value="1">Theater 1</label>
+                                                            <label><input class="tm-input" type="checkbox"
+                                                                          name="theater"
+                                                                          value="2">Theater 2</label>
+                                                            <label><input class="tm-input" type="checkbox"
+                                                                          name="theater"
+                                                                          value="3">Theater 3</label>
+                                                            <label><input class="tm-input" type="checkbox"
+                                                                          name="theater"
+                                                                          value="3">Theater 3</label>
+                                                        </fieldset>
 
                                                     </div>
-                                                </fieldset>
-
-                                                <div class="js-form-item form-item js-form-type-textfield form-item-last-name js-form-item-last-name form-item--required">
-                                                    <label for="edit-last-name" class="js-form-required form-required">Фамилия*</label>
-                                                    <input type="text"
-                                                           id="edit-last-name" name="last_name" value="" size="64"
-                                                           maxlength="64" placeholder="Фамилия*"
-                                                           class="form-text required" required="required"
-                                                           aria-required="true">
-
                                                 </div>
+                                            </div>
 
-                                                <div class="js-form-item form-item js-form-type-textfield form-item-first-name js-form-item-first-name form-item--required">
-                                                    <label for="edit-first-name" class="js-form-required form-required">Имя*</label>
-                                                    <input type="text"
-                                                           id="edit-first-name" name="first_name" value="" size="64"
-                                                           maxlength="64" placeholder="Имя*" class="form-text required"
-                                                           required="required" aria-required="true">
+                                            <div class="content">
+                                                <div class="form-item formule">
+                                                    <div class="tm-dropdown-inputs">
+                                                        <span>All genres</span>
+                                                        <fieldset class="tm-dropdown-content">
+                                                            <legend>Select Genre(s)</legend>
+                                                            <a href="#" class="js-all-trigger">All</a>
+                                                            <a href="#" class="js-clear-trigger">Clear</a>
+                                                            <label><input class="tm-input" type="checkbox" name="genre"
+                                                                          value="1">Genre 1</label>
+                                                            <label><input class="tm-input" type="checkbox" name="genre"
+                                                                          value="2">Genre 2</label>
+                                                            <label><input class="tm-input" type="checkbox" name="genre"
+                                                                          value="3">Genre 3</label>
+                                                            <label><input class="tm-input" type="checkbox" name="genre"
+                                                                          value="3">Genre 3</label>
+                                                        </fieldset>
 
+                                                    </div>
                                                 </div>
+                                            </div>
 
-                                                <div class="js-form-item form-item js-form-type-email form-item-email js-form-item-email form-item--required">
-                                                    <label for="edit-email" class="js-form-required form-required">Эл.
-                                                        адрес*</label>
-                                                    <input type="email"
-                                                           id="edit-email" name="email" value="" size="60"
-                                                           maxlength="254" placeholder="Эл. адрес*"
-                                                           class="form-email required" required="required"
-                                                           aria-required="true">
-
-                                                </div>
-
-                                                <div class="js-form-item form-item js-form-type-email form-item-email-confirm js-form-item-email-confirm form-item--required">
-                                                    <label for="edit-email-confirm"
-                                                           class="js-form-required form-required">Подтвердить адрес эл.
-                                                        почты*</label>
-                                                    <input type="email"
-                                                           id="edit-email-confirm" name="email_confirm" value=""
-                                                           size="60" maxlength="254"
-                                                           placeholder="Подтвердить адрес эл. почты*"
-                                                           class="form-email required" required="required"
-                                                           aria-required="true">
-
-                                                </div>
-
-                                                <div class="js-form-item form-item js-form-type-tel form-item-phone-number js-form-item-phone-number form-item--required">
-                                                    <label for="ph"
-                                                           class="js-form-required form-required">Телефон*</label>
-                                                    <input type="tel"
-                                                           id="ph" name="phone_number" value="" size="64"
-                                                           maxlength="64" placeholder="Телефон*"
-                                                           class="form-tel required" required="required"
-                                                           aria-required="true">
-
-                                                </div>
-
-                                                <div class="js-form-item form-item js-form-type-select form-item-nationality js-form-item-nationality form-item--required">
-                                                    <label for="address-country" class="js-form-required form-required"
-                                                           id="customSelect-Zgbu3-label">Гражданство*</label>
-                                                    <div class="custom-select-container customSelect">
-                                                        <select id="address-country" name="nationality"
-                                                                class="form-select required" required="required"
-                                                                aria-required="true" tabindex="-1">
+                                            <div class="content">
+                                                <div class="form-item formule">
+                                                    <div class="block">
+                                                        <!--<div class="custom-select-container">-->
+                                                        <select name="spectacle" tabindex="-1">
+                                                            <option value="0">
+                                                                All shows
+                                                            </option>
+                                                            <option value="0">
+                                                                All shows
+                                                            </option>
+                                                            <option value="1">
+                                                                Popular shows
+                                                            </option>
+                                                            <option value="2">
+                                                                Swan Lake ballet
+                                                            </option>
+                                                            <option value="3">
+                                                                The Nutcracker ballet
+                                                            </option>
+                                                            <option value="4">
+                                                                The Sleeping Beauty ballet
+                                                            </option>
+                                                            <option value="5">
+                                                                Giselle ballet
+                                                            </option>
+                                                            <option value="6">
+                                                                Folklore show
+                                                            </option>
                                                         </select>
+                                                        <!--</div>-->
                                                     </div>
                                                 </div>
+                                            </div>
 
-                                                <div class="js-form-item form-item js-form-type-textarea form-item-comment js-form-item-comment">
-                                                    <label for="edit-comment">Комментарий</label>
-                                                    <div>
+                                            <!--<div class="content">-->
+                                            <!--<div class="form-item formule">-->
+                                            <!--<div class="block">-->
+
+                                            <!--<select name="theater">-->
+                                            <!--<option value="0">-->
+                                            <!--Все театры-->
+                                            <!--</option>-->
+                                            <!--<option value="1">-->
+                                            <!--Театр 1-->
+                                            <!--</option>-->
+                                            <!--<option value="2">-->
+                                            <!--Театр 2-->
+                                            <!--</option>-->
+                                            <!--<option value="3">-->
+                                            <!--Театр 3-->
+                                            <!--</option>-->
+                                            <!--<option value="4">-->
+                                            <!--Театр 4-->
+                                            <!--</option>-->
+                                            <!--</select>-->
+
+                                            <!--</div>-->
+                                            <!--</div>-->
+                                            <!--</div>-->
+
+                                            <div class="content">
+                                                <div class="form-item" special="promos"
+                                                     readonly="readonly">
+                                                    <div class="block">
+                                                        <input id="modalFlatpickr" class="calendar js-flatpickr"
+                                                               placeholder="Выберите диапазон дат">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <a href="#"
+                                                   class="btn submit js-submit-stage-1 active">
+                                                    <span></span>
+                                                    <span>Следующий этап</span>
+                                                </a>
+                                            </div>
+
+                                            <input type="hidden" value="" name="v" id="offer-id">
+                                            <input type="hidden" value="1" name="ts" id="ticket-step">
+                                        </div>
+
+                                        <div class="offrir-accroche">
+                                            <p>Следующий этап оплаты. Подарите уникальные мгновения</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="step step2 scroller">
+                                    <div class="inactive">
+                                        <span class="inactive-step">Шаг 2</span>
+                                        <span class="inactive-title">Выберите предложение</span>
+                                    </div>
+                                    <div class="offers">
+                                        <h2 class="title">Ваш выбор</h2>
+                                    </div>
+                                </section>
+
+                                <div class="step2-dots"></div>
+
+                                <section class="step step3 scroller">
+                                    <div class="inactive">
+                                        <span class="inactive-step">Шаг 3</span>
+                                        <span class="inactive-title">Персонализировать предложение</span>
+                                    </div>
+                                    <div class="options">
+                                        <h2 class="title"><span>Персонализировать и завершить заказ</span></h2>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!--order modal second part-->
+    <div class="tm-modal js-order-modal-2 tm-hidden">
+        <div id="wrapper" class="layout-container">
+
+            <main id="main" role="main">
+                <a id="main-content" tabindex="-1"></a>
+                <div class="layout-content">
+                    <div>
+                        <div id="block-lido-content">
+
+                            <div class="checkout">
+
+                                <div class="checkout__header">
+                                    <a class="back js-order-modal-return-2" href="#">Изменить заказ</a>
+                                    <p><b>Нужна помощь?</b> Вы можете связаться с нами по номеру <a
+                                            href="tel:+78126450898">+7
+                                        (812) 645 08 98</a></p>
+                                </div>
+
+                                <div class="checkout__nav">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="disabled active selected">1</a>
+                                            <span class="title active">Информация</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="disabled">2</a>
+                                            <span class="title">Оплата</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="disabled">3</a>
+                                            <span class="title">Итог</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="checkout__main">
+
+
+                                    <div class="checkout-information-form css-form tag-form"
+                                         action="/" method="post"
+                                         id="checkout-information-form" accept-charset="UTF-8">
+                                        <div class="checkout__content active checkout__form scroller">
+
+
+                                            <fieldset id="edit-information"
+                                                      class="js-form-item form-item js-form-wrapper form-wrapper">
+                                                <legend>
+                                                    <span class="fieldset-legend">Ваши контактные данные </span>
+                                                </legend>
+
+                                                <p class="security-mention">Мы обязуемся обеспечить защиту и
+                                                    конфиденциальность Ваших личных данных.</p>
+
+                                                <div class="fieldset-wrapper">
+                                                    <fieldset id="edit-civility--wrapper"
+                                                              class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper form-item--valid"
+                                                              required="required" aria-required="true">
+                                                        <legend>
+                                                            <span class="fieldset-legend js-form-required form-required">Форма обращения*</span>
+                                                        </legend>
+                                                        <div class="fieldset-wrapper">
+                                                            <div id="edit-civility">
+                                                                <div class="js-form-item form-item js-form-type-radio form-item-civility js-form-item-civility">
+                                                                    <input type="radio" id="edit-civility-001"
+                                                                           name="civility" value="001"
+                                                                           class="form-radio">
+
+                                                                    <label for="edit-civility-001"
+                                                                           class="option">Господин</label>
+                                                                </div>
+                                                                <div class="js-form-item form-item js-form-type-radio form-item-civility js-form-item-civility">
+                                                                    <input type="radio" id="edit-civility-002"
+                                                                           name="civility" value="002"
+                                                                           class="form-radio">
+
+                                                                    <label for="edit-civility-002" class="option">
+                                                                        мадам</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </fieldset>
+
+                                                    <div class="js-form-item form-item js-form-type-textfield form-item-last-name js-form-item-last-name form-item--required">
+                                                        <label for="edit-last-name"
+                                                               class="js-form-required form-required">Фамилия*</label>
+                                                        <input type="text"
+                                                               id="edit-last-name" name="last_name" value="" size="64"
+                                                               maxlength="64" placeholder="Фамилия*"
+                                                               class="form-text required" required="required"
+                                                               aria-required="true">
+
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-textfield form-item-first-name js-form-item-first-name form-item--required">
+                                                        <label for="edit-first-name"
+                                                               class="js-form-required form-required">Имя*</label>
+                                                        <input type="text"
+                                                               id="edit-first-name" name="first_name" value="" size="64"
+                                                               maxlength="64" placeholder="Имя*"
+                                                               class="form-text required"
+                                                               required="required" aria-required="true">
+
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-email form-item-email js-form-item-email form-item--required">
+                                                        <label for="edit-email" class="js-form-required form-required">Эл.
+                                                            адрес*</label>
+                                                        <input type="email"
+                                                               id="edit-email" name="email" value="" size="60"
+                                                               maxlength="254" placeholder="Эл. адрес*"
+                                                               class="form-email required" required="required"
+                                                               aria-required="true">
+
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-email form-item-email-confirm js-form-item-email-confirm form-item--required">
+                                                        <label for="edit-email-confirm"
+                                                               class="js-form-required form-required">Подтвердить адрес
+                                                            эл.
+                                                            почты*</label>
+                                                        <input type="email"
+                                                               id="edit-email-confirm" name="email_confirm" value=""
+                                                               size="60" maxlength="254"
+                                                               placeholder="Подтвердить адрес эл. почты*"
+                                                               class="form-email required" required="required"
+                                                               aria-required="true">
+
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-tel form-item-phone-number js-form-item-phone-number form-item--required">
+                                                        <label for="ph"
+                                                               class="js-form-required form-required">Телефон*</label>
+                                                        <input type="tel"
+                                                               id="ph" name="phone_number" value="" size="64"
+                                                               maxlength="64" placeholder="Телефон*"
+                                                               class="form-tel required" required="required"
+                                                               aria-required="true">
+
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-select form-item-nationality js-form-item-nationality form-item--required">
+                                                        <label for="address-country"
+                                                               class="js-form-required form-required"
+                                                               id="customSelect-Zgbu3-label">Гражданство*</label>
+                                                        <div class="custom-select-container customSelect">
+                                                            <select id="address-country" name="nationality"
+                                                                    class="form-select required" required="required"
+                                                                    aria-required="true" tabindex="-1">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-textarea form-item-comment js-form-item-comment">
+                                                        <label for="edit-comment">Комментарий</label>
+                                                        <div>
                                                         <textarea id="edit-comment"
                                                                   name="comment" rows="1" cols="60"
                                                                   placeholder="Особая просьба? Пищевая аллергия? Пожалуйста сообщите нам об этом"
                                                                   class="form-textarea"></textarea>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="js-form-item form-item js-form-type-checkbox form-item-optin js-form-item-optin">
+                                                        <input type="checkbox"
+                                                               id="edit-optin" name="optin" value="1"
+                                                               class="form-checkbox">
+
+                                                        <label for="edit-optin" class="option">Я желаю получать
+                                                            информацию о
+                                                            мероприятиях, предложениях и промоакциях Лидо</label>
                                                     </div>
 
                                                 </div>
-
-                                                <div class="js-form-item form-item js-form-type-checkbox form-item-optin js-form-item-optin">
-                                                    <input type="checkbox"
-                                                           id="edit-optin" name="optin" value="1" class="form-checkbox">
-
-                                                    <label for="edit-optin" class="option">Я желаю получать информацию о
-                                                        мероприятиях, предложениях и промоакциях Лидо</label>
-                                                </div>
-
-                                            </div>
-                                        </fieldset>
+                                            </fieldset>
 
 
-                                        <a href="#" class="btn disabled"><span></span><span>Следующий этап</span></a>
-                                        <p><i>* обязательные поля</i></p>
-                                    </div>
-                                    <div class="checkout__content checkout__form scroller">
+                                            <a href="#"
+                                               class="btn disabled"><span></span><span>Следующий этап</span></a>
+                                            <p><i>* обязательные поля</i></p>
+                                        </div>
+                                        <div class="checkout__content checkout__form scroller">
 
-                                        <fieldset id="edit-is-gift--wrapper"
-                                                  class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper form-item--valid">
-                                            <legend>
-                                                <span class="fieldset-legend">Желаете сделать подарок? </span>
-                                            </legend>
-                                            <div class="fieldset-wrapper">
-                                                <div id="edit-is-gift">
-                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
-                                                        <input type="radio"
-                                                               id="edit-is-gift-yes" name="is_gift" value="yes"
-                                                               class="form-radio">
-                                                        <label for="edit-is-gift-yes" class="option">Да</label>
+                                            <fieldset id="edit-is-gift--wrapper"
+                                                      class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper form-item--valid">
+                                                <legend>
+                                                    <span class="fieldset-legend">Желаете сделать подарок? </span>
+                                                </legend>
+                                                <div class="fieldset-wrapper">
+                                                    <div id="edit-is-gift">
+                                                        <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
+                                                            <input type="radio"
+                                                                   id="edit-is-gift-yes" name="is_gift" value="yes"
+                                                                   class="form-radio">
+                                                            <label for="edit-is-gift-yes" class="option">Да</label>
+                                                        </div>
+                                                        <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
+                                                            <input type="radio"
+                                                                   id="edit-is-gift-no" name="is_gift" value="no"
+                                                                   class="form-radio">
+                                                            <label for="edit-is-gift-no" class="option">Нет</label>
+                                                        </div>
                                                     </div>
-                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
-                                                        <input type="radio"
-                                                               id="edit-is-gift-no" name="is_gift" value="no"
-                                                               class="form-radio">
-                                                        <label for="edit-is-gift-no" class="option">Нет</label>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                        </fieldset>
-                                        <fieldset id="edit-gift"
-                                                  class="js-form-item form-item js-form-wrapper form-wrapper">
-                                            <legend>
-                                                <span class="fieldset-legend"></span>
-                                            </legend>
-                                            <div class="fieldset-wrapper">
-                                                <div class="js-form-item form-item js-form-type-textarea form-item-gift-message js-form-item-gift-message">
-                                                    <label for="edit-gift-message">Введите имя получателя</label>
-                                                    <div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset id="edit-gift"
+                                                      class="js-form-item form-item js-form-wrapper form-wrapper">
+                                                <legend>
+                                                    <span class="fieldset-legend"></span>
+                                                </legend>
+                                                <div class="fieldset-wrapper">
+                                                    <div class="js-form-item form-item js-form-type-textarea form-item-gift-message js-form-item-gift-message">
+                                                        <label for="edit-gift-message">Введите имя получателя</label>
+                                                        <div>
                                                         <textarea aria-describedby="edit-gift-message--description"
                                                                   id="edit-gift-message" name="gift_message" rows="4"
                                                                   cols="60" maxlength="130"
                                                                   class="form-textarea"></textarea>
-                                                    </div>
-
-                                                    <div id="edit-gift-message--description" class="description">
-                                                        Максимум 130 символов
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </fieldset>
-
-
-                                        <fieldset id="edit-promo"
-                                                  class="js-form-item form-item js-form-wrapper form-wrapper form-item--valid">
-                                            <legend>
-                                                <span class="fieldset-legend">У Вас есть промокод? </span>
-                                            </legend>
-                                            <div class="fieldset-wrapper">
-                                                <div type="text"
-                                                     id="edit-code-promo" name="code_promo" value="" size="64"
-                                                     maxlength="64" placeholder="Введите промокод"
-                                                     class="form-text js-form-item form-item js-form-type- form-item- js-form-item- form-no-label"
-                                                     accept-charset="UTF-8">
-                                                    <input type="text"
-                                                           id="edit-code-promo" name="code_promo" value="" size="64"
-                                                           maxlength="64" placeholder="Введите промокод"
-                                                           class="form-text">
-
-                                                </div>
-                                                <p class="form-item--error-message" id="promo-mess"></p>
-                                                <div class="actions">
-                                                    <a id="check-coupon"
-                                                       href="#"
-                                                       class="but disabled"><span></span><span>Подтвердить промокод</span></a>
-                                                </div>
-
-                                            </div>
-                                        </fieldset>
-
-                                        <fieldset>
-                                            <legend>
-                                                <span class="fieldset-legend">Select delivery option:</span>
-                                            </legend>
-                                            <div class="fieldset-wrapper">
-                                                <div id="edit-is-delivery">
-                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-delivery js-form-item-is-delivery">
-                                                        <input type="radio"
-                                                               id="edit-is-delivery-one" name="is_gift" value="yes"
-                                                               class="form-radio">
-                                                        <label for="edit-is-delivery-one" class="option">Postal delivery to your country (takes up to 1+ month) + 10.2 EUR</label>
-                                                    </div>
-                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
-                                                        <input type="radio"
-                                                               id="edit-is-delivery-two" name="is_gift" value="no"
-                                                               class="form-radio">
-                                                        <label for="edit-is-delivery-two" class="option">E-ticket</label>
-                                                    </div>
-                                                    <div>
-                                                        <a href="#">Learn more about delivery</a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </fieldset>
-
-
-                                        <!--<div class="gift-mention form-item">Отправка в течение 48 часов максимум и получение с учетом почтовых задержек.</div>-->
-                                        <fieldset id="edit-payment"
-                                                  class="js-form-item form-item js-form-wrapper form-wrapper">
-                                            <legend>
-                                                <span class="fieldset-legend">Средства оплаты</span>
-                                            </legend>
-                                            <div class="fieldset-wrapper">
-                                                <fieldset id="payments"
-                                                          class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper"
-                                                          required="required" aria-required="true">
-                                                    <legend>
-                                                        <span class="fieldset-legend js-form-required form-required">Средства оплаты</span>
-                                                    </legend>
-                                                    <div class="fieldset-wrapper">
-                                                        <div id="edit-payement-mode">
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
-                                                                <input type="radio" id="edit-payement-mode-visa"
-                                                                       name="payement_mode" value="VISA"
-                                                                       class="form-radio visap">
-
-                                                                <label for="edit-payement-mode-visa"
-                                                                       class="option">credit card</label>
-                                                            </div>
-                                                            <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
-                                                                <input type="radio" id="edit-payement-mode-paypal"
-                                                                       name="payement_mode" value="PAYPAL"
-                                                                       class="form-radio paypalp">
-
-                                                                <label for="edit-payement-mode-paypal"
-                                                                       class="option">paypal</label>
-                                                            </div>
                                                         </div>
 
+                                                        <div id="edit-gift-message--description" class="description">
+                                                            Максимум 130 символов
+                                                        </div>
                                                     </div>
-                                                </fieldset>
-                                                <div class="js-form-item form-item js-form-type-checkbox form-item-cgv js-form-item-cgv form-item--required">
-                                                    <input type="checkbox" id="edit-cgv"
-                                                           name="cgv" value="1" class="form-checkbox required"
-                                                           required="required" aria-required="true">
 
-                                                    <label for="edit-cgv" class="option js-form-required form-required">Я
-                                                        ознакомился с <a
-                                                                href="#"
-                                                                target="_blank">общими условиями продажи</a> и согласен
-                                                        с ними
-
-                                                        <br><br><a href="#"
-                                                                   target="_blank">Для получения более подробной
-                                                            информации об условиях сбора и обработки Ваших личных
-                                                            данных, ознакомьтесь с нашей политикой
-                                                            конфиденциальности</a>.
-
-                                                    </label>
                                                 </div>
+                                            </fieldset>
 
-                                            </div>
-                                        </fieldset>
 
-                                        <a href="#" class="btn disabled"><span></span><span>Следующий этап</span></a>
-                                        <p><i>* обязательные поля</i></p>
-                                    </div>
-                                    <div class="hidden">
-                                        <fieldset id="edit-is-gift--wrapper"
-                                                  class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper form-item--filled form-item--valid">
-                                            <legend>
-                                                <span class="fieldset-legend">Желаете сделать подарок? </span>
-                                            </legend>
-                                            <div class="fieldset-wrapper">
-                                                <div id="edit-is-gift">
-                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
-                                                        <input type="radio"
-                                                               id="edit-is-gift-yes1" name="is_gift1" value="yes"
-                                                               class="form-radio">
+                                            <fieldset id="edit-promo"
+                                                      class="js-form-item form-item js-form-wrapper form-wrapper form-item--valid">
+                                                <legend>
+                                                    <span class="fieldset-legend">У Вас есть промокод? </span>
+                                                </legend>
+                                                <div class="fieldset-wrapper">
+                                                    <div type="text"
+                                                         id="edit-code-promo" name="code_promo" value="" size="64"
+                                                         maxlength="64" placeholder="Введите промокод"
+                                                         class="form-text js-form-item form-item js-form-type- form-item- js-form-item- form-no-label"
+                                                         accept-charset="UTF-8">
+                                                        <input type="text"
+                                                               id="edit-code-promo" name="code_promo" value="" size="64"
+                                                               maxlength="64" placeholder="Введите промокод"
+                                                               class="form-text">
 
-                                                        <label for="edit-is-gift-yes1" class="option">Да</label>
                                                     </div>
-                                                    <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
-                                                        <input type="radio"
-                                                               id="edit-is-gift-no1" name="is_gift1" value="no"
-                                                               checked="checked" class="form-radio">
-
-                                                        <label for="edit-is-gift-no1" class="option">Нет</label>
+                                                    <p class="form-item--error-message" id="promo-mess"></p>
+                                                    <div class="actions">
+                                                        <a id="check-coupon"
+                                                           href="#"
+                                                           class="but disabled"><span></span><span>Подтвердить промокод</span></a>
                                                     </div>
+
                                                 </div>
+                                            </fieldset>
 
+                                            <fieldset>
+                                                <legend>
+                                                    <span class="fieldset-legend">Select delivery option:</span>
+                                                </legend>
+                                                <div class="fieldset-wrapper">
+                                                    <div id="edit-is-delivery">
+                                                        <div class="js-form-item form-item js-form-type-radio form-item-is-delivery js-form-item-is-delivery">
+                                                            <input type="radio"
+                                                                   id="edit-is-delivery-one" name="is_gift" value="yes"
+                                                                   class="form-radio">
+                                                            <label for="edit-is-delivery-one" class="option">Postal
+                                                                delivery to your country (takes up to 1+ month) + 10.2
+                                                                EUR</label>
+                                                        </div>
+                                                        <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
+                                                            <input type="radio"
+                                                                   id="edit-is-delivery-two" name="is_gift" value="no"
+                                                                   class="form-radio">
+                                                            <label for="edit-is-delivery-two"
+                                                                   class="option">E-ticket</label>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#">Learn more about delivery</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+
+
+                                            <!--<div class="gift-mention form-item">Отправка в течение 48 часов максимум и получение с учетом почтовых задержек.</div>-->
+                                            <fieldset id="edit-payment"
+                                                      class="js-form-item form-item js-form-wrapper form-wrapper">
+                                                <legend>
+                                                    <span class="fieldset-legend">Средства оплаты</span>
+                                                </legend>
+                                                <div class="fieldset-wrapper">
+                                                    <fieldset id="payments"
+                                                              class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper"
+                                                              required="required" aria-required="true">
+                                                        <legend>
+                                                            <span class="fieldset-legend js-form-required form-required">Средства оплаты</span>
+                                                        </legend>
+                                                        <div class="fieldset-wrapper">
+                                                            <div id="edit-payement-mode">
+                                                                <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
+                                                                    <input type="radio" id="edit-payement-mode-visa"
+                                                                           name="payement_mode" value="VISA"
+                                                                           class="form-radio visap">
+
+                                                                    <label for="edit-payement-mode-visa"
+                                                                           class="option">credit card</label>
+                                                                </div>
+                                                                <div class="js-form-item form-item js-form-type-radio form-item-payement-mode js-form-item-payement-mode form-item--required">
+                                                                    <input type="radio" id="edit-payement-mode-paypal"
+                                                                           name="payement_mode" value="PAYPAL"
+                                                                           class="form-radio paypalp">
+
+                                                                    <label for="edit-payement-mode-paypal"
+                                                                           class="option">paypal</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </fieldset>
+                                                    <div class="js-form-item form-item js-form-type-checkbox form-item-cgv js-form-item-cgv form-item--required">
+                                                        <input type="checkbox" id="edit-cgv"
+                                                               name="cgv" value="1" class="form-checkbox required"
+                                                               required="required" aria-required="true">
+
+                                                        <label for="edit-cgv"
+                                                               class="option js-form-required form-required">Я
+                                                            ознакомился с <a
+                                                                    href="#"
+                                                                    target="_blank">общими условиями продажи</a> и
+                                                            согласен
+                                                            с ними
+
+                                                            <br><br><a href="#"
+                                                                       target="_blank">Для получения более подробной
+                                                                информации об условиях сбора и обработки Ваших личных
+                                                                данных, ознакомьтесь с нашей политикой
+                                                                конфиденциальности</a>.
+
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+
+                                            <a href="#"
+                                               class="btn disabled"><span></span><span>Следующий этап</span></a>
+                                            <p><i>* обязательные поля</i></p>
+                                        </div>
+                                        <div class="hidden">
+                                            <fieldset id="edit-is-gift--wrapper"
+                                                      class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper form-item--filled form-item--valid">
+                                                <legend>
+                                                    <span class="fieldset-legend">Желаете сделать подарок? </span>
+                                                </legend>
+                                                <div class="fieldset-wrapper">
+                                                    <div id="edit-is-gift">
+                                                        <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
+                                                            <input type="radio"
+                                                                   id="edit-is-gift-yes1" name="is_gift1" value="yes"
+                                                                   class="form-radio">
+
+                                                            <label for="edit-is-gift-yes1" class="option">Да</label>
+                                                        </div>
+                                                        <div class="js-form-item form-item js-form-type-radio form-item-is-gift js-form-item-is-gift">
+                                                            <input type="radio"
+                                                                   id="edit-is-gift-no1" name="is_gift1" value="no"
+                                                                   checked="checked" class="form-radio">
+
+                                                            <label for="edit-is-gift-no1" class="option">Нет</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+
+
+                                            <input autocomplete="off"
+                                                   type="hidden" name="form_build_id"
+                                                   value="form-b6M3VmqLCr-twAnBtUq-PKLStqY3Y8NadLk3lyauklA">
+
+                                            <input type="hidden"
+                                                   name="form_id" value="checkout_information_form">
+
+                                        </div>
+
+
+                                        <div class="checkout__content checkout__summary scroller">
+                                            <p>Содержание <br> заказа </p>
+                                            <div class="summary-date">
+                                                Бронь действительна в течение 6 месяцев - С открытой датой
                                             </div>
-                                        </fieldset>
+                                            <div>
+                                                <p>Ваш выбор</p>
+                                                <ul>
+                                                    <li>
+                                                        <div class="title-pourcent">
 
+                                                            Soirée Plume <span>x 1</span>
 
-                                        <input autocomplete="off"
-                                               type="hidden" name="form_build_id"
-                                               value="form-b6M3VmqLCr-twAnBtUq-PKLStqY3Y8NadLk3lyauklA">
-
-                                        <input type="hidden"
-                                               name="form_id" value="checkout_information_form">
-
-                                    </div>
-
-
-                                    <div class="checkout__content checkout__summary scroller">
-                                        <p>Содержание <br> заказа </p>
-                                        <div class="summary-date">
-                                            Бронь действительна в течение 6 месяцев - С открытой датой
-                                        </div>
-                                        <div>
-                                            <p>Ваш выбор</p>
-                                            <ul>
-                                                <li>
-                                                    <div class="title-pourcent">
-
-                                                        Soirée Plume <span>x 1</span>
-
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div>
-                                                                <span>Tickets amount: </span>
-                                                                <span id="cse">1</span>
-                                                            </div>
-                                                            <div>
-                                                                <span id="tp">130,00&nbsp;</span>
-                                                                <span>eur</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <p>Ваши варианты</p>
-                                            <ul>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul id="js-total-price">
-                                                <li>
-                                                    <div>
-                                                        Total
-                                                    </div>
-                                                    <div>
-                                                        <span class="priceall">355.41</span>
-                                                        <span>eur</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <button type="submit" class="btn">
-                                                <span></span>
-                                                <span>Proceed to payment</span>
-                                            </button>
-                                        </div>
-                                        <div class="payment-mention">Кликнув по ссылке, Вы перейдете к защищенному
-                                            терминалу оплаты, предоставленному нашим партнером INGENICO.
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <div>
+                                                                    <span>Tickets amount: </span>
+                                                                    <span id="cse">1</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span id="tp">130,00&nbsp;</span>
+                                                                    <span>eur</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <p>Ваши варианты</p>
+                                                <ul>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul id="js-total-price">
+                                                    <li>
+                                                        <div>
+                                                            Total
+                                                        </div>
+                                                        <div>
+                                                            <span class="priceall">355.41</span>
+                                                            <span>eur</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="btn">
+                                                    <span></span>
+                                                    <span>Proceed to payment</span>
+                                                </button>
+                                            </div>
+                                            <div class="payment-mention">Кликнув по ссылке, Вы перейдете к защищенному
+                                                терминалу оплаты, предоставленному нашим партнером INGENICO.
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
 
                             </div>
 
+
                         </div>
 
+                    </div>
+
+                </div>
+            </main>
+
+
+            <footer id="footer" role="contentinfo">
+                <div>
+                    <div id="block-filsdariane">
+
+
+                        <section class="breadcrumb section active">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <a href="/"> Главная
+                                        </a> &gt;
+                                    </li>
+                                    <li>
+                                        Checkout information
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
 
                     </div>
 
                 </div>
 
-            </div>
-        </main>
 
+                <section class="sitemap section active">
+                    <div class="container">
 
-        <footer id="footer" role="contentinfo">
-            <div>
-                <div id="block-filsdariane">
+                        <ul class="sitemap-secondary">
+                            <li class="content">
 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
 
-                    <section class="breadcrumb section active">
-                        <div class="container">
-                            <ul>
-                                <li>
-                                    <a href="/"> Главная
-                                    </a> &gt;
-                                </li>
-                                <li>
-                                    Checkout information
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+                    </div>
+                </section>
 
-                </div>
+            </footer>
 
-            </div>
-
-
-            <section class="sitemap section active">
-                <div class="container">
-
-                    <ul class="sitemap-secondary">
-                        <li class="content">
-
-                        </li>
-                    </ul>
-                </div>
-                <div class="container">
-
-                </div>
-            </section>
-
-        </footer>
-
+        </div>
     </div>
-</div>
 </form>
 
 <!--theaters modal-->
@@ -2018,6 +2045,7 @@
 
 
 
+
                 </script>
                 <div class="event-box" rel="14061" attr-time="1582905600"
                      itemscope="" itemtype="http://data-vocabulary.org/Event">
@@ -2138,6 +2166,7 @@
     "name": "Mariinsky II (New) Theatre troupe"
   }
 }
+
 
 
 
@@ -2286,6 +2315,7 @@
 
 
 
+
                 </script>
                 <div class="event-box" rel="14118" attr-time="1582905600"
                      itemscope="" itemtype="http://data-vocabulary.org/Event">
@@ -2402,6 +2432,7 @@
     "name": "Mikhailovsky (ex. Mussorgsky) Theatre troupe"
   }
 }
+
 
 
 
@@ -2533,6 +2564,7 @@
     "name": "Saint-Petersburg Opera Theatre troupe"
   }
 }
+
 
 
 
@@ -2689,6 +2721,7 @@
 
 
 
+
                 </script>
                 <div style="background:#fce07f" class="event-box" rel="14145"
                      attr-time="1582992000" itemscope=""
@@ -2811,6 +2844,7 @@
     "name": "Mariinsky (ex. Kirov) Ballet and Opera Theatre troupe"
   }
 }
+
 
 
 
@@ -2948,6 +2982,7 @@
     "name": "Mariinsky II (New) Theatre troupe"
   }
 }
+
 
 
 
@@ -3104,6 +3139,7 @@
 
 
 
+
                 </script>
                 <div class="event-box" rel="12649" attr-time="1583053200"
                      itemscope="" itemtype="http://data-vocabulary.org/Event">
@@ -3229,6 +3265,7 @@
     "name": "Mariinsky (ex. Kirov) Ballet and Opera Theatre troupe"
   }
 }
+
 
 
 
