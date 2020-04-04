@@ -4,7 +4,6 @@ var landing;
 var arr;
 var mappoint_raphael;
 var objs = {};
-const hover_zone_color = "#cab471";
 
 $(function(){
     init_scheme();
@@ -13,6 +12,8 @@ $(function(){
 
 function init_scheme(){
     if(landing == undefined) return;
+
+    hover_zone_color = "#cab471";
     
     raph = Raphael('map', landing.width, landing.height),
         attributes = {
