@@ -1022,7 +1022,7 @@ $(document).ready(function () {
                 })
             })
 
-            $('[style*="background: #fed444"]').attr('style', 'background: #feefaf;');
+            $('[style*="#fed444"]').attr('style', 'background: #feefaf;');
         }
 
         //ajax and processing / modal 1-3 (not done)
