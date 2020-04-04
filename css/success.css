@@ -494,7 +494,8 @@
 
 .page_casting_recruiting #casting .desc {
     *zoom: 1;
-    text-align: center
+    text-align: center;
+    display: flex;
 }
 
 .page_casting_recruiting #casting .desc:before, .page_casting_recruiting #casting .desc:after {
